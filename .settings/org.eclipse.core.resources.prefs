@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/jsp/index.jsp=UTF-8
+encoding//src/com/usedvehicle/controllers/Admin_menuController.java=UTF-8
+encoding//src/com/usedvehicle/dao/Admin_menuMapper.java=UTF-8
+encoding//src/com/usedvehicle/service/impl/Admin_menuServiceImpl.java=UTF-8

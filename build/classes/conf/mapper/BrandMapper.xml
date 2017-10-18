@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.usedvehicle.dao.BrandMapper" >
+  <resultMap id="BaseResultMap" type="com.usedvehicle.beans.Brand" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="rn" property="rn" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from brand
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.usedvehicle.beans.Brand" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into brand (id, name, rn)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{rn,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.usedvehicle.beans.Brand" >
+    update brand
+    set name = #{name,jdbcType=VARCHAR},
+      rn = #{rn,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select id, name, rn
+    from brand
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, name, rn
+    from brand
+  </select>
+  
+  <!-- 自定义查询开始 -->
+  <select id="selectAllBrandByRn" resultMap="BaseResultMap">
+  	 select id,name,rn from brand order by rn
+  </select>
+  
+  
+  
+</mapper>

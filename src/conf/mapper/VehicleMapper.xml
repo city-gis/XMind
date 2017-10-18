@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.usedvehicle.dao.VehicleMapper" >
+  <resultMap id="BaseResultMap" type="com.usedvehicle.beans.Vehicle" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="vin" property="vin" jdbcType="VARCHAR" />
+    <result column="typeId" property="typeid" jdbcType="BIGINT" />
+    <result column="licensePlateNumber" property="licenseplatenumber" jdbcType="VARCHAR" />
+    <result column="registerCode" property="registercode" jdbcType="VARCHAR" />
+    <result column="mileage" property="mileage" jdbcType="DECIMAL" />
+    <result column="registerDate" property="registerdate" jdbcType="DATE" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="startingPrice" property="startingprice" jdbcType="BIGINT" />
+    <result column="hopePrice" property="hopeprice" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="memberId" property="memberid" jdbcType="BIGINT" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from vehicle
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.usedvehicle.beans.Vehicle" >
+    <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into vehicle ( vin, typeId, 
+      licensePlateNumber, registerCode, mileage, 
+      registerDate, type, startingPrice, 
+      hopePrice, status, memberId
+      )
+    values ( #{vin,jdbcType=VARCHAR}, #{typeid,jdbcType=BIGINT}, 
+      #{licenseplatenumber,jdbcType=VARCHAR}, #{registercode,jdbcType=VARCHAR}, #{mileage,jdbcType=DECIMAL}, 
+      #{registerdate,jdbcType=DATE}, #{type,jdbcType=VARCHAR}, #{startingprice,jdbcType=BIGINT}, 
+      #{hopeprice,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, #{memberid,jdbcType=BIGINT}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.usedvehicle.beans.Vehicle" >
+    update vehicle
+    set vin = #{vin,jdbcType=VARCHAR},
+      typeId = #{typeid,jdbcType=BIGINT},
+      licensePlateNumber = #{licenseplatenumber,jdbcType=VARCHAR},
+      registerCode = #{registercode,jdbcType=VARCHAR},
+      mileage = #{mileage,jdbcType=DECIMAL},
+      registerDate = #{registerdate,jdbcType=DATE},
+      type = #{type,jdbcType=VARCHAR},
+      startingPrice = #{startingprice,jdbcType=BIGINT},
+      hopePrice = #{hopeprice,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      memberId = #{memberid,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select id, vin, typeId, licensePlateNumber, registerCode, mileage, registerDate, 
+    type, startingPrice, hopePrice, status, memberId
+    from vehicle
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, vin, typeId, licensePlateNumber, registerCode, mileage, registerDate, 
+    type, startingPrice, hopePrice, status, memberId
+    from vehicle
+  </select>
+  
+  
+  <!-- 车辆查询 -->
+  <resultMap type="com.usedvehicle.vo.ViewVehicle" id="VechileBaseMap">
+  	<id column="id" property="id"/>
+  	<result column="bname" property="bname"/>
+  	<result column="sname" property="sname"/>
+  	<result column="tname" property="tname"/>
+  	<result column="rdate" property="regdate"/>
+  	<result column="memberId" property="memberId"/>
+  </resultMap>
+  
+  
+  <select id="selectVehicleById" resultMap="VechileBaseMap">
+  
+  select id,vin,  
+	substring_index(carmemo, ";" ,1) bname, 
+	substring_index(carmemo, ";" ,-1) tname,
+	substring_index( substring_index(carmemo, ";" ,2),   ";"  ,-1   ) sname
+	
+	,licensePlateNumber,registerCode,mileage, rdate,type,
+	startingPrice,hopePrice,status,memberId from (
+	
+	select id,vin,  translateTypeid(typeId) carmemo,licensePlateNumber,registerCode,mileage,date_format(registerDate,'%Y-%m-%d') rdate,type,
+	startingPrice,hopePrice,status,memberId from vehicle where id=#{vid} ) t
+  </select>
+  
+</mapper>

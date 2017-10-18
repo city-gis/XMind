@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    
+    <!-- Spring的容器配置文件 -->
+    <!-- 注册数据源， Service, Dao,事务 -->
+    
+    <!-- 注册组件扫描器 -->
+    <context:component-scan base-package="com.usedvehicle.service" />
+    
+    <!-- 引用属性配置文件 -->
+    <context:property-placeholder location="classpath:conf/core/jdbc.properties"/>
+    
+    <!-- 注册数据源， 使用数据库连接池， DBCP,C3P0 -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+    	<property name="driverClass" value="${jdbc.driver}" />
+    	<property name="jdbcUrl" value="${jdbc.url}" />
+    	<property name="user" value="${jdbc.username}" />
+    	<property name="password" value="${jdbc.password}"></property>
+    </bean>
+    
+    <!-- 和MyBatis相关的内容 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    	<property name="dataSource" ref="dataSource" />
+    	<!-- 指定别名 -->
+    	<property name="typeAliasesPackage" value="com.usedvehicle.beans" />
+    	<!-- 指定sql映射文件 -->
+    	<property name="mapperLocations" value="classpath:conf/mapper/*.xml" />
+    </bean>
+    
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    	<property name="basePackage" value="com.usedvehicle.dao" />
+    	<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+    
+    <!-- 配置参数 -->
+    <bean id="configParam" class="com.usedvehicle.init.ConfigParam">
+      <!-- 设置服务器上存储图片的路径 -->
+      <property name="imagePath" value="C:\usedimage\upload" />
+      <!-- 显示图片的url -->
+      <property name="imageUrl" value="http://localhost:8080/carimage/upload/"></property>
+    </bean>
+    
+        
+</beans>

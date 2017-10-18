@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.usedvehicle.dao.Admin_menuMapper" >
+  <resultMap id="BaseResultMap" type="com.usedvehicle.beans.Admin_menu" >
+    <id column="menu_id" property="menu_id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="parentid" property="parentid" jdbcType="INTEGER" />
+    <result column="m" property="m" jdbcType="VARCHAR" />
+    <result column="c" property="c" jdbcType="VARCHAR" />
+    <result column="a" property="a" jdbcType="VARCHAR" />
+    <result column="color" property="color" jdbcType="VARCHAR" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="data" property="data" jdbcType="VARCHAR" />
+    <result column="listorder" property="listorder" jdbcType="INTEGER" />
+    <result column="display" property="display" jdbcType="INTEGER" />
+  </resultMap>
+ 
+  <select id="selectAll" resultMap="BaseResultMap" >
+   SELECT menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where display=1
+  </select>
+    <select id="serchByPage" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
+     select menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu 
+  </select>
+  
+</mapper>

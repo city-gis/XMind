@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.usedvehicle.dao.VehicleimgMapper" >
+  <resultMap id="BaseResultMap" type="com.usedvehicle.beans.Vehicleimg" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="vehicleId" property="vehicleid" jdbcType="BIGINT" />
+    <result column="fimg" property="fimg" jdbcType="VARCHAR" />
+    <result column="bimg" property="bimg" jdbcType="VARCHAR" />
+    <result column="limg" property="limg" jdbcType="VARCHAR" />
+    <result column="rimg" property="rimg" jdbcType="VARCHAR" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from vehicleimg
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.usedvehicle.beans.Vehicleimg" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="BEFORE" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into vehicleimg (id, vehicleId, fimg, 
+      bimg, limg, rimg)
+    values (#{id,jdbcType=INTEGER}, #{vehicleid,jdbcType=BIGINT}, #{fimg,jdbcType=VARCHAR}, 
+      #{bimg,jdbcType=VARCHAR}, #{limg,jdbcType=VARCHAR}, #{rimg,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.usedvehicle.beans.Vehicleimg" >
+    update vehicleimg
+    set vehicleId = #{vehicleid,jdbcType=BIGINT},
+      fimg = #{fimg,jdbcType=VARCHAR},
+      bimg = #{bimg,jdbcType=VARCHAR},
+      limg = #{limg,jdbcType=VARCHAR},
+      rimg = #{rimg,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select id, vehicleId, fimg, bimg, limg, rimg
+    from vehicleimg
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select id, vehicleId, fimg, bimg, limg, rimg
+    from vehicleimg
+  </select>
+  
+  <!-- 查询 -->
+  <select id="selectVehicleimgByVechileId" resultMap="BaseResultMap">
+   select id, vehicleId, fimg, bimg, limg, rimg
+    from vehicleimg where vehicleId=#{vid}
+  </select>
+  
+  
+  <insert id="insertImg">
+  	insert into vehicleimg(vehicleId,
+  	<choose>
+  		<when test="fimg !=null">
+  		  fimg
+  		</when>
+  		<when test="bimg !=null">
+  		  bimg
+  		</when>
+  		<when test="limg !=null">
+  		  limg
+  		</when>
+  		<when test="rimg !=null">
+  		  rimg
+  		</when>
+  	</choose>
+  	) values(#{vehicleid},
+     <choose>
+  		<when test="fimg !=null">
+  		  #{fimg}
+  		</when>
+  		<when test="bimg !=null">
+  		  #{bimg}
+  		</when>
+  		<when test="limg !=null">
+  		  #{limg}
+  		</when>
+  		<when test="rimg !=null">
+  		  #{rimg}
+  		</when>
+  	</choose> 	
+  	)
+  </insert>
+  
+  <update id="updateImg">
+  update vehicleimg set
+  	<choose>
+  		<when test="fimg !=null">
+  		  fimg=
+  		</when>
+  		<when test="bimg !=null">
+  		  bimg=
+  		</when>
+  		<when test="limg !=null">
+  		  limg=
+  		</when>
+  		<when test="rimg !=null">
+  		  rimg=
+  		</when>
+  	</choose>
+  	 
+     <choose>
+  		<when test="fimg !=null">
+  		  #{fimg}
+  		</when>
+  		<when test="bimg !=null">
+  		  #{bimg}
+  		</when>
+  		<when test="limg !=null">
+  		  #{limg}
+  		</when>
+  		<when test="rimg !=null">
+  		  #{rimg}
+  		</when>
+  	</choose> 	
+  	where vehicleId=#{vehicleid}
+  
+  </update>
+  
+  
+</mapper>
