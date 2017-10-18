@@ -7,5 +7,5 @@ import com.usedvehicle.beans.Admin_menu;
 
 public interface IAdmin_menuService {
 	List<Admin_menu>  queryAll();
-	List<Admin_menu>  serch(int page,int limit);
+	List<Admin_menu>  serch(int page,int limit,String name);
 }

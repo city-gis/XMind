@@ -8,99 +8,52 @@ layui.config({
 
 	//加载页面数据
 	var newsData = '';
-	$.get("admin_menu/serch.do?page=0&&limit=10", function(data){
-		var newArray = [];
-		//单击首页“待审核文章”加载的信息
-		if($(".top_tab li.layui-this cite",parent.document).text() == "待审核文章"){
-			if(window.sessionStorage.getItem("addNews")){
-				var addNews = window.sessionStorage.getItem("addNews");
-				newsData = JSON.parse(addNews).concat(data);
-			}else{
+	var url="admin_menu/serch.do";
+	var page = 0;
+	var limit = 10;
+	var name =$(".search_input").val();
+	//encodeURI()
+	serch(page,limit,name);
+	function serch(start ,end ,name ){
+		$.get(encodeURI("admin_menu/serch.do?page="+start+"&&limit="+end+"&&name="+name), function(data){
+			var newArray = [];
+			//单击首页“待审核文章”加载的信息
+			if($(".top_tab li.layui-this cite",parent.document).text() == "待审核文章"){
+				if(window.sessionStorage.getItem("addNews")){
+					var addNews = window.sessionStorage.getItem("addNews");
+					newsData = JSON.parse(addNews).concat(data);
+				}else{
+					newsData = data;
+				}
+				for(var i=0;i<newsData.length;i++){
+	        		if(newsData[i].newsStatus == "待审核"){
+						newArray.push(newsData[i]);
+	        		}
+	        	}
+	        	newsData = newArray;
+	        	newsList(newsData);
+			}else{    //正常加载信息
 				newsData = data;
+				if(window.sessionStorage.getItem("addNews")){
+					var addNews = window.sessionStorage.getItem("addNews");
+					newsData = JSON.parse(addNews).concat(newsData);
+				}
+				//执行加载数据的方法
+				newsList();
 			}
-			for(var i=0;i<newsData.length;i++){
-        		if(newsData[i].newsStatus == "待审核"){
-					newArray.push(newsData[i]);
-        		}
-        	}
-        	newsData = newArray;
-        	newsList(newsData);
-		}else{    //正常加载信息
-			newsData = data;
-			if(window.sessionStorage.getItem("addNews")){
-				var addNews = window.sessionStorage.getItem("addNews");
-				newsData = JSON.parse(addNews).concat(newsData);
-			}
-			//执行加载数据的方法
-			newsList();
-		}
-	})
+		})
+	}
+	
 
 	//查询
 	$(".search_btn").click(function(){
 		var newArray = [];
 		if($(".search_input").val() != ''){
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
+			serch(page,limit,$(".search_input").val());
             setTimeout(function(){
-            	$.ajax({
-					url : "../../json/newsList.json",
-					type : "get",
-					dataType : "json",
-					success : function(data){
-						if(window.sessionStorage.getItem("addNews")){
-							var addNews = window.sessionStorage.getItem("addNews");
-							newsData = JSON.parse(addNews).concat(data);
-						}else{
-							newsData = data;
-						}
-						for(var i=0;i<newsData.length;i++){
-							var newsStr = newsData[i];
-							var selectStr = $(".search_input").val();
-		            		function changeStr(data){
-		            			var dataStr = '';
-		            			var showNum = data.split(eval("/"+selectStr+"/ig")).length - 1;
-		            			if(showNum > 1){
-									for (var j=0;j<showNum;j++) {
-		            					dataStr += data.split(eval("/"+selectStr+"/ig"))[j] + "<i style='color:#03c339;font-weight:bold;'>" + selectStr + "</i>";
-		            				}
-		            				dataStr += data.split(eval("/"+selectStr+"/ig"))[showNum];
-		            				return dataStr;
-		            			}else{
-		            				dataStr = data.split(eval("/"+selectStr+"/ig"))[0] + "<i style='color:#03c339;font-weight:bold;'>" + selectStr + "</i>" + data.split(eval("/"+selectStr+"/ig"))[1];
-		            				return dataStr;
-		            			}
-		            		}
-		            		//文章标题
-		            		if(newsStr.newsName.indexOf(selectStr) > -1){
-			            		newsStr["newsName"] = changeStr(newsStr.newsName);
-		            		}
-		            		//发布人
-		            		if(newsStr.newsAuthor.indexOf(selectStr) > -1){
-			            		newsStr["newsAuthor"] = changeStr(newsStr.newsAuthor);
-		            		}
-		            		//审核状态
-		            		if(newsStr.newsStatus.indexOf(selectStr) > -1){
-			            		newsStr["newsStatus"] = changeStr(newsStr.newsStatus);
-		            		}
-		            		//浏览权限
-		            		if(newsStr.newsLook.indexOf(selectStr) > -1){
-			            		newsStr["newsLook"] = changeStr(newsStr.newsLook);
-		            		}
-		            		//发布时间
-		            		if(newsStr.newsTime.indexOf(selectStr) > -1){
-			            		newsStr["newsTime"] = changeStr(newsStr.newsTime);
-		            		}
-		            		if(newsStr.newsName.indexOf(selectStr)>-1 || newsStr.newsAuthor.indexOf(selectStr)>-1 || newsStr.newsStatus.indexOf(selectStr)>-1 || newsStr.newsLook.indexOf(selectStr)>-1 || newsStr.newsTime.indexOf(selectStr)>-1){
-		            			newArray.push(newsStr);
-		            		}
-		            	}
-		            	newsData = newArray;
-		            	newsList(newsData);
-					}
-				})
-            	
                 layer.close(index);
-            },2000);
+            },1000);
 		}else{
 			layer.msg("请输入需要查询的内容");
 		}

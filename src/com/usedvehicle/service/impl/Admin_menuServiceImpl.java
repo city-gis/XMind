@@ -10,6 +10,8 @@ import com.usedvehicle.beans.Admin_menu;
 import com.usedvehicle.dao.Admin_menuMapper;
 import com.usedvehicle.service.IAdmin_menuService;
 
+import sun.invoke.empty.Empty;
+
 
 @Service
 public class Admin_menuServiceImpl implements IAdmin_menuService{
@@ -23,12 +25,13 @@ public class Admin_menuServiceImpl implements IAdmin_menuService{
 		return admin_menus;
 	}
 	@Override
-	public List<Admin_menu> serch(int page,int limit) {
+	public List<Admin_menu> serch(int page,int limit,String name) {
 		page =page--;
 		if(page<0){page=0;}
+		if(name==null){name="";}
 		int start =page*limit;
 		int end =start+limit;
-		String name="%"+""+"%";
+		 //name="%"+name+"%";
 		List<Admin_menu> admin_menus = null;
 		admin_menus = admin_menuDao.serchByPage(start,end,name);
 		return admin_menus;

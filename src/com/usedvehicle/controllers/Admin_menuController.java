@@ -39,10 +39,10 @@ public class Admin_menuController {
 	//分页查询
 	@RequestMapping("serch.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
-	public Object serch(int page,int limit) {
+	public Object serch(int page,int limit,String name) {
 		List<Admin_menu> adminmenus = null;
 		
-		adminmenus = admin_menuService.serch(page, limit);
+		adminmenus = admin_menuService.serch(page, limit,name);
 		return adminmenus;
 	}
 	//分页查询

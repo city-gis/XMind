@@ -19,7 +19,12 @@
    SELECT menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where display=1
   </select>
     <select id="serchByPage" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
-     select menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu 
+     
+     select menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where 1=1
+     <if test="name!=null">
+      AND name LIKE CONCAT('%','${name}','%' ) 
+     </if>
+       limit #{page,jdbcType=INTEGER},#{limits,jdbcType=INTEGER} 
   </select>
   
 </mapper>
