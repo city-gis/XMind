@@ -12,5 +12,6 @@ public interface Admin_menuMapper {
 
     List<Admin_menu> selectAll();
     List<Admin_menu> serchByPage(@Param("page") int page,@Param("limits") int limits,@Param("name") String name);
-    
+    int countAll(@Param("name") String name);
+    int delByID(@Param("menu_id") int menu_id);
 }

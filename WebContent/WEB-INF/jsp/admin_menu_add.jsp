@@ -81,6 +81,7 @@
 		</div>
 	</form>
 	<script type="text/javascript" src="js/layui/layui.js"></script>
+	
 	<script type="text/javascript" src="js/admin_menu/admin_menu_add.js"></script>
 </body>
 </html>

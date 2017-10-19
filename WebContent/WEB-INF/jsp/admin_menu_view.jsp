@@ -51,6 +51,7 @@
 	</div>
 	<div id="page"></div>
 	<script type="text/javascript" src="js/layui/layui.js"></script>
+	<script type="text/javascript" src="js/pager.js"></script>
 	<script type="text/javascript" src="js/admin_menu/admin_menu_list.js"></script>
 </body>
 </html>

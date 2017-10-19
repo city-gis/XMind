@@ -26,14 +26,18 @@ public class Admin_menuServiceImpl implements IAdmin_menuService{
 	}
 	@Override
 	public List<Admin_menu> serch(int page,int limit,String name) {
-		page =page--;
-		if(page<0){page=0;}
-		if(name==null){name="";}
-		int start =page*limit;
-		int end =start+limit;
-		 //name="%"+name+"%";
+		
 		List<Admin_menu> admin_menus = null;
-		admin_menus = admin_menuDao.serchByPage(start,end,name);
+		admin_menus = admin_menuDao.serchByPage(page,limit,name);
 		return admin_menus;
+	}
+	@Override
+	public int countAll(String name) {
+		int count = admin_menuDao.countAll(name);
+		return count;
+	}	
+	@Override
+	public int delById(int id) {
+		return admin_menuDao.delByID(id);
 	}
 }

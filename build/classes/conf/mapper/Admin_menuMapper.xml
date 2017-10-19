@@ -16,8 +16,19 @@
   </resultMap>
  
   <select id="selectAll" resultMap="BaseResultMap" >
-   SELECT menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where display=1
+   	SELECT menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where display=1
   </select>
+  <select id="countAll"  resultType="java.lang.Integer" >
+    SELECT count(1) FROM admin_menu where display=1
+    <if test="name!=null">
+      AND name LIKE CONCAT('%','${name}','%' ) 
+     </if>
+     
+  </select>
+   <delete id="delByID" parameterType="java.lang.Integer" >
+    delete from admin_menu
+    where menu_id = #{menu_id,jdbcType=INTEGER}
+  </delete>
     <select id="serchByPage" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
      
      select menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where 1=1

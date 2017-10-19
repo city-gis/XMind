@@ -3,7 +3,7 @@ package com.usedvehicle.common;
 
 public class messageHelper {
 	private String msg;
-	private messageEnum mst;
+	private int mst;//0表示成功、1表示失败
 	private Object data;
 	
 	public String getMsg() {
@@ -12,10 +12,10 @@ public class messageHelper {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-	public messageEnum getMst() {
+	public int getMst() {
 		return mst;
 	}
-	public void setMst(messageEnum mst) {
+	public void setMst(int mst) {
 		this.mst = mst;
 	}
 	public Object getData() {

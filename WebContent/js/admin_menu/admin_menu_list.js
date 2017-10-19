@@ -10,37 +10,42 @@ layui.config({
 	var newsData = '';
 	var url="admin_menu/serch.do";
 	var page = 0;
+	var pagecurr = 0;
 	var limit = 10;
+	var dataCount =0;
 	var name =$(".search_input").val();
-	//encodeURI()
+	var pagesize =10;
+	var pager ;
+
+	//查询数据
 	serch(page,limit,name);
+	//获取资料总数
+	function getDataCount(name){
+		$.get(encodeURI("admin_menu/serchCount.do?name="+name), function(data){
+			dataCount=parseInt(data);
+			pager=new table_pager();
+			pager.init("page",dataCount,pagesize,pagecurr,pageEvent);
+		})
+	}
+	getDataCount($(".search_input").val());//获取资料总笔数
+	//初始化分页
+//	var pager=new table_pager();
+//	pager.init("page",dataCount,pagesize,pageEvent);
+	
+	//分页按钮事件
+	function pageEvent(curr){
+		var start =pager.Lstart();
+		page=start;
+		pagecurr=pager.curr();
+		var end =pagesize;
+		serch(start,end,$(".search_input").val());
+	}
+	
+	//查询
 	function serch(start ,end ,name ){
 		$.get(encodeURI("admin_menu/serch.do?page="+start+"&&limit="+end+"&&name="+name), function(data){
-			var newArray = [];
-			//单击首页“待审核文章”加载的信息
-			if($(".top_tab li.layui-this cite",parent.document).text() == "待审核文章"){
-				if(window.sessionStorage.getItem("addNews")){
-					var addNews = window.sessionStorage.getItem("addNews");
-					newsData = JSON.parse(addNews).concat(data);
-				}else{
-					newsData = data;
-				}
-				for(var i=0;i<newsData.length;i++){
-	        		if(newsData[i].newsStatus == "待审核"){
-						newArray.push(newsData[i]);
-	        		}
-	        	}
-	        	newsData = newArray;
-	        	newsList(newsData);
-			}else{    //正常加载信息
-				newsData = data;
-				if(window.sessionStorage.getItem("addNews")){
-					var addNews = window.sessionStorage.getItem("addNews");
-					newsData = JSON.parse(addNews).concat(newsData);
-				}
-				//执行加载数据的方法
-				newsList();
-			}
+			newsData=data;
+			newsList(data);
 		})
 	}
 	
@@ -51,9 +56,10 @@ layui.config({
 		if($(".search_input").val() != ''){
 			var index = layer.msg('查询中，请稍候',{icon: 16,time:false,shade:0.8});
 			serch(page,limit,$(".search_input").val());
+			getDataCount($(".search_input").val());
             setTimeout(function(){
                 layer.close(index);
-            },1000);
+            },500);
 		}else{
 			layer.msg("请输入需要查询的内容");
 		}
@@ -195,12 +201,15 @@ layui.config({
 		var _this = $(this);
 		layer.confirm('确定删除此信息？',{icon:3, title:'提示信息'},function(index){
 			//_this.parents("tr").remove();
-			for(var i=0;i<newsData.length;i++){
-				if(newsData[i].newsId == _this.attr("data-id")){
-					newsData.splice(i,1);
-					newsList(newsData);
+			var id=_this.attr("data-id");
+			$.get(encodeURI("admin_menu/delmenu.do?id="+id), function(data){
+				//console.log(data);
+				top.layer.msg(data.msg);
+				if(data.mst==0){
+					serch(page,limit,$(".search_input").val());
+					getDataCount($(".search_input").val());
 				}
-			}
+			})
 			layer.close(index);
 		});
 	})
@@ -234,7 +243,7 @@ layui.config({
 			    	+'<td><input type="checkbox" name="show" lay-skin="switch" lay-text="是|否" lay-filter="isShow"'+isshow+'></td>'
 			    	//+'<td>'+currData[i].newsTime+'</td>'
 			    	+'<td>'
-					+  '<a class="layui-btn layui-btn-mini news_edit"><i class="iconfont icon-edit"></i> 编辑</a>'
+					+  '<a class="layui-btn layui-btn-mini news_edit" data-id="'+data[i].menu_id+'"><i class="iconfont icon-edit"></i> 编辑</a>'
 					+  '<a class="layui-btn layui-btn-normal layui-btn-mini news_collect"><i class="layui-icon">&#xe600;</i> 收藏</a>'
 					+  '<a class="layui-btn layui-btn-danger layui-btn-mini news_del" data-id="'+data[i].menu_id+'"><i class="layui-icon">&#xe640;</i> 删除</a>'
 			        +'</td>'
@@ -251,14 +260,9 @@ layui.config({
 		if(that){
 			newsData = that;
 		}
-		laypage({
-			cont : "page",
-			pages : Math.ceil(newsData.length/nums),
-			jump : function(obj){
-				$(".news_content").html(renderDate(newsData,obj.curr));
-				$('.news_list thead input[type="checkbox"]').prop("checked",false);
-		    	form.render();
-			}
-		})
+		$(".news_content").html(renderDate(newsData));
+		$('.news_list thead input[type="checkbox"]').prop("checked",false);
+		form.render('checkbox');
+		form.render();
 	}
 })
