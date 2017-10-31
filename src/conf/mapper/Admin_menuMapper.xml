@@ -37,5 +37,12 @@
      </if>
        limit #{page,jdbcType=INTEGER},#{limits,jdbcType=INTEGER} 
   </select>
-  
+    <resultMap id="voResultMap" type="com.usedvehicle.vo.Admin_menu_tree" >
+    <id column="menu_id" property="Id" jdbcType="INTEGER" />
+    <result column="name" property="text" jdbcType="VARCHAR" />
+    <result column="parentid" property="parent" jdbcType="VARCHAR" />
+  </resultMap>
+    <select id="selectTree" resultMap="voResultMap" >
+   	SELECT menu_id ,name,case parentid when 0 then '#' else parentid end parentid  FROM admin_menu 
+  </select>
 </mapper>

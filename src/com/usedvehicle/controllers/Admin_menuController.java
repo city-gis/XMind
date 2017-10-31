@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.usedvehicle.beans.Admin_menu;
+import com.usedvehicle.vo.Admin_menu_tree;
 import com.usedvehicle.common.messageHelper;
+import com.usedvehicle.common.pagerHelperRQ;
+import com.usedvehicle.common.pagerHelperRS;
 import com.usedvehicle.service.IAdmin_menuService;
 
 
@@ -41,10 +44,18 @@ public class Admin_menuController {
 	//分页查询
 	@RequestMapping("serch.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
-	public Object serch(int page,int limit,String name) {
-		List<Admin_menu> adminmenus = null;
+	public Object serch(pagerHelperRQ pager) {
+		pagerHelperRS pagerrs=admin_menuService.serchbypager(pager);
+		return pagerrs;
+	}
+
+	//分页查询
+	@RequestMapping("serchAdmin_menu_Tree.do")//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object serchAll() {
+		List<Admin_menu_tree> adminmenus = null;
 		
-		adminmenus = admin_menuService.serch(page, limit,name);
+		adminmenus = admin_menuService.serchTree();
 		return adminmenus;
 	}
 	//分页查询
