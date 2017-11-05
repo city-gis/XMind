@@ -12,7 +12,7 @@ public class NavigationController {
 	public ModelAndView nextPage(String target,Long vid){
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName(target);
-		mv.addObject("vid", vid);
+		mv.addObject("vid", "111111111");
 		return mv;
 	}
 

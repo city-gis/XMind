@@ -83,7 +83,7 @@
 
                     </li>
                     <li>
-                        <a class="J_menuItem" href="nextjsp.do?target=admin_menu_view.jsp"><i class="fa fa-columns"></i> <span class="nav-label">菜单</span></a>
+                        <a class="J_menuItem" href="admin_menu/view.do"><i class="fa fa-columns"></i> <span class="nav-label">菜单</span></a>
                     </li>
                     <li>
                         <a href="#">

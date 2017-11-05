@@ -14,5 +14,8 @@ public interface IAdmin_menuService {
 	List<Admin_menu>  serchAll();
 	List<Admin_menu_tree>  serchTree();
 	int countAll(String name);
-	int delById(int id);
+	int delById(String id);
+	int addone(Admin_menu menu);
+	int modify(Admin_menu menu);
+	Admin_menu serchByID(String id);
 }

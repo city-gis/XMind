@@ -414,7 +414,7 @@
 										<td height="40" align="left"><input type="submit"
 											value=" 保存 " name="submit" id="saveButton"
 											class="btn btn_small"> &nbsp;&nbsp;&nbsp;&nbsp; <input
-											type="reset" value=" 重置 " name="submit" class="btn btn_small"> ${error}</td>
+											type="reset" value=" 重置 " name="submit" class="btn btn_small"> ${vid}</td>
 									</tr>
 								</table>
 							</div>

@@ -33,20 +33,20 @@ public class Admin_menuServiceImpl implements IAdmin_menuService{
 	}
 	@Override
 	public pagerHelperRS serchbypager(pagerHelperRQ pager) {
+		pager.setStart();
 		pagerRs=new pagerHelperRS();
 		List<Admin_menu> admin_menus = null;
 		int count = admin_menuDao.countAll(pager.getSearchString());
 		//return count;
-		admin_menus = admin_menuDao.serchByPage(pager.getStart(),pager.getRows(),pager.getSearchString());
+		admin_menus = admin_menuDao.serchByPage(pager);
 		pagerRs.setRows(admin_menus);
 		pagerRs.setPage(pager.getPage());
 		pagerRs.setRecords(count);
-		pagerRs.setTotal((int)Math.ceil(count/pager.getPage()));
+		pagerRs.setTotal((int)Math.ceil((double)count/(double)pager.getRows()));
 		return pagerRs;
 	}
 	@Override
 	public List<Admin_menu> serchAll() {
-		
 		List<Admin_menu> admin_menus = null;
 		admin_menus = admin_menuDao.selectAll();
 		return admin_menus;
@@ -64,7 +64,19 @@ public class Admin_menuServiceImpl implements IAdmin_menuService{
 		return count;
 	}	
 	@Override
-	public int delById(int id) {
+	public int delById(String id) {
 		return admin_menuDao.delByID(id);
+	}
+	@Override
+	public int addone(Admin_menu menu) {
+		return admin_menuDao.addone(menu);
+	}
+	@Override
+	public int modify(Admin_menu menu) {
+		return admin_menuDao.modify(menu);
+	}
+	@Override
+	public Admin_menu serchByID(String id){
+		return admin_menuDao.serchById(id);
 	}
 }

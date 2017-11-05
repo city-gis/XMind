@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.usedvehicle.dao.Admin_menuMapper" >
   <resultMap id="BaseResultMap" type="com.usedvehicle.beans.Admin_menu" >
-    <id column="menu_id" property="menu_id" jdbcType="INTEGER" />
+    <id column="menu_id" property="menu_id" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="parentid" property="parentid" jdbcType="INTEGER" />
+    <result column="parentid" property="parentid" jdbcType="VARCHAR" />
     <result column="m" property="m" jdbcType="VARCHAR" />
     <result column="c" property="c" jdbcType="VARCHAR" />
     <result column="a" property="a" jdbcType="VARCHAR" />
@@ -19,30 +19,75 @@
    	SELECT menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where display=1
   </select>
   <select id="countAll"  resultType="java.lang.Integer" >
-    SELECT count(1) FROM admin_menu where display=1
-    <if test="name!=null">
+    SELECT count(1) FROM admin_menu where 1=1 and display=1
+    <if test="name!=null and name !=''" >
       AND name LIKE CONCAT('%','${name}','%' ) 
      </if>
      
   </select>
-   <delete id="delByID" parameterType="java.lang.Integer" >
+   <delete id="delByID" >
     delete from admin_menu
-    where menu_id = #{menu_id,jdbcType=INTEGER}
+    where menu_id = #{menu_id,jdbcType=VARCHAR}
   </delete>
     <select id="serchByPage" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
      
-     select menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where 1=1
-     <if test="name!=null">
-      AND name LIKE CONCAT('%','${name}','%' ) 
+     select menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where 1=1 and display=1
+     <if test="pagerHelperRQ.searchString!=null and pagerHelperRQ.searchString !=''">
+      AND name LIKE CONCAT('%','${pagerHelperRQ.searchString}','%' ) 
      </if>
-       limit #{page,jdbcType=INTEGER},#{limits,jdbcType=INTEGER} 
+      <if test="pagerHelperRQ.sidx!=null and pagerHelperRQ.sidx !=''">
+      		  order by ${pagerHelperRQ.sidx}
+      		   <if test="pagerHelperRQ.sord!=null">
+      		     ${pagerHelperRQ.sord}
+     			</if>
+     	</if>
+       limit #{pagerHelperRQ.start,jdbcType=INTEGER},#{pagerHelperRQ.rows,jdbcType=INTEGER} 
+       
+      
+  </select>
+    <select id="serchById" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
+     
+     select menu_id,name,parentid,m,c,a,color,img,data,listorder,display FROM admin_menu where 1=1 
+     <if test="id!=null and id !=''">
+      AND menu_id= #{id,jdbcType=VARCHAR}
+     </if>
   </select>
     <resultMap id="voResultMap" type="com.usedvehicle.vo.Admin_menu_tree" >
-    <id column="menu_id" property="Id" jdbcType="INTEGER" />
+    <id column="menu_id" property="Id" jdbcType="VARCHAR" />
     <result column="name" property="text" jdbcType="VARCHAR" />
     <result column="parentid" property="parent" jdbcType="VARCHAR" />
   </resultMap>
     <select id="selectTree" resultMap="voResultMap" >
    	SELECT menu_id ,name,case parentid when 0 then '#' else parentid end parentid  FROM admin_menu 
   </select>
+  
+   <insert id="addone" parameterType="com.usedvehicle.beans.Admin_menu" >
+    
+    insert into admin_menu (
+    menu_id, name, parentid,m,c,a,color,img,data,listorder,display
+    )
+    values (
+    UUID()
+    ,#{name,jdbcType=VARCHAR}
+    ,#{parentid,jdbcType=VARCHAR}
+    , #{m,jdbcType=VARCHAR}
+    , #{c,jdbcType=VARCHAR}
+    , #{a,jdbcType=VARCHAR}
+    , #{color,jdbcType=VARCHAR}
+    , #{img,jdbcType=VARCHAR}
+    , #{data,jdbcType=VARCHAR}
+    , #{listorder,jdbcType=INTEGER}
+    , #{display,jdbcType=INTEGER}
+    )
+  </insert>
+   <update id="modify" parameterType="com.usedvehicle.beans.Admin_menu" >
+    update admin_menu set  
+    name=#{name,jdbcType=VARCHAR},
+     parentid=#{parentid,jdbcType=VARCHAR},
+     m=#{m,jdbcType=VARCHAR},
+     a=#{a,jdbcType=VARCHAR},
+     img=#{img,jdbcType=VARCHAR},
+     display= #{display,jdbcType=INTEGER}  
+    where menu_id=#{menu_id,jdbcType=VARCHAR}
+  </update>
 </mapper>

@@ -2,11 +2,11 @@ package com.usedvehicle.beans;
 
 public class Admin_menu {
 	
-	private Integer menu_id;
+	private String menu_id;
 
 	private String name;
 
-	private Integer parentid;
+	private String parentid;
 
 	private String m;
 
@@ -24,11 +24,11 @@ public class Admin_menu {
 
 	private Integer display;
 
-	public Integer getMenu_id() {
+	public String getMenu_id() {
 		return menu_id;
 	}
 
-	public void setMenu_id(Integer menu_id) {
+	public void setMenu_id(String menu_id) {
 		this.menu_id = menu_id;
 	}
 
@@ -40,11 +40,11 @@ public class Admin_menu {
 		this.name = name;
 	}
 
-	public Integer getParentid() {
+	public String getParentid() {
 		return parentid;
 	}
 
-	public void setParentid(Integer parentid) {
+	public void setParentid(String parentid) {
 		this.parentid = parentid;
 	}
 

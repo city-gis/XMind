@@ -1,12 +1,12 @@
 package com.usedvehicle.vo;
 
 public class Admin_menu_tree {
-	  private int Id;
+	  private String Id;
 	  private String text;
-	  public int getId() {
+	  public String getId() {
 		return Id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		Id = id;
 	}
 	public String getText() {

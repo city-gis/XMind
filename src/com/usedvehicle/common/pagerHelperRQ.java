@@ -37,10 +37,10 @@ public void setPage(int page) {
 	this.page = page;
 }
 public String getSidx() {
-	return sidx;
+	return sidx==""?null:sidx;
 }
 public void setSidx(String sidx) {
-	this.sidx = sidx;
+	this.sidx = sidx==""?null:sidx;
 }
 public String getSord() {
 	return sord;
@@ -75,9 +75,9 @@ public void setFilters(String filters) {
 public int getStart() {
 	return start;
 }
-public void setStart(int start) {
-	if(this.page-->0){
-		this.start = this.page-- * this.rows;
+public void setStart() {
+	if(this.page-1>0){
+		this.start = (this.page-1) * this.rows;
 	}else{
 		this.start = 0;
 	}
