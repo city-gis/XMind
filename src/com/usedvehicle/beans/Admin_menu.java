@@ -1,7 +1,7 @@
 package com.usedvehicle.beans;
 
 public class Admin_menu {
-	
+
 	private String menu_id;
 
 	private String name;

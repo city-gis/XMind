@@ -24,48 +24,48 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<form class="form-horizontal m-t" id="signupForm"
-					action="../admin_menu/add.do">
+					action="../admin_user/add.do">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">名称：</label>
 						<div class="col-sm-4">
-						<input name ="menu_id" type ="hidden" value="${ admin_menu.menu_id}"/>
-							<input id="name" name="name" class="form-control"  value="${admin_menu.name }"
+						<input name ="menu_id" type ="hidden" value="${ admin_user.userid}"/>
+							<input id="name" name="name" class="form-control"  value="${admin_user.username }"
 								aria-required="true" aria-invalid="true" type="text">
 						</div>
-						<label class="col-sm-2 control-label">父节点：</label>
+						<label class="col-sm-2 control-label">真实姓名：</label>
 						<div class="col-sm-4">
 							<input id="lastname" name="parentid" class="form-control"
-							 value="${ admin_menu.parentid}"	type="text" aria-required="true" aria-invalid="true"
+							 value="${ admin_user.realname}"	type="text" aria-required="true" aria-invalid="true"
 								class="valid">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label">模块：</label>
+						<label class="col-sm-2 control-label">手机号：</label>
 						<div class="col-sm-4">
 							<input id="password" name="m" class="form-control"
-							 value="${ admin_menu.m}"		type="text">
+							 value="${ admin_user.mobile}"		type="text">
 						</div>
 						
-						<label class="col-sm-2 control-label">方法：</label>
+						<label class="col-sm-2 control-label">email：</label>
 						<div class="col-sm-4">
 							<input id="confirm_password" name="a" aria-invalid="true"
-									 value="${ admin_menu.a}"		class="form-control" type="text">
+									 value="${ admin_user.email}"		class="form-control" type="text">
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="col-sm-2 control-label">图标：</label>
+						<label class="col-sm-2 control-label">身份证号：</label>
 						<div class="col-sm-4">
-							<input id="img"  value="${admin_menu.img}"	 name="img" class="form-control">
+							<input id="img"  value="${admin_user.card}"	 name="img" class="form-control">
 						</div>
 						
-						<input type ="hidden" id = "hdcheckDisplay" value="${admin_menu.display}">
-						<label class="col-sm-2 control-label">是否显示：</label>
+						<input type ="hidden" id = "hdcheckDisplay" value="${admin_user.status}">
+						<label class="col-sm-2 control-label">状态：</label>
 						<div class="col-sm-4 col-sm-offset-3"
 							style="margin-left: 0px !important;">
-							<input type="hidden" name="display" id="display" value="${admin_menu.display}" />
+							<input type="hidden" name="display" id="display" value="${admin_user.status}" />
 							<div class="switch">
 								<div class="onoffswitch">
-									<input type="checkbox" ${admin_menu.display==1?'checked':'' }
+									<input type="checkbox" ${admin_user.status==1?'checked':'' }
 										onchange="changeDisplay(this);" class="onoffswitch-checkbox"
 										id="example1"> <label class="onoffswitch-label"
 										for="example1"> <span class="onoffswitch-inner"></span>
@@ -134,7 +134,7 @@
 	function postForm(form){
 		$(form).ajaxSubmit({
             type: 'post', // 提交方式 get/post
-            url: '../admin_menu/edit.do', // 需要提交的 url,
+            url: '../admin_user/edit.do', // 需要提交的 url,
             success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
                 // 此处可对 data 作相关处理
                 if(data.mst==0){

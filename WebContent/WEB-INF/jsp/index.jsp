@@ -83,7 +83,15 @@
 
                     </li>
                     <li>
-                        <a class="J_menuItem" href="admin_menu/view.do"><i class="fa fa-columns"></i> <span class="nav-label">菜单</span></a>
+                        <a class="J_menuItem" href="admin_menu/view.do"><i class="fa fa-columns"></i> <span class="nav-label">菜单管理</span></a>
+                    </li>
+                    
+                    <li>
+                        <a class="J_menuItem" href="admin_user/view.do"><i class="fa fa-columns"></i> <span class="nav-label">用户管理</span></a>
+                    </li>
+                    
+                    <li>
+                        <a class="J_menuItem" href="admin_role/view.do"><i class="fa fa-columns"></i> <span class="nav-label">角色管理</span></a>
                     </li>
                     <li>
                         <a href="#">

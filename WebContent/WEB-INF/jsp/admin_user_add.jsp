@@ -1,13 +1,10 @@
-  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>修改页面</title>
+<title>H+ 后台主题UI框架 - 表单验证 jQuery Validation</title>
 <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
 <meta name="description"
 	content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
@@ -24,48 +21,46 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<form class="form-horizontal m-t" id="signupForm"
-					action="../admin_menu/add.do">
+					action="../admin_user/add.do">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">名称：</label>
 						<div class="col-sm-4">
-						<input name ="menu_id" type ="hidden" value="${ admin_menu.menu_id}"/>
-							<input id="name" name="name" class="form-control"  value="${admin_menu.name }"
+							<input id="name" name="name" class="form-control"
 								aria-required="true" aria-invalid="true" type="text">
 						</div>
 						<label class="col-sm-2 control-label">父节点：</label>
 						<div class="col-sm-4">
 							<input id="lastname" name="parentid" class="form-control"
-							 value="${ admin_menu.parentid}"	type="text" aria-required="true" aria-invalid="true"
+								type="text" aria-required="true" aria-invalid="true"
 								class="valid">
 						</div>
 					</div>
 					<div class="form-group">
+						
 						<label class="col-sm-2 control-label">模块：</label>
 						<div class="col-sm-4">
 							<input id="password" name="m" class="form-control"
-							 value="${ admin_menu.m}"		type="text">
+								 type="text">
 						</div>
-						
 						<label class="col-sm-2 control-label">方法：</label>
 						<div class="col-sm-4">
 							<input id="confirm_password" name="a" aria-invalid="true"
-									 value="${ admin_menu.a}"		class="form-control" type="text">
+								class="form-control" type="text">
 						</div>
 					</div>
 					<div class="form-group">
+						
 						<label class="col-sm-2 control-label">图标：</label>
 						<div class="col-sm-4">
-							<input id="img"  value="${admin_menu.img}"	 name="img" class="form-control">
+							<input id="img" name="img" class="form-control" >
 						</div>
-						
-						<input type ="hidden" id = "hdcheckDisplay" value="${admin_menu.display}">
 						<label class="col-sm-2 control-label">是否显示：</label>
 						<div class="col-sm-4 col-sm-offset-3"
 							style="margin-left: 0px !important;">
-							<input type="hidden" name="display" id="display" value="${admin_menu.display}" />
+							<input type="hidden" name="display" id="display" value="1" />
 							<div class="switch">
 								<div class="onoffswitch">
-									<input type="checkbox" ${admin_menu.display==1?'checked':'' }
+									<input type="checkbox" checked=""
 										onchange="changeDisplay(this);" class="onoffswitch-checkbox"
 										id="example1"> <label class="onoffswitch-label"
 										for="example1"> <span class="onoffswitch-inner"></span>
@@ -96,8 +91,6 @@
 	<script src="../js/demo/form-validate-demo.min.js"></script>
 	<script src="../js/jquery.form.js"></script>
     <script src="../js/plugins/toastr/toastr.min.js"></script>
-		<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
-		<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript"
 		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 	<script type="text/javascript">
@@ -134,25 +127,24 @@
 	function postForm(form){
 		$(form).ajaxSubmit({
             type: 'post', // 提交方式 get/post
-            url: '../admin_menu/edit.do', // 需要提交的 url,
+            url: '../admin_user/add.do', // 需要提交的 url,
             success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
                 // 此处可对 data 作相关处理
                 if(data.mst==0){
                 	toastr.success(data.msg);
                 	$(form).resetForm(); // 提交后重置表单
                 	if(btn&&btn=="close"){
-                		parent.reloadGrid()
+                		parent.reloadGrid();
                 		setTimeout(function(){
                 			$('.parent_win_closed', window.parent.document).click();
                 		},1000);
-                		//alert(1);
                 	}
                 	//setTimeout(function(){$("#frameView", window.parent.document).attr("src","");},1000);
+                	
                 }else{
                 	toastr.error(data.msg);
                 }
             }
-            
         });
 	}
 		/*
@@ -173,13 +165,6 @@
 				closeWind();
 			});
 			$("#signupForm").validate();
-			/*var check=$("#hdcheckDisplay").val();
-			if(check=="1" && $("#display").is(':checked')){
-				$("#example1").click();
-			} if(check=="0" && $("#display").is(':checked')==false){
-				$("#example1").click();
-			}*/
-			//$("#example1")
 		});
 		var btn;
 		function closeWind() {

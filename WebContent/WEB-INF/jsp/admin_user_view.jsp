@@ -8,11 +8,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>H+ 后台主题UI框架 - 树形视图</title>
+<title>用户管理列表页面</title>
 
 <meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
 <meta name="description"
-	content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+	content="用户管理列表页面">
 
 <link rel="shortcut icon" href="favicon.ico">
 <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
@@ -47,29 +47,10 @@
 	<div class="wrapper wrapper-content  animated fadeInRight">
 
 		<div class="row">
-			<!-- 左侧菜单树 start -->
-			<div class="col-sm-3">
+			<div class="col-sm-12">
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
-						<h5>菜单树</h5>
-						<div class="ibox-tools">
-							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
-							</a>
-							<!-- <a class="close-link"> <i class="fa fa-times"></i></a> -->
-						</div>
-					</div>
-					<div class="ibox-content">
-
-						<div id="using_json"></div>
-
-					</div>
-				</div>
-			</div>
-			<!-- 左侧菜单树 end -->
-			<div class="col-sm-9">
-				<div class="ibox float-e-margins">
-					<div class="ibox-title">
-						<h5>菜单列表</h5>
+						<h5>用户列表</h5>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 							</a>
@@ -136,247 +117,68 @@
 				
 				
 				$.jgrid.defaults.styleUI = "Bootstrap";
-				var mydata = [ {
-					id : "1",
-					invdate : "2010-05-24",
-					name : "test",
-					note : "note",
-					tax : "10.00",
-					total : "2111.00"
-				}, {
-					id : "2",
-					invdate : "2010-05-25",
-					name : "test2",
-					note : "note2",
-					tax : "20.00",
-					total : "320.00"
-				}, {
-					id : "3",
-					invdate : "2007-09-01",
-					name : "test3",
-					note : "note3",
-					tax : "30.00",
-					total : "430.00"
-				}, {
-					id : "4",
-					invdate : "2007-10-04",
-					name : "test",
-					note : "note",
-					tax : "10.00",
-					total : "210.00"
-				}, {
-					id : "5",
-					invdate : "2007-10-05",
-					name : "test2",
-					note : "note2",
-					tax : "20.00",
-					total : "320.00"
-				}, {
-					id : "6",
-					invdate : "2007-09-06",
-					name : "test3",
-					note : "note3",
-					tax : "30.00",
-					total : "430.00"
-				}, {
-					id : "7",
-					invdate : "2007-10-04",
-					name : "test",
-					note : "note",
-					tax : "10.00",
-					total : "210.00"
-				}, {
-					id : "8",
-					invdate : "2007-10-03",
-					name : "test2",
-					note : "note2",
-					amount : "300.00",
-					tax : "21.00",
-					total : "320.00"
-				}, {
-					id : "9",
-					invdate : "2007-09-01",
-					name : "test3",
-					note : "note3",
-					amount : "400.00",
-					tax : "30.00",
-					total : "430.00"
-				}, {
-					id : "11",
-					invdate : "2007-10-01",
-					name : "test",
-					note : "note",
-					amount : "200.00",
-					tax : "10.00",
-					total : "210.00"
-				}, {
-					id : "12",
-					invdate : "2007-10-02",
-					name : "test2",
-					note : "note2",
-					amount : "300.00",
-					tax : "20.00",
-					total : "320.00"
-				}, {
-					id : "13",
-					invdate : "2007-09-01",
-					name : "test3",
-					note : "note3",
-					amount : "400.00",
-					tax : "30.00",
-					total : "430.00"
-				}, {
-					id : "14",
-					invdate : "2007-10-04",
-					name : "test",
-					note : "note",
-					amount : "200.00",
-					tax : "10.00",
-					total : "210.00"
-				}, {
-					id : "15",
-					invdate : "2007-10-05",
-					name : "test2",
-					note : "note2",
-					amount : "300.00",
-					tax : "20.00",
-					total : "320.00"
-				}, {
-					id : "16",
-					invdate : "2007-09-06",
-					name : "test3",
-					note : "note3",
-					amount : "400.00",
-					tax : "30.00",
-					total : "430.00"
-				}, {
-					id : "17",
-					invdate : "2007-10-04",
-					name : "test",
-					note : "note",
-					amount : "200.00",
-					tax : "10.00",
-					total : "210.00"
-				}, {
-					id : "18",
-					invdate : "2007-10-03",
-					name : "test2",
-					note : "note2",
-					amount : "300.00",
-					tax : "20.00",
-					total : "320.00"
-				}, {
-					id : "19",
-					invdate : "2007-09-01",
-					name : "test3",
-					note : "note3",
-					amount : "400.00",
-					tax : "30.00",
-					total : "430.00"
-				}, {
-					id : "21",
-					invdate : "2007-10-01",
-					name : "test",
-					note : "note",
-					amount : "200.00",
-					tax : "10.00",
-					total : "210.00"
-				}, {
-					id : "22",
-					invdate : "2007-10-02",
-					name : "test2",
-					note : "note2",
-					amount : "300.00",
-					tax : "20.00",
-					total : "320.00"
-				}, {
-					id : "23",
-					invdate : "2007-09-01",
-					name : "test3",
-					note : "note3",
-					amount : "400.00",
-					tax : "30.00",
-					total : "430.00"
-				}, {
-					id : "24",
-					invdate : "2007-10-04",
-					name : "test",
-					note : "note",
-					amount : "200.00",
-					tax : "10.00",
-					total : "210.00"
-				}, {
-					id : "25",
-					invdate : "2007-10-05",
-					name : "test2",
-					note : "note2",
-					amount : "300.00",
-					tax : "20.00",
-					total : "320.00"
-				}, {
-					id : "26",
-					invdate : "2007-09-06",
-					name : "test3",
-					note : "note3",
-					amount : "400.00",
-					tax : "30.00",
-					total : "430.00"
-				}, {
-					id : "27",
-					invdate : "2007-10-04",
-					name : "test",
-					note : "note",
-					amount : "200.00",
-					tax : "10.00",
-					total : "210.00"
-				}, {
-					id : "28",
-					invdate : "2007-10-03",
-					name : "test2",
-					note : "note2",
-					amount : "300.00",
-					tax : "20.00",
-					total : "320.00"
-				}, {
-					id : "29",
-					invdate : "2007-09-01",
-					name : "test3",
-					note : "note3",
-					amount : "400.00",
-					tax : "30.00",
-					total : "430.00"
-				} ];
-
+				
 				$("#table_list_2").jqGrid({
-					url : "../admin_menu/serch.do",
+					url : "../admin_user/serch.do",
 					datatype : "json",
 					height : 350,
 					autowidth : true,
 					shrinkToFit : true,
 					rowNum : 10,
 					rowList : [ 10, 20, 30 ],
-					colNames : [ "序号", "名称", "是否显示" ],
-					colModel : [ {
-						name : "menu_id",
-						index : "menu_id",
+					colNames : [ "id","名称", "姓名", "手机号","email","身份证号","角色","状态"],
+					
+					colModel : [{
+						name : "userid",
+						index : "userid",
+						editable : true,
+						width : 60,
+						search : false,
+						hidden:true
+					},  {
+						name : "username",
+						index : "username",
+						editable : true,
+						width : 60,
+						search : true
+					},  {
+						name : "realname",
+						index : "realname",
+						editable : true,
+						width : 60,
+						search : true
+					},  {
+						name : "mobile",
+						index : "mobile",
+						editable : true,
+						width : 60,
+						search : true
+					},  {
+						name : "email",
+						index : "email",
+						editable : true,
+						width : 60,
+						search : true
+					},  {
+						name : "card",
+						index : "card",
 						editable : true,
 						width : 60,
 						sorttype : "int",
 						search : true
 					}, {
-						name : "name",
-						index : "name",
+						name : "roleid",
+						index : "roleid",
 						editable : true,
 						width : 90
 					}, {
-						name : "display",
-						index : "display",
+						name : "status",
+						index : "status",
 						editable : true,
-						width : 100,
+						width : 60,
 						sorttype : "int",
 						search : true,
-						formatter:showStatue
-						
+						formatter: showStatue
 					} ],
 					pager : "#pager_list_2",
 					viewrecords : true,
@@ -420,6 +222,13 @@
 					$("#table_list_2").setGridWidth(width);
 				});
 			});
+			function showStatue(cellvalue, options, rowObject){
+				if(cellvalue==0){
+					return '<span class="label label-primary">启用</span>';
+				}else{
+					return '<span class="label label-warning">禁用</span>';
+				}
+			}
 			/**
 			删除
 			 */
@@ -435,7 +244,7 @@
 				}, function() {
 					$.ajax({
 			             type: "GET",
-			             url: "../admin_menu/delmenu.do",
+			             url: "../admin_user/delmenu.do",
 			             data: {id:id},
 			             dataType: "json",
 			             success: function(data){
@@ -445,20 +254,12 @@
 					
 				});
 			}
-			
-			function showStatue(cellvalue, options, rowObject){
-				if(cellvalue==1){
-					return '<span class="label label-primary">显示</span>';
-				}else{
-					return '<span class="label label-warning">不显示</span>';
-				}
-			}
 			/**
 			修改
 			 */
 			function editdata(id) {
 				//alert(id);
-				$("#frameView").attr("src", "../admin_menu/edit_view.do?id="+id);
+				$("#frameView").attr("src", "../admin_user/edit_view.do?id="+id);
 				$('#addmodal').modal({
 					keyboard : true
 				});
@@ -467,7 +268,7 @@
 			新增
 			 */
 			function adddata() {
-				$("#frameView").attr("src", "../admin_menu/add_view.do");
+				$("#frameView").attr("src", "../admin_user/add_view.do");
 				$('#addmodal').modal({
 					keyboard : true
 				});
@@ -494,18 +295,7 @@
 			}
 		</script>
 
-		<script>
-			$(document).ready(function() {
-				$("#using_json").jstree({
-					"core" : {
-						"data" : {
-							'url' : '../admin_menu/serchAdmin_menu_Tree.do',
-							'dataType' : 'json',
-						}
-					}
-				})
-			});
-		</script>
+		
 		<script type="text/javascript"
 			src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 </body>

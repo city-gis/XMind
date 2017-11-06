@@ -127,7 +127,7 @@
 					shrinkToFit : true,
 					rowNum : 10,
 					rowList : [ 10, 20, 30 ],
-					colNames : [ "序号", "名称", "是否显示" ],
+					colNames : [ "序号", "名称", "状态" ],
 					colModel : [ {
 						name : "roleid",
 						index : "roleid",
@@ -146,7 +146,8 @@
 						editable : true,
 						width : 100,
 						sorttype : "int",
-						search : true
+						search : true,
+						formatter: showStatue
 					} ],
 					pager : "#pager_list_2",
 					viewrecords : true,
@@ -190,6 +191,13 @@
 					$("#table_list_2").setGridWidth(width);
 				});
 			});
+			function showStatue(cellvalue, options, rowObject){
+				if(cellvalue==0){
+					return '<span class="label label-primary">启用</span>';
+				}else{
+					return '<span class="label label-warning">禁用</span>';
+				}
+			}
 			/**
 			删除
 			 */
