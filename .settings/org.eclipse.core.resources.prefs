@@ -4,5 +4,7 @@ encoding//src/com/usedvehicle/controllers/Admin_menuController.java=UTF-8
 encoding//src/com/usedvehicle/controllers/Admin_userController.java=UTF-8
 encoding//src/com/usedvehicle/dao/Admin_menuMapper.java=UTF-8
 encoding//src/com/usedvehicle/dao/Admin_userMapper.java=UTF-8
+encoding//src/com/usedvehicle/dao/Cm7_serversMapper.java=UTF-8
 encoding//src/com/usedvehicle/service/impl/Admin_menuServiceImpl.java=UTF-8
 encoding//src/com/usedvehicle/service/impl/Admin_userServiceImpl.java=UTF-8
+encoding//src/com/usedvehicle/service/impl/Cm7_serversServiceImpl.java=UTF-8

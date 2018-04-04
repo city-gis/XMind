@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.usedvehicle.dao.Cm7_serversMapper" >
+  <resultMap id="BaseResultMap" type="com.usedvehicle.beans.Cm7_servers" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="port" property="port" jdbcType="VARCHAR" />
+    <result column="desc" property="desc" jdbcType="VARCHAR" />
+  </resultMap>
+ 
+  <select id="selectAll" resultMap="BaseResultMap" >
+   	SELECT `id`,`name`,`ip`,`port`,`desc` FROM cm7_servers
+  </select>
+  <select id="countAll"  resultType="java.lang.Integer" >
+    SELECT count(1) FROM cm7_servers where 1=1 
+    <if test="name!=null and name !=''" >
+      AND name LIKE CONCAT('%','${name}','%' ) 
+     </if>
+     
+  </select>
+   <delete id="delByID" >
+    delete from cm7_servers
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+    <select id="serchByPage" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
+     
+     select `id`,`name`,`ip`,`port`,`desc` FROM cm7_servers where 1=1 
+     <if test="pagerHelperRQ.searchString!=null and pagerHelperRQ.searchString !=''">
+      AND name LIKE CONCAT('%','${pagerHelperRQ.searchString}','%' ) 
+     </if>
+      <if test="pagerHelperRQ.sidx!=null and pagerHelperRQ.sidx !=''">
+      		  order by ${pagerHelperRQ.sidx}
+      		   <if test="pagerHelperRQ.sord!=null">
+      		     ${pagerHelperRQ.sord}
+     			</if>
+     	</if>
+       limit #{pagerHelperRQ.start,jdbcType=INTEGER},#{pagerHelperRQ.rows,jdbcType=INTEGER} 
+       
+      
+  </select>
+    <select id="serchById" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
+     
+     select `id`,`name`,`ip`,`port`,`desc` FROM cm7_servers where 1=1 
+     <if test="id!=null and id !=''">
+      AND id= #{id,jdbcType=VARCHAR}
+     </if>
+  </select>
+    <!--<resultMap id="voResultMap" type="com.usedvehicle.vo.cm7_servers_tree" >
+    <id column="id" property="Id" jdbcType="VARCHAR" />
+    <result column="name" property="text" jdbcType="VARCHAR" />
+    <result column="ip" property="parent" jdbcType="VARCHAR" />
+  </resultMap>
+    <select id="selectTree" resultMap="voResultMap" >
+   	SELECT id ,name, ip   FROM cm7_servers 
+  </select>-->
+  
+   <insert id="addone" parameterType="com.usedvehicle.beans.Cm7_servers" >
+    
+    insert into cm7_servers (
+    id, name, ip,port,`desc`
+    )
+    values (
+    UUID()
+    ,#{name,jdbcType=VARCHAR}
+    ,#{ip,jdbcType=VARCHAR}
+    , #{port,jdbcType=VARCHAR}
+    , #{desc,jdbcType=INTEGER}
+    )
+  </insert>
+   <update id="modify" parameterType="com.usedvehicle.beans.Cm7_servers" >
+    update cm7_servers set  
+    name=#{name,jdbcType=VARCHAR},
+     ip=#{ip,jdbcType=VARCHAR},
+     port=#{port,jdbcType=VARCHAR},
+     `desc`= #{desc,jdbcType=VARCHAR}  
+    where id=#{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
