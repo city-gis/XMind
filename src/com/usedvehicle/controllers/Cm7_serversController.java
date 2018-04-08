@@ -31,7 +31,6 @@ public class Cm7_serversController {
 		List<Cm7_servers> adminmenus = null;
 		adminmenus = Cm7_serversService.queryAll();
 		return adminmenus;
-		
 	}
 	
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
@@ -149,5 +148,4 @@ public class Cm7_serversController {
 		}
 		return message;
 	}
-	
 }
