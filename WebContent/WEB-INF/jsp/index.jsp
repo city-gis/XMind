@@ -92,7 +92,9 @@
                     <li>
                         <a class="J_menuItem" href="sys_departs/view.do"><i class="fa fa-columns"></i> <span class="nav-label">部门管理</span></a>
                     </li>
-                   
+                    <li>
+                        <a class="J_menuItem" href="sys_models/view.do"><i class="fa fa-columns"></i> <span class="nav-label">模块管理</span></a>
+                    </li>
                     <li>
                         <a class="J_menuItem" href="admin_role/view.do"><i class="fa fa-columns"></i> <span class="nav-label">角色管理</span></a>
                     </li>
