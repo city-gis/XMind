@@ -14,6 +14,7 @@
     <result column="creattime" property="creattime" jdbcType="VARCHAR" />
     <result column="modifyuser" property="modifyuser" jdbcType="VARCHAR" />
     <result column="modifytime" property="modifytime" jdbcType="VARCHAR" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
   </resultMap>
  
   <select id="selectAll" resultMap="BaseResultMap" >
@@ -69,7 +70,7 @@
 			 creatuser,
 			 creattime,
 			 modifyuser,
-			 modifytime)
+			 modifytime,icon)
     values (
     UUID()
     ,#{parentid,jdbcType=VARCHAR}
@@ -83,6 +84,7 @@
     , #{creattime,jdbcType=VARCHAR}
     , #{modifyuser,jdbcType=VARCHAR}
     , #{modifytime,jdbcType=VARCHAR}
+    , #{icon,jdbcType=VARCHAR}
     )
   </insert>
    <update id="modify" parameterType="com.usedvehicle.beans.sys_models" >
@@ -96,7 +98,8 @@
     creatuser=#{creatuser,jdbcType=VARCHAR},
     creattime=#{creattime,jdbcType=VARCHAR},
     modifyuser=#{modifyuser,jdbcType=VARCHAR},
-    modifytime=#{modifytime,jdbcType=VARCHAR}
+    modifytime=#{modifytime,jdbcType=VARCHAR},
+    icon=#{icon,jdbcType=VARCHAR}
     where modelid=#{modelid,jdbcType=VARCHAR}
   </update>
 </mapper>

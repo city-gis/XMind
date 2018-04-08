@@ -13,6 +13,7 @@ public class sys_models {
 	private String creattime;
 	private String modifyuser;
 	private String modifytime;
+	private String icon;
 	public String getModelid() {
 		return modelid;
 	}
@@ -84,6 +85,12 @@ public class sys_models {
 	}
 	public void setModifytime(String modifytime) {
 		this.modifytime = modifytime;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 
 }
