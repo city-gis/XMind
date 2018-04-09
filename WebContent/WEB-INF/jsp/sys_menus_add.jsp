@@ -72,1324 +72,937 @@
 	
 	
 	<div class="bs-glyphicons" id="divShow" style="display:none">
-                            <ul class="bs-glyphicons-list">
-
-                                <li>
-                                    <span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-asterisk</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-plus</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-euro" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-euro</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-eur" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-eur</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-minus</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-cloud</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-envelope</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-pencil</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-glass</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-music" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-music</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-search</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-heart</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-star</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-star-empty</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-user</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-film" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-film</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-th-large" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-th-large</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-th</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-th-list</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-ok</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-remove</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-zoom-in</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-zoom-out" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-zoom-out</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-off</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-signal</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-cog</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-trash</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-home</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-file</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-time" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-time</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-road</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-download-alt</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-download" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-download</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-upload</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-inbox</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-play-circle</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-repeat</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-refresh</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-list-alt</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-lock</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-flag" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-flag</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-headphones" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-headphones</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-volume-off" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-volume-off</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-volume-down" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-volume-down</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-volume-up</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-qrcode" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-qrcode</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-barcode" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-barcode</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-tag</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-tags</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-book" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-book</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-bookmark</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-print</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-camera</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-font" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-font</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-bold" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-bold</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-italic" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-italic</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-text-height" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-text-height</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-text-width" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-text-width</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-align-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-align-center" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-align-center</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-align-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-align-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-align-justify" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-align-justify</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-list</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-indent-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-indent-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-indent-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-indent-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-facetime-video</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-picture</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-map-marker</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-adjust" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-adjust</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-tint" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-tint</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-edit</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-share" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-share</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-check</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-move" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-move</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-step-backward" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-step-backward</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-fast-backward</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-backward</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-play" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-play</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-pause" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-pause</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-stop" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-stop</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-forward" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-forward</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-fast-forward</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-step-forward</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-eject" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-eject</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-chevron-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-chevron-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-plus-sign</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-minus-sign" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-minus-sign</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-remove-sign</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-ok-sign</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-question-sign</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-info-sign</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-screenshot</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-remove-circle</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-ok-circle</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-ban-circle" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-ban-circle</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-arrow-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-arrow-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-arrow-up</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-arrow-down</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-share-alt</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-resize-full" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-resize-full</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-resize-small" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-resize-small</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-exclamation-sign</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-gift</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-leaf</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-fire" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-fire</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-eye-open</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-eye-close</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-warning-sign</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-plane</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-calendar</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-random</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-comment</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-magnet" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-magnet</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-chevron-up</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-chevron-down</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-retweet</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-shopping-cart</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-folder-close" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-folder-close</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-folder-open</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-resize-vertical" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-resize-vertical</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-resize-horizontal</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-hdd</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-bullhorn</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-bell</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-certificate</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-thumbs-up</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-thumbs-down</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-hand-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-hand-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-hand-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-hand-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-hand-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-hand-up</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-hand-down" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-hand-down</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-circle-arrow-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-circle-arrow-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-circle-arrow-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-circle-arrow-up</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-circle-arrow-down</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-globe</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-wrench</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-tasks" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-tasks</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-filter" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-filter</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-briefcase</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-fullscreen</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-dashboard</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-paperclip</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-heart-empty</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-link</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-phone</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-pushpin</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-usd" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-usd</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-gbp" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-gbp</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sort" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sort</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sort-by-alphabet</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sort-by-alphabet-alt" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sort-by-alphabet-alt</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sort-by-order" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sort-by-order</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sort-by-order-alt" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sort-by-order-alt</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sort-by-attributes" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sort-by-attributes</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sort-by-attributes-alt</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-unchecked" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-unchecked</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-expand" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-expand</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-collapse-down" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-collapse-down</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-collapse-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-collapse-up</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-log-in</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-flash" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-flash</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-log-out</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-new-window</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-record" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-record</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-save" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-save</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-open" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-open</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-saved" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-saved</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-import" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-import</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-export" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-export</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-send</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-floppy-disk</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-floppy-saved" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-floppy-saved</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-floppy-remove" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-floppy-remove</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-floppy-save" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-floppy-save</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-floppy-open" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-floppy-open</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-credit-card" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-credit-card</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-transfer</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-cutlery</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-header" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-header</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-compressed" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-compressed</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-earphone</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-phone-alt</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-tower" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-tower</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-stats</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sd-video" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sd-video</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-hd-video" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-hd-video</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-subtitles" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-subtitles</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sound-stereo" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sound-stereo</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sound-dolby" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sound-dolby</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sound-5-1" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sound-5-1</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sound-6-1" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sound-6-1</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sound-7-1" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sound-7-1</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-copyright-mark</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-registration-mark" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-registration-mark</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-cloud-download</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-cloud-upload</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-tree-conifer" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-tree-conifer</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-tree-deciduous" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-tree-deciduous</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-cd</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-save-file" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-save-file</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-open-file" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-open-file</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-level-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-level-up</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-copy" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-copy</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-paste" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-paste</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-alert</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-equalizer</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-king" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-king</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-queen" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-queen</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-pawn" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-pawn</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-bishop" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-bishop</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-knight</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-baby-formula" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-baby-formula</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-tent" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-tent</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-blackboard</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-bed" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-bed</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-apple" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-apple</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-erase</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-hourglass" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-hourglass</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-lamp" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-lamp</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-duplicate" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-duplicate</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-piggy-bank</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-scissors" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-scissors</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-bitcoin" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-bitcoin</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-btc" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-btc</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-xbt" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-xbt</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-yen" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-yen</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-jpy" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-jpy</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-ruble" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-ruble</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-rub" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-rub</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-scale" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-scale</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-ice-lolly" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-ice-lolly</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-ice-lolly-tasted" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-ice-lolly-tasted</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-education</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-option-horizontal</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-option-vertical</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-menu-hamburger</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-modal-window</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-oil" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-oil</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-grain" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-grain</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-sunglasses" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-sunglasses</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-text-size" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-text-size</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-text-color" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-text-color</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-text-background" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-text-background</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-object-align-top" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-object-align-top</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-object-align-bottom</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-object-align-horizontal" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-object-align-horizontal</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-object-align-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-object-align-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-object-align-vertical" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-object-align-vertical</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-object-align-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-object-align-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-triangle-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-triangle-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-triangle-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-triangle-bottom</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-triangle-top</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-console" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-console</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-superscript" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-superscript</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-subscript" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-subscript</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-menu-left</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-menu-right</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-menu-down</span>
-                                </li>
-
-                                <li>
-                                    <span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span>
-                                    <span class="glyphicon-class">glyphicon glyphicon-menu-up</span>
-                                </li>
-
-                            </ul>
+                            <div class="row fontawesome-icon-list">
+
+
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-500px"></i> 500px</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-amazon"></i> amazon</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-balance-scale"></i> balance-scale</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-battery-0"></i> battery-0 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-battery-1"></i> battery-1 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-battery-2"></i> battery-2 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-battery-3"></i> battery-3 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-battery-4"></i> battery-4 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-battery-empty"></i> battery-empty</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-battery-full"></i> battery-full</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-battery-half"></i> battery-half</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-battery-quarter"></i> battery-quarter</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-battery-three-quarters"></i> battery-three-quarters</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-black-tie"></i> black-tie</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i> calendar-check-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-calendar-minus-o"></i> calendar-minus-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-calendar-plus-o"></i> calendar-plus-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-calendar-times-o"></i> calendar-times-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-cc-diners-club"></i> cc-diners-club</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-cc-jcb"></i> cc-jcb</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-chrome"></i> chrome</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-clone"></i> clone</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-commenting"></i> commenting</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-commenting-o"></i> commenting-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-contao"></i> contao</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-creative-commons"></i> creative-commons</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-expeditedssl"></i> expeditedssl</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-firefox"></i> firefox</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-fonticons"></i> fonticons</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-genderless"></i> genderless</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-get-pocket"></i> get-pocket</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-gg"></i> gg</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-gg-circle"></i> gg-circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-hand-grab-o"></i> hand-grab-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-hand-lizard-o"></i> hand-lizard-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-hand-paper-o"></i> hand-paper-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hand-peace-o"></i> hand-peace-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-hand-pointer-o"></i> hand-pointer-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-hand-rock-o"></i> hand-rock-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-hand-scissors-o"></i> hand-scissors-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hand-spock-o"></i> hand-spock-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-hand-stop-o"></i> hand-stop-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass"></i> hourglass</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-hourglass-1"></i> hourglass-1 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass-2"></i> hourglass-2 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass-3"></i> hourglass-3 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass-end"></i> hourglass-end</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass-half"></i> hourglass-half</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-hourglass-o"></i> hourglass-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-hourglass-start"></i> hourglass-start</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-houzz"></i> houzz</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-i-cursor"></i> i-cursor</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-industry"></i> industry</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-internet-explorer"></i> internet-explorer</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-map"></i> map</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-map-o"></i> map-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-map-pin"></i> map-pin</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-map-signs"></i> map-signs</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-mouse-pointer"></i> mouse-pointer</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-object-group"></i> object-group</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-object-ungroup"></i> object-ungroup</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-odnoklassniki"></i> odnoklassniki</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-odnoklassniki-square"></i> odnoklassniki-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-opencart"></i> opencart</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-opera"></i> opera</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-optin-monster"></i> optin-monster</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-registered"></i> registered</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-safari"></i> safari</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-sticky-note"></i> sticky-note</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-sticky-note-o"></i> sticky-note-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-television"></i> television</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-trademark"></i> trademark</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-tripadvisor"></i> tripadvisor</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-tv"></i> tv <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-vimeo"></i> vimeo</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-wikipedia-w"></i> wikipedia-w</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-y-combinator"></i> y-combinator</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-yc"></i> yc <span class="text-muted">(alias)</span></a></div>
+                                                                            
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-adjust"></i> adjust</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-anchor"></i> anchor</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-archive"></i> archive</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-area-chart"></i> area-chart</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-arrows"></i> arrows</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-arrows-h"></i> arrows-h</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-arrows-v"></i> arrows-v</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-asterisk"></i> asterisk</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-at"></i> at</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-automobile"></i> automobile <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-balance-scale"></i> balance-scale</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-ban"></i> ban</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-bank"></i> bank <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-bar-chart"></i> bar-chart</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-bar-chart-o"></i> bar-chart-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-barcode"></i> barcode</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-bars"></i> bars</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-battery-0"></i> battery-0 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-battery-1"></i> battery-1 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-battery-2"></i> battery-2 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-battery-3"></i> battery-3 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-battery-4"></i> battery-4 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-battery-empty"></i> battery-empty</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-battery-full"></i> battery-full</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-battery-half"></i> battery-half</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-battery-quarter"></i> battery-quarter</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-battery-three-quarters"></i> battery-three-quarters</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-bed"></i> bed</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-beer"></i> beer</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-bell"></i> bell</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-bell-o"></i> bell-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-bell-slash"></i> bell-slash</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-bell-slash-o"></i> bell-slash-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-bicycle"></i> bicycle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-binoculars"></i> binoculars</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-birthday-cake"></i> birthday-cake</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-bolt"></i> bolt</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-bomb"></i> bomb</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-book"></i> book</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-bookmark"></i> bookmark</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-bookmark-o"></i> bookmark-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-briefcase"></i> briefcase</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-bug"></i> bug</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-building"></i> building</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-building-o"></i> building-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-bullhorn"></i> bullhorn</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-bullseye"></i> bullseye</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-bus"></i> bus</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-cab"></i> cab <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-calculator"></i> calculator</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-calendar"></i> calendar</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-calendar-check-o"></i> calendar-check-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-calendar-minus-o"></i> calendar-minus-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-calendar-o"></i> calendar-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-calendar-plus-o"></i> calendar-plus-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-calendar-times-o"></i> calendar-times-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-camera"></i> camera</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-camera-retro"></i> camera-retro</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-car"></i> car</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-caret-square-o-down"></i> caret-square-o-down</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-caret-square-o-left"></i> caret-square-o-left</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-caret-square-o-right"></i> caret-square-o-right</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-caret-square-o-up"></i> caret-square-o-up</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-cart-arrow-down"></i> cart-arrow-down</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-cart-plus"></i> cart-plus</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-cc"></i> cc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-certificate"></i> certificate</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-check"></i> check</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-check-circle"></i> check-circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-check-circle-o"></i> check-circle-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-check-square"></i> check-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-check-square-o"></i> check-square-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-child"></i> child</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-circle"></i> circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-circle-o"></i> circle-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-circle-o-notch"></i> circle-o-notch</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-circle-thin"></i> circle-thin</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-clock-o"></i> clock-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-clone"></i> clone</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-close"></i> close <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-cloud"></i> cloud</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-cloud-download"></i> cloud-download</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-cloud-upload"></i> cloud-upload</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-code"></i> code</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-code-fork"></i> code-fork</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-coffee"></i> coffee</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-cog"></i> cog</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-cogs"></i> cogs</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-comment"></i> comment</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-comment-o"></i> comment-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-commenting"></i> commenting</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-commenting-o"></i> commenting-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-comments"></i> comments</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-comments-o"></i> comments-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-compass"></i> compass</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-copyright"></i> copyright</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-creative-commons"></i> creative-commons</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-credit-card"></i> credit-card</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-crop"></i> crop</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-crosshairs"></i> crosshairs</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-cube"></i> cube</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-cubes"></i> cubes</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-cutlery"></i> cutlery</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-dashboard"></i> dashboard <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-database"></i> database</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-desktop"></i> desktop</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-diamond"></i> diamond</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-dot-circle-o"></i> dot-circle-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-download"></i> download</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-edit"></i> edit <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-ellipsis-h"></i> ellipsis-h</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-ellipsis-v"></i> ellipsis-v</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-envelope"></i> envelope</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-envelope-o"></i> envelope-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-envelope-square"></i> envelope-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-eraser"></i> eraser</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-exchange"></i> exchange</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-exclamation"></i> exclamation</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-exclamation-circle"></i> exclamation-circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-exclamation-triangle"></i> exclamation-triangle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-external-link"></i> external-link</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-external-link-square"></i> external-link-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-eye"></i> eye</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-eye-slash"></i> eye-slash</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-eyedropper"></i> eyedropper</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-fax"></i> fax</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-feed"></i> feed <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-female"></i> female</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-fighter-jet"></i> fighter-jet</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-file-archive-o"></i> file-archive-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-file-audio-o"></i> file-audio-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-file-code-o"></i> file-code-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-file-excel-o"></i> file-excel-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-file-image-o"></i> file-image-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-file-movie-o"></i> file-movie-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-file-pdf-o"></i> file-pdf-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-file-photo-o"></i> file-photo-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-file-picture-o"></i> file-picture-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-file-powerpoint-o"></i> file-powerpoint-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-file-sound-o"></i> file-sound-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-file-video-o"></i> file-video-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-file-word-o"></i> file-word-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-file-zip-o"></i> file-zip-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-film"></i> film</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-filter"></i> filter</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-fire"></i> fire</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-fire-extinguisher"></i> fire-extinguisher</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-flag"></i> flag</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-flag-checkered"></i> flag-checkered</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-flag-o"></i> flag-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-flash"></i> flash <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-flask"></i> flask</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-folder"></i> folder</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-folder-o"></i> folder-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-folder-open"></i> folder-open</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-folder-open-o"></i> folder-open-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-frown-o"></i> frown-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-futbol-o"></i> futbol-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-gamepad"></i> gamepad</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-gavel"></i> gavel</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-gear"></i> gear <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-gears"></i> gears <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-gift"></i> gift</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-glass"></i> glass</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-globe"></i> globe</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-graduation-cap"></i> graduation-cap</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-group"></i> group <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-hand-grab-o"></i> hand-grab-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-hand-lizard-o"></i> hand-lizard-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-hand-paper-o"></i> hand-paper-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hand-peace-o"></i> hand-peace-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-hand-pointer-o"></i> hand-pointer-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-hand-rock-o"></i> hand-rock-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-hand-scissors-o"></i> hand-scissors-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hand-spock-o"></i> hand-spock-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-hand-stop-o"></i> hand-stop-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-hdd-o"></i> hdd-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-headphones"></i> headphones</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-heart"></i> heart</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-heart-o"></i> heart-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-heartbeat"></i> heartbeat</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-history"></i> history</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-home"></i> home</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-hotel"></i> hotel <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass"></i> hourglass</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-hourglass-1"></i> hourglass-1 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass-2"></i> hourglass-2 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass-3"></i> hourglass-3 <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass-end"></i> hourglass-end</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-hourglass-half"></i> hourglass-half</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-hourglass-o"></i> hourglass-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-hourglass-start"></i> hourglass-start</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-i-cursor"></i> i-cursor</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-image"></i> image <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-inbox"></i> inbox</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-industry"></i> industry</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-info"></i> info</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-info-circle"></i> info-circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-institution"></i> institution <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-key"></i> key</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-keyboard-o"></i> keyboard-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-language"></i> language</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-laptop"></i> laptop</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-leaf"></i> leaf</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-legal"></i> legal <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-lemon-o"></i> lemon-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-level-down"></i> level-down</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-level-up"></i> level-up</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-life-bouy"></i> life-bouy <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-life-buoy"></i> life-buoy <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-life-ring"></i> life-ring</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-life-saver"></i> life-saver <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-lightbulb-o"></i> lightbulb-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-line-chart"></i> line-chart</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-location-arrow"></i> location-arrow</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-lock"></i> lock</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-magic"></i> magic</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-magnet"></i> magnet</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-mail-forward"></i> mail-forward <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-mail-reply"></i> mail-reply <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-mail-reply-all"></i> mail-reply-all <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-male"></i> male</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-map"></i> map</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-map-marker"></i> map-marker</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-map-o"></i> map-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-map-pin"></i> map-pin</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-map-signs"></i> map-signs</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-meh-o"></i> meh-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-microphone"></i> microphone</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-microphone-slash"></i> microphone-slash</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-minus"></i> minus</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-minus-circle"></i> minus-circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-minus-square"></i> minus-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-minus-square-o"></i> minus-square-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-mobile"></i> mobile</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-mobile-phone"></i> mobile-phone <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-money"></i> money</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-moon-o"></i> moon-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-mortar-board"></i> mortar-board <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-motorcycle"></i> motorcycle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-mouse-pointer"></i> mouse-pointer</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-music"></i> music</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-navicon"></i> navicon <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-newspaper-o"></i> newspaper-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-object-group"></i> object-group</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-object-ungroup"></i> object-ungroup</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-paint-brush"></i> paint-brush</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-paper-plane"></i> paper-plane</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-paper-plane-o"></i> paper-plane-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-paw"></i> paw</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-pencil"></i> pencil</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-pencil-square"></i> pencil-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-pencil-square-o"></i> pencil-square-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-phone"></i> phone</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-phone-square"></i> phone-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-photo"></i> photo <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-picture-o"></i> picture-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-pie-chart"></i> pie-chart</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-plane"></i> plane</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-plug"></i> plug</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-plus"></i> plus</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-plus-circle"></i> plus-circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-plus-square"></i> plus-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-plus-square-o"></i> plus-square-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-power-off"></i> power-off</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-print"></i> print</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-puzzle-piece"></i> puzzle-piece</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-qrcode"></i> qrcode</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-question"></i> question</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-question-circle"></i> question-circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-quote-left"></i> quote-left</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-quote-right"></i> quote-right</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-random"></i> random</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-recycle"></i> recycle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-refresh"></i> refresh</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-registered"></i> registered</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-remove"></i> remove <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-reorder"></i> reorder <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-reply"></i> reply</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-reply-all"></i> reply-all</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-retweet"></i> retweet</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-road"></i> road</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-rocket"></i> rocket</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-rss"></i> rss</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-rss-square"></i> rss-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-search"></i> search</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-search-minus"></i> search-minus</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-search-plus"></i> search-plus</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-send"></i> send <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-send-o"></i> send-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-server"></i> server</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-share"></i> share</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-share-alt"></i> share-alt</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-share-alt-square"></i> share-alt-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-share-square"></i> share-square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-share-square-o"></i> share-square-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-shield"></i> shield</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-ship"></i> ship</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-shopping-cart"></i> shopping-cart</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-sign-in"></i> sign-in</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-sign-out"></i> sign-out</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-signal"></i> signal</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-sitemap"></i> sitemap</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-sliders"></i> sliders</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-smile-o"></i> smile-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-soccer-ball-o"></i> soccer-ball-o <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-sort"></i> sort</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-sort-alpha-asc"></i> sort-alpha-asc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-sort-alpha-desc"></i> sort-alpha-desc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-sort-amount-asc"></i> sort-amount-asc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-sort-amount-desc"></i> sort-amount-desc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-sort-asc"></i> sort-asc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-sort-desc"></i> sort-desc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-sort-down"></i> sort-down <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-sort-numeric-asc"></i> sort-numeric-asc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-sort-numeric-desc"></i> sort-numeric-desc</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-sort-up"></i> sort-up <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-space-shuttle"></i> space-shuttle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-spinner"></i> spinner</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-spoon"></i> spoon</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-square"></i> square</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-square-o"></i> square-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-star"></i> star</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-star-half"></i> star-half</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-star-half-empty"></i> star-half-empty <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-star-half-full"></i> star-half-full <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-star-half-o"></i> star-half-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-star-o"></i> star-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-sticky-note"></i> sticky-note</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-sticky-note-o"></i> sticky-note-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-street-view"></i> street-view</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-suitcase"></i> suitcase</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-sun-o"></i> sun-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-support"></i> support <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-tablet"></i> tablet</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-tachometer"></i> tachometer</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-tag"></i> tag</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-tags"></i> tags</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-tasks"></i> tasks</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-taxi"></i> taxi</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-television"></i> television</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-terminal"></i> terminal</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-thumb-tack"></i> thumb-tack</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-thumbs-down"></i> thumbs-down</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-thumbs-o-down"></i> thumbs-o-down</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-thumbs-o-up"></i> thumbs-o-up</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-thumbs-up"></i> thumbs-up</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-ticket"></i> ticket</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-times"></i> times</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-times-circle"></i> times-circle</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-times-circle-o"></i> times-circle-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-tint"></i> tint</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-toggle-down"></i> toggle-down <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-toggle-left"></i> toggle-left <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-toggle-off"></i> toggle-off</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-toggle-on"></i> toggle-on</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-toggle-right"></i> toggle-right <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-toggle-up"></i> toggle-up <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-trademark"></i> trademark</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-trash"></i> trash</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-trash-o"></i> trash-o</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-tree"></i> tree</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-trophy"></i> trophy</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-truck"></i> truck</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);      "><i class="fa fa-tty"></i> tty</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-tv"></i> tv <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);"><i class="fa fa-umbrella"></i> umbrella</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-university"></i> university</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-unlock"></i> unlock</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-unlock-alt"></i> unlock-alt</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-unsorted"></i> unsorted <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-upload"></i> upload</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-user"></i> user</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-user-plus"></i> user-plus</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);     "><i class="fa fa-user-secret"></i> user-secret</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-user-times"></i> user-times</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-users"></i> users</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-video-camera"></i> video-camera</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0); "><i class="fa fa-volume-down"></i> volume-down</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-volume-off"></i> volume-off</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-volume-up"></i> volume-up</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);    "><i class="fa fa-warning"></i> warning <span class="text-muted">(alias)</span></a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-wheelchair"></i> wheelchair</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);   "><i class="fa fa-wifi"></i> wifi</a></div>
+                                                                            
+    <div class="fa-hover col-md-3 col-sm-4"><a href="javascript:void(0);  "><i class="fa fa-wrench"></i> wrench</a></div>
+
+</div>
                         </div>
 	
 	
@@ -1489,16 +1102,16 @@
 			                , offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
 			                , id: "divShowLayer"  //防止重复弹出
 			                , content:$("#divShow")
-			                , area: [500 + 'px', 300 + 'px']
+			                , area: [700 + 'px', 400 + 'px']
 			                , btnAlign: 'c' //按钮居中
 			                , shade: 0 //不显示遮罩
 			                // , yes: function () {
 			                //     layer.closeAll();
 			                // },
 			                , success: function (layero, index) {
-			                   $(".bs-glyphicons-list>li").on("click",function(){
-			                	   var span=$(this).find(".glyphicon-class");
-			                	   $("#icon").val($(span).html());
+			                   $(".fa-hover>a").on("click",function(){
+			                	   var span=$(this).find("i");
+			                	   $("#icon").val($(span).attr("class"));
 			                	   layer.closeAll();
 			                   })
 			                }

@@ -8,6 +8,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
+<style>
+.jstree-open>.jstree-anchor>.fa-folder:before {
+	content: "\f07c"
+}
+
+.jstree-default .jstree-icon.none {
+	width: 0
+}
+</style>
 <title>模块管理列表页面</title>
 
 <meta name="keywords" content="模块管理列表页面">
@@ -15,16 +24,18 @@
 
 <link rel="shortcut icon" href="favicon.ico">
 <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 <link href="../css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
 <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 <link href="../css/plugins/jsTree/style.min.css" rel="stylesheet">
 <link href="../css/animate.min.css" rel="stylesheet">
 <link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
 <link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
 <!-- Sweet Alert -->
 <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
 <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="../css/layui.css" rel="stylesheet">
 <base target="_blank">
 <style>
 .jstree-open>.jstree-anchor>.fa-folder:before {
@@ -46,17 +57,33 @@
 	<div class="wrapper wrapper-content  animated fadeInRight">
 
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-3">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5>列表树</h5>
+						<div class="ibox-tools">
+							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
+							</a>
+						</div>
+					</div>
+					<div class="ibox-content">
+						<div id="using_json"></div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-9">
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
 						<h5>模块列表</h5>
-						<a style="padding: 5px 15px;" onclick="fnAdd();" href="javascript:void(0);"><i
-							class="fa fa-plus"></i> 新增</a> <a style="padding: 5px 15px;"
-							onclick="fnEdit();" href="javascript:void(0);"><i class="fa fa-edit"></i> 修改</a> <a
-							style="padding: 5px 15px;" onclick="fnDel();" href="javascript:void(0);"><i
-							class="fa fa-trash"></i> 删除</a> <a style="padding: 5px 15px;"
-							onclick="fnSetBtn();" href="javascript:void(0);"><i class="fa fa-cogs"></i>
-							设置按钮</a>
+						<a style="padding: 5px 15px;" onclick="fnAdd();"
+							href="javascript:void(0);"><i class="fa fa-plus"></i> 新增</a> <a
+							style="padding: 5px 15px;" onclick="fnEdit();"
+							href="javascript:void(0);"><i class="fa fa-edit"></i> 修改</a> <a
+							style="padding: 5px 15px;" onclick="fnDel();"
+							href="javascript:void(0);"><i class="fa fa-trash"></i> 删除</a> <a
+							style="padding: 5px 15px;" onclick="fnSetBtn();"
+							href="javascript:void(0);"><i class="fa fa-cogs"></i> 设置按钮</a>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 							</a>
@@ -93,16 +120,26 @@
 				</div>
 			</div>
 		</div>
-		<script src="../js/jquery.min.js?v=2.1.4"></script>
-		<script src="../js/bootstrap.min.js?v=3.3.5"></script>
-		<script src="../js/content.min.js?v=1.0.0"></script>
-		<script src="../js/plugins/jsTree/jstree.min.js"></script>
-		<script src="../js/plugins/peity/jquery.peity.min.js"></script>
-		<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
-		<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
-		<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
-		<script src="../js/plugins/toastr/toastr.min.js"></script>
-		<script>
+	</div>
+	
+	<div class="jqGrid_wrapper" id="menu_showwin" style="display:none;">
+		<table id="table_list_alert"></table>
+		<!-- <div id="pager_list_2"></div> -->
+	</div>
+    
+	<script src="../js/jquery.min.js?v=2.1.4"></script>
+	<script src="../js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="../js/content.min.js?v=1.0.0"></script>
+	<script src="../js/plugins/jsTree/jstree.min.js"></script>
+	<script src="../js/plugins/peity/jquery.peity.min.js"></script>
+	<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+	<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+	<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
+	<script src="../js/plugins/toastr/toastr.min.js"></script>
+	<script type="text/javascript"
+		src="../js/plugins/lay/layui.js" charset="UTF-8"></script>
+		
+	<script>
 			$(document).ready(
 					function() {
 						/*
@@ -197,7 +234,6 @@
 									} ],
 									pager : "#pager_list_2",
 									viewrecords : true,
-									//caption : "jqGrid 示例2",
 									add : true,
 									edit : true,
 									addtext : "Add",
@@ -205,7 +241,6 @@
 									hidegrid : false,
 									multiselect : true,
 								});
-						//$("#table_list_2").setSelection(4, true);
 						$("#table_list_2").jqGrid("navGrid", "#pager_list_2", {
 							edit : false,
 							add : false,
@@ -233,14 +268,11 @@
 						});
 						$(window).bind("resize", function() {
 							var width = $(".jqGrid_wrapper").width();
-							//$("#table_list_1").setGridWidth(width);
 							$("#table_list_2").setGridWidth(width);
 						});
 					});
 			function fnAdd() {
 				adddata();
-				//var selrow=$("#table_list_2").jqGrid('getGridParam', 'selarrrow');
-				//alert(selrow);
 				return false;
 			}
 
@@ -265,7 +297,6 @@
 					deldata(modelid);
 				} else {
 					toastr.error("你没有选取或者选取为多行数据");
-					//alert("你没有选取或者选取为多行数据");
 				}
 				return false;
 			}
@@ -281,6 +312,35 @@
 				}
 				return false;
 			}
+			function setbutton(id){
+				layui.use('layer', function () { //独立版的layer无需执行这一句
+		            var layer = layui.layer; //独立版的layer无需执行这一句
+		            layer.open({
+		                type: 1
+		                , anim: 5
+		                , isOutAnim: false
+		                , offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+		                , id: "divShowLayer"  //防止重复弹出
+		                , content:$("#menu_showwin")
+		                , area: [700 + 'px', 500 + 'px']
+		                ,btn: ['确定', '取消']
+		                , btnAlign: 'c' //按钮居中
+		                , shade: 0 //不显示遮罩
+		                ,yes: function () {
+		                    //先保存数据，然后关闭
+		                    layer.closeAll();
+		                },
+		                btn2: function(index, layero){
+		                	layer.closeAll();
+		                },
+		                success: function (layero, index) {
+		                   
+		                }
+		            });
+		        });
+			}
+			
+			
 			function showStatue(cellvalue, options, rowObject) {
 				if (cellvalue == 0) {
 					return '<span class="label label-primary">启用</span>';
@@ -338,7 +398,6 @@
 			}
 			//刷新grid
 			function reloadGrid() {
-				//alert(1);
 				var page = $("#table_list_2").jqGrid("getGridParam", "page");
 				$("#table_list_2").jqGrid().trigger("reloadGrid", [ {
 					page : page
@@ -360,9 +419,75 @@
 			}
 		</script>
 
-
-		<script type="text/javascript"
-			src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+	<script>
+	$(document).ready(function() {
+		layui.use(['form', 'layedit'], function(){
+			  var form = layui.form,layer = layui.layer;
+		});
+		$("#using_json").jstree({
+			"core" : {
+				"data" : {
+					'url' : '../sys_models/models_Tree.do',
+					'dataType' : 'json',
+				}
+			}
+		});
+		$("#table_list_alert").jqGrid({
+			url : "../sys_menus/serch.do",
+			datatype : "json",
+			height : "auto",
+			width : "100%",
+			autowidth : true,
+			shrinkToFit : true,
+			rowNum : 10,
+			rowList : [ 10, 20, 30 ],
+			colNames : [ "id", "菜单名称", "描述","对应方法"],
+			colModel : [{
+				name : "menuid",
+				index : "menuid",
+				editable : false,
+				width : 60,
+				search : false,
+				hidden:true
+			},{
+				name : "menuname",
+				index : "menuname",
+				editable : false,
+				width : 200,
+				search : true,
+				formatter:showicon
+			},{
+				name : "description",
+				index : "description",
+				editable : false,
+				width : 250,
+				search : true
+			},{
+				name : "action",
+				index : "",
+				editable : true,
+				width : 200,
+				search : true,
+				editable:true
+			}],
+			//pager : "#pager_list_2",
+			viewrecords : true,
+			//caption : "jqGrid 示例2",
+			add : false,
+			edit : false,
+			addtext : "Add",
+			edittext : "Edit",
+			hidegrid : true,
+			multiselect : true,  
+			cellEdit: true,
+		    cellsubmit: 'clientArray'
+		});
+		
+	});
+	function showicon(cellvalue, options, rowObject) {
+		return '<i class="'+rowObject.icon+'"></i>&nbsp;&nbsp;&nbsp;&nbsp;'+cellvalue;
+	}
+    </script>
 </body>
 
 </html>

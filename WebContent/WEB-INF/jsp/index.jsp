@@ -105,6 +105,9 @@
                         <a class="J_menuItem" href="cm7_servers/view.do"><i class="fa fa-columns"></i> <span class="nav-label">服务器管理</span></a>
                     </li>
                     <li>
+                        <a class="J_menuItem" href="admin_menu/view.do"><i class="fa fa-columns"></i> <span class="nav-label">服务器管理</span></a>
+                    </li>
+                    <li>
                         <a href="#">
                             <i class="fa fa fa-bar-chart-o"></i>
                             <span class="nav-label">统计图表</span>

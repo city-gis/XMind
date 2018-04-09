@@ -15,7 +15,10 @@ import com.usedvehicle.beans.sys_models;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
+import com.usedvehicle.service.IjstreeService;
 import com.usedvehicle.service.Isys_modelsService;
+import com.usedvehicle.vo.Admin_menu_tree;
+import com.usedvehicle.vo.jstree;
 
 @Controller
 @RequestMapping("sys_models")
@@ -23,6 +26,8 @@ public class sys_modelsController {
 
 	@Autowired
 	private Isys_modelsService sys_modelsService;
+	@Autowired
+	private IjstreeService jstreeService;
 	@RequestMapping("queryTreeMenu.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public Object queryMember() {
@@ -139,6 +144,12 @@ public class sys_modelsController {
 			message.setMsg("删除菜单功能失败！"+e.getMessage());
 		}
 		return message;
+	}
+	@RequestMapping("models_Tree.do")//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object serchAll() {
+ 		List<jstree> jstrees = jstreeService.model_tree();
+		return jstrees;
 	}
 	
 }
