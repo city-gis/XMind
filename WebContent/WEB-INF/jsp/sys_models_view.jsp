@@ -167,7 +167,7 @@
 								{
 									url : "../sys_models/serch.do",
 									datatype : "json",
-									height : 350,
+									height : 460,
 									autowidth : true,
 									shrinkToFit : true,
 									rowNum : 10,
@@ -175,7 +175,6 @@
 									colNames : [ "id", "parentid", "模块名称",
 											"是否可见", "是否启用", "图标", "描述", "创建人",
 											"最后修改人" ],
-
 									colModel : [ {
 										name : "modelid",
 										index : "modelid",
@@ -275,7 +274,6 @@
 				adddata();
 				return false;
 			}
-
 			function fnEdit() {
 				var ids = $("#table_list_2").jqGrid("getGridParam", "selarrrow");
 				if (ids.length == 1) {
@@ -339,8 +337,6 @@
 		            });
 		        });
 			}
-			
-			
 			function showStatue(cellvalue, options, rowObject) {
 				if (cellvalue == 0) {
 					return '<span class="label label-primary">启用</span>';
@@ -375,7 +371,6 @@
 
 				});
 			}
-
 			/**
 			修改
 			 */
@@ -418,7 +413,6 @@
 				}
 			}
 		</script>
-
 	<script>
 	$(document).ready(function() {
 		layui.use(['form', 'layedit'], function(){
@@ -482,7 +476,6 @@
 			cellEdit: true,
 		    cellsubmit: 'clientArray'
 		});
-		
 	});
 	function showicon(cellvalue, options, rowObject) {
 		return '<i class="'+rowObject.icon+'"></i>&nbsp;&nbsp;&nbsp;&nbsp;'+cellvalue;
