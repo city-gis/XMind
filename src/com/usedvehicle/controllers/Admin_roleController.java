@@ -24,8 +24,8 @@ public class Admin_roleController {
 
 	@Autowired
 	private IAdmin_roleService Admin_roleService;
-	@RequestMapping("queryTreeMenu.do")//用於查詢所有的下拉菜單分級顯示
-	@ResponseBody//用於AJAX
+	@RequestMapping("queryTreeMenu.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+	@ResponseBody//鐢ㄦ柤AJAX
 	public Object queryMember() {
 		
 		List<Admin_role> adminmenus = null;
@@ -34,7 +34,7 @@ public class Admin_roleController {
 		
 	}
 	
-	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
+	@RequestMapping("view.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("admin_role_view");
@@ -42,8 +42,8 @@ public class Admin_roleController {
 	}
 
 	
-	@RequestMapping("add_view.do")//用於查詢所有的下拉菜單分級顯示
-	@ResponseBody//用於AJAX
+	@RequestMapping("add_view.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+	@ResponseBody//鐢ㄦ柤AJAX
 	public ModelAndView add_view() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("admin_role_add");
@@ -51,8 +51,8 @@ public class Admin_roleController {
 		return mv;
 	}
 	
-	@RequestMapping("edit_view.do")//用於查詢所有的下拉菜單分級顯示
-	//@ResponseBody//用於AJAX
+	@RequestMapping("edit_view.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+	//@ResponseBody//鐢ㄦ柤AJAX
 	public ModelAndView edit_view(String id) {
 		Admin_role admin_role=Admin_roleService.serchByID(id);
 		ModelAndView mv = new ModelAndView("admin_role_edit");
@@ -63,79 +63,79 @@ public class Admin_roleController {
 		//View view=mv.getClass();
 		return mv;
 	}
-	//分页查询
-	@RequestMapping("serch.do")//用於查詢所有的下拉菜單分級顯示
-	@ResponseBody//用於AJAX
+	//鍒嗛〉鏌ヨ
+	@RequestMapping("serch.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+	@ResponseBody//鐢ㄦ柤AJAX
 	public Object serch(pagerHelperRQ pager) {
 		pagerHelperRS pagerrs=Admin_roleService.serchbypager(pager);
 		return pagerrs;
 	}
-	//分页查询
-	@RequestMapping("serchCount.do")//用於查詢所有的下拉菜單分級顯示
-	@ResponseBody//用於AJAX
+	//鍒嗛〉鏌ヨ
+	@RequestMapping("serchCount.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+	@ResponseBody//鐢ㄦ柤AJAX
 	public int  serchCount(String name) {
 		int count = Admin_roleService.countAll(name);
 		return count;
 	}
-	//分页查询
-	@RequestMapping("add.do")//用於查詢所有的下拉菜單分級顯示
-	@ResponseBody//用於AJAX
+	//鍒嗛〉鏌ヨ
+	@RequestMapping("add.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+	@ResponseBody//鐢ㄦ柤AJAX
 	public Object add(Admin_role menus) {
 		messageHelper message= new messageHelper();
 		try {
 			 int result= Admin_roleService.addone(menus);
 			 if(result>0){
 				message.setMst(0);
-				message.setMsg("新增菜单功能成功！");
+				message.setMsg("鏂板鑿滃崟鍔熻兘鎴愬姛锛�");
 			 }else{
 				message.setMst(1);
-				message.setMsg("新增菜单功能失败！");
+				message.setMsg("鏂板鑿滃崟鍔熻兘澶辫触锛�");
 			 }
 		} catch (Exception e) {
 			message.setMst(1);
-			message.setMsg("新增菜单功能失败！"+e.getMessage());
+			message.setMsg("鏂板鑿滃崟鍔熻兘澶辫触锛�"+e.getMessage());
 		}
 		return message;
 	}
 	
-	//修改 
-		@RequestMapping("edit.do")//用於查詢所有的下拉菜單分級顯示
-		@ResponseBody//用於AJAX
+	//淇敼 
+		@RequestMapping("edit.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+		@ResponseBody//鐢ㄦ柤AJAX
 		public Object edit(Admin_role menus) {
 			messageHelper message= new messageHelper();
 			try {
 				 int result= Admin_roleService.modify(menus);
 				 if(result>0){
 					message.setMst(0);
-					message.setMsg("修改菜单功能成功！");
+					message.setMsg("淇敼鑿滃崟鍔熻兘鎴愬姛锛�");
 				 }else{
 					message.setMst(1);
-					message.setMsg("修改菜单功能失败！");
+					message.setMsg("淇敼鑿滃崟鍔熻兘澶辫触锛�");
 				 }
 			} catch (Exception e) {
 				message.setMst(1);
-				message.setMsg("修改菜单功能失败！"+e.getMessage());
+				message.setMsg("淇敼鑿滃崟鍔熻兘澶辫触锛�"+e.getMessage());
 			}
 			return message;
 		}
-	//分页查询
-	@RequestMapping("delmenu.do")//用於查詢所有的下拉菜單分級顯示
-	@ResponseBody//用於AJAX
+	//鍒嗛〉鏌ヨ
+	@RequestMapping("delmenu.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+	@ResponseBody//鐢ㄦ柤AJAX
 	public Object delmenu(String id) {
 		messageHelper message= new messageHelper();
 		try {
 			 int result= Admin_roleService.delById(id);
 			 if(result>0){
 				message.setMst(0);
-				message.setMsg("删除菜单功能成功！");
+				message.setMsg("鍒犻櫎鑿滃崟鍔熻兘鎴愬姛锛�");
 			 }else{
 				message.setMst(1);
-				message.setMsg("删除菜单功能失败！");
+				message.setMsg("鍒犻櫎鑿滃崟鍔熻兘澶辫触锛�");
 			 }
 			
 		} catch (Exception e) {
 			message.setMst(1);
-			message.setMsg("删除菜单功能失败！"+e.getMessage());
+			message.setMsg("鍒犻櫎鑿滃崟鍔熻兘澶辫触锛�"+e.getMessage());
 		}
 		return message;
 	}

@@ -15,7 +15,9 @@ import com.usedvehicle.beans.sys_roles;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
+import com.usedvehicle.service.IjstreeService;
 import com.usedvehicle.service.Isys_rolesService;
+import com.usedvehicle.vo.jstree;
 
 @Controller
 @RequestMapping("sys_roles")
@@ -23,6 +25,8 @@ public class sys_rolesController {
 
 	@Autowired
 	private Isys_rolesService sys_rolesService;
+	@Autowired
+	private IjstreeService jstreeService;
 	@RequestMapping("queryTreeMenu.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public Object queryMember() {
@@ -140,5 +144,10 @@ public class sys_rolesController {
 		}
 		return message;
 	}
-	
+	@RequestMapping("roles_Tree.do")//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object roles_Tree() {
+ 		List<jstree> jstrees = jstreeService.role_tree();
+		return jstrees;
+	}
 }

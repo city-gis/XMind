@@ -7,4 +7,5 @@ import com.usedvehicle.vo.jstree;
 
 public interface IjstreeService {
 	List<jstree>  model_tree();
+	List<jstree>  role_tree();
 }
