@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.usedvehicle.beans.sys_modelmenu;
 import com.usedvehicle.beans.sys_models;
 import com.usedvehicle.common.pagerHelperRQ;
 
@@ -19,4 +20,12 @@ public interface sys_modelsMapper {
     int addone(sys_models sys_models );
     int modify(sys_models sys_models );
     sys_models serchById(@Param("id") String id);
+    /*
+     * 添加按钮
+     * */
+    int addmodelmenu(sys_modelmenu sys_modelmenu);//
+    /*
+     * 通过modelid删除所有对应的按钮
+     * */
+    int delBymodelID(String modelid);//
 }

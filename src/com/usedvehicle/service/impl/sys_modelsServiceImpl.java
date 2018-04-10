@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
+import com.usedvehicle.beans.sys_modelmenu;
 import com.usedvehicle.beans.sys_models;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
@@ -70,5 +71,13 @@ public class sys_modelsServiceImpl implements Isys_modelsService{
 	@Override
 	public sys_models serchByID(String id){
 		return sys_modelsDao.serchById(id);
+	}
+	@Override
+	public boolean addmodelmenus(String id,List<sys_modelmenu> lstmodelmenu){
+		sys_modelsDao.delBymodelID(id);
+		for(sys_modelmenu one : lstmodelmenu){
+			sys_modelsDao.addmodelmenu(one);
+		}
+		return true;
 	}
 }

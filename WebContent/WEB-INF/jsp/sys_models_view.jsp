@@ -325,8 +325,39 @@
 		                , btnAlign: 'c' //按钮居中
 		                , shade: 0 //不显示遮罩
 		                ,yes: function () {
-		                    //先保存数据，然后关闭
-		                    layer.closeAll();
+		                    //先保存数据，
+		                    //$('#table_list_alert').jqGrid('getGridParam','selarrrow');
+		                    //$('#table_list_alert').saveRow();
+		                    $('#table_list_alert').jqGrid('saveRow',lastSel);//写在保存方法里  
+		                    var ids=$('#table_list_alert').jqGrid('getGridParam','selarrrow');
+		                    var modelid=$('#table_list_2').jqGrid('getGridParam','selrow');
+		                    var rowDatas = $('#table_list_2').jqGrid('getRowData',modelid);
+		                    var datas=[];
+		                    for(var i=0;i<ids.length;i++){
+		                    	var rowData = $("#table_list_alert").jqGrid('getRowData',ids[i]);
+		                    	var rowone={};
+		                    	rowone.action=rowData.action;
+		                    	rowone.menuid=rowData.menuid;
+		                    	rowone.modelid=rowDatas.modelid;
+		                    	rowone.modelmenuid="";
+		                    	datas.push(rowone);
+		                    }
+		                    //console.log(datas);
+		                    $.ajax({
+								type : "POST",
+								url : "../sys_models/updateMenus.do",
+								data : JSON.stringify({"sys_modelmenuss":datas,"modelid":rowDatas.modelid}),
+								dataType : "json", 
+								contentType: 'application/json',
+								headers : {  
+			                        'Content-Type' : 'application/json;charset=utf-8'  
+			                    },
+								success : function(data) {
+									messageHelper(data, reloadGrid());
+				                    //然后关闭
+				                    layer.closeAll();
+								}
+							});
 		                },
 		                btn2: function(index, layero){
 		                	layer.closeAll();
@@ -414,6 +445,7 @@
 			}
 		</script>
 	<script>
+	var lastSel;//在顶部定义  
 	$(document).ready(function() {
 		layui.use(['form', 'layedit'], function(){
 			  var form = layui.form,layer = layui.layer;
@@ -474,9 +506,17 @@
 			hidegrid : true,
 			multiselect : true,  
 			cellEdit: true,
-		    cellsubmit: 'clientArray'
+		    cellsubmit: 'clientArray',
+		    beforeSelectRow:function(id){  
+	            if(id && id!==lastSel){     
+	                $('#table_list_alert').jqGrid('saveRow',lastSel);  
+	                lastSel=id;
+	            }
+	            $('#table_list_alert').editRow(id, true);
+	        }//加上grid代码处。  
 		});
 	});
+	  
 	function showicon(cellvalue, options, rowObject) {
 		return '<i class="'+rowObject.icon+'"></i>&nbsp;&nbsp;&nbsp;&nbsp;'+cellvalue;
 	}

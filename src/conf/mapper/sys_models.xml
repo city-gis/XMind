@@ -102,4 +102,22 @@
     icon=#{icon,jdbcType=VARCHAR}
     where modelid=#{modelid,jdbcType=VARCHAR}
   </update>
+  <insert id="addmodelmenu" parameterType="com.usedvehicle.beans.sys_modelmenu" >
+    
+   INSERT INTO sys_modelmenu
+            (modelmenuid,
+            modelid,
+             menuid,
+             action)
+    values (
+    UUID()
+    ,#{modelid,jdbcType=VARCHAR}
+    ,#{menuid,jdbcType=VARCHAR}
+    ,#{action,jdbcType=VARCHAR}
+    )
+  </insert> 
+     <delete id="delBymodelID" >
+    delete from sys_modelmenu
+    where modelid = #{modelid,jdbcType=VARCHAR}
+  </delete>
 </mapper>

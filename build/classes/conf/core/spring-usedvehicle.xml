@@ -47,6 +47,24 @@
     	<property name="basePackage" value="com.usedvehicle.dao" />
     	<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
     </bean>
+   <!-- 注册事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<!-- 注册事物的通知 -->
+	<tx:advice id="myAdvice" transaction-manager="transactionManager">
+          <tx:attributes>
+              <tx:method name="add*" isolation="DEFAULT" propagation="REQUIRED"/>
+              <tx:method name="find*" isolation="DEFAULT" propagation="REQUIRED" read-only="true"/>
+              <tx:method name="buystock" isolation="DEFAULT" propagation="REQUIRED" rollback-for="StockException"/>
+          </tx:attributes>
+	</tx:advice>
+	<!-- 配置 aop -->
+	<aop:config>
+	    <!--指定切入点 expression切入点表达式 id切入点名称-->
+	   <aop:pointcut expression="execution(* *..service.*.*(..))" id="mypointcut"/>
+	   <aop:advisor advice-ref="myAdvice" pointcut-ref="mypointcut"/>
+	</aop:config>
     
     <!-- 配置参数 -->
     <bean id="configParam" class="com.usedvehicle.init.ConfigParam">
