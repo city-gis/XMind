@@ -9,41 +9,23 @@
     <result column="fieldname" property="fieldname" jdbcType="VARCHAR" />
   </resultMap>
  
-  <select id="selectAll" resultMap="BaseResultMap" >
-   	SELECT * FROM sys_authority 
-  </select>
-  <select id="countAll"  resultType="java.lang.Integer" >
+  <!-- <select id="countAll"  resultType="java.lang.Integer" >
     SELECT count(1) FROM sys_authority where 1=1 
     <if test="name!=null and name !=''" >
-      AND username LIKE CONCAT('%','${name}','%' ) 
+      AND roleid = #{roleid,jdbcType=VARCHAR}
      </if>
      
-  </select>
-   <delete id="delByID" >
+  </select> -->
+   <delete id="delByroleid" >
     delete from sys_authority
-    where userid = #{userid,jdbcType=VARCHAR}
+    where roleid = #{roleid,jdbcType=VARCHAR}
   </delete>
-    <select id="serchByPage" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
-     
-     select * FROM sys_authority where 1=1 
-     <if test="pagerHelperRQ.searchString!=null and pagerHelperRQ.searchString !=''">
-      AND username LIKE CONCAT('%','${pagerHelperRQ.searchString}','%' ) 
-     </if>
-      <if test="pagerHelperRQ.sidx!=null and pagerHelperRQ.sidx !=''">
-      		  order by ${pagerHelperRQ.sidx}
-      		   <if test="pagerHelperRQ.sord!=null">
-      		     ${pagerHelperRQ.sord}
-     			</if>
-     	</if>
-       limit #{pagerHelperRQ.start,jdbcType=INTEGER},#{pagerHelperRQ.rows,jdbcType=INTEGER} 
-       
-      
-  </select>
-    <select id="serchById" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
+    
+    <select id="serchByroleid" resultMap="BaseResultMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
      
      select * FROM sys_authority where 1=1 
      <if test="id!=null and id !=''">
-      AND userid= #{id,jdbcType=VARCHAR}
+      AND roleid= #{roleid,jdbcType=VARCHAR}
      </if>
   </select>
 
@@ -51,48 +33,17 @@
    <insert id="addone" parameterType="com.usedvehicle.beans.sys_authority" >
     
    INSERT INTO sys_authority
-            (userid,
-             username,
-             password,
-             realname,
-             mobile,
-             email,
-             card,
+            (rolemodelid,
              roleid,
-             add_time,
-             lastloginip,
-             lastlogintime,
-             status,
-             img_url)
+             modelid,
+             type,
+             fieldname)
     values (
     UUID()
-    ,#{username,jdbcType=VARCHAR}
-    ,#{password,jdbcType=VARCHAR}
-    ,#{realname,jdbcType=VARCHAR}
-    , #{mobile,jdbcType=VARCHAR}
-    , #{email,jdbcType=VARCHAR}
-    , #{card,jdbcType=VARCHAR}
-    , #{roleid,jdbcType=VARCHAR}
-    , #{add_time,jdbcType=VARCHAR}
-    , #{lastloginip,jdbcType=VARCHAR}
-    , #{lastlogintime,jdbcType=VARCHAR}
-    , #{status,jdbcType=INTEGER}
-    , #{img_url,jdbcType=VARCHAR}
+    ,#{roleid,jdbcType=VARCHAR}
+    ,#{modelid,jdbcType=VARCHAR}
+    ,#{type,jdbcType=VARCHAR}
+    , #{fieldname,jdbcType=VARCHAR}
     )
   </insert>
-   <update id="modify" parameterType="com.usedvehicle.beans.sys_authority" >
-   UPDATE sys_authority
-    username=#{username,jdbcType=VARCHAR},
-    password=#{password,jdbcType=VARCHAR},
-    realname=#{realname,jdbcType=VARCHAR},
-    mobile=#{mobile,jdbcType=VARCHAR},
-    email=#{email,jdbcType=VARCHAR},
-    card=#{card,jdbcType=VARCHAR},
-    roleid=#{roleid,jdbcType=VARCHAR},
-     add_time=#{add_time,jdbcType=VARCHAR},
-     lastloginip=#{lastloginip,jdbcType=VARCHAR},
-     img_url=#{img_url,jdbcType=VARCHAR},
-     status= #{status,jdbcType=INTEGER}  
-    where userid=#{userid,jdbcType=VARCHAR}
-  </update>
 </mapper>
