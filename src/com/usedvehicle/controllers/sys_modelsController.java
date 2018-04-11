@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.glass.ui.View;
+import com.usedvehicle.auth.AuthPassport;
 import com.usedvehicle.beans.sys_modelmenu;
 import com.usedvehicle.beans.sys_models;
 import com.usedvehicle.common.messageHelper;
@@ -45,6 +46,7 @@ public class sys_modelsController {
 		
 	}
 	
+	@AuthPassport
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();

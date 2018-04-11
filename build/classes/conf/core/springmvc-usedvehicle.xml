@@ -51,6 +51,13 @@
     <!-- 注册自动代理生成器 -->
     <aop:aspectj-autoproxy />
     
-    
+        <mvc:interceptors>  
+	    <!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 --> 
+	    <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />  
+	    <!-- 如果不定义 mvc:mapping path 将拦截所有的URL请求 -->
+	    <bean class="com.usedvehicle.auth.AuthInterceptor"></bean>
+	</mvc:interceptors>
+        <!-- 如果当前请求为“/”时，则转发到“/helloworld/index" -->
+	<mvc:view-controller path="/" view-name="forward:/ssm-usedvehicle/nextjsp.do"/>
     
 </beans>

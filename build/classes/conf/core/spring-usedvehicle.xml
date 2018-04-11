@@ -73,6 +73,5 @@
       <!-- 显示图片的url -->
       <property name="imageUrl" value="http://localhost:8080/carimage/upload/"></property>
     </bean>
-    
-        
+
 </beans>
