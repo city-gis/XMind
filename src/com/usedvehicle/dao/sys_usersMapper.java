@@ -19,4 +19,5 @@ public interface sys_usersMapper {
     int addone(sys_users sys_users );
     int modify(sys_users sys_users );
     sys_users serchById(@Param("id") String id);
+    sys_users serchByName(@Param("name") String name);//登录使用
 }

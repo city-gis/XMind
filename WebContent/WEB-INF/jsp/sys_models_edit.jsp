@@ -17,6 +17,7 @@
 <link href="../css/animate.min.css" rel="stylesheet">
 <link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
 <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
 <link href="../css/layui.css" rel="stylesheet">
 <base target="_blank">
 </head>
@@ -92,6 +93,11 @@
 				</form>
 			</div>
 		</div>
+	</div>
+		<!-- 弹出选择父级div -->
+	<div class="jqGrid_wrapper" id="menu_showwin"  style="display:none">
+		<table id="table_list_alert"></table>
+		<!-- <div id="pager_list_2"></div> -->
 	</div>
 	
 	<div class="bs-glyphicons" id="divShow" style="display:none">
@@ -1538,6 +1544,97 @@
 			            });
 			        });
 			})
+			$("#parentid").on("click",function(){
+				 layui.use('layer', function () { //独立版的layer无需执行这一句
+			            var layer = layui.layer; //独立版的layer无需执行这一句
+			            layer.open({
+			                type: 1
+			                , anim: 5
+			                , isOutAnim: false
+			                , offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+			                , id: "menu_showwinlayui"  //防止重复弹出
+			                , content:$("#menu_showwin")
+			                , area: [500 + 'px', 300 + 'px']
+			                , btnAlign: 'c' //按钮居中
+			                ,btn: ['确定', '取消']
+			                , shade: 0 //不显示遮罩
+			                 , yes: function () {
+			                	 var id=$('#table_list_alert').jqGrid('getGridParam','selrow');
+			                	 if(id && id.length==1 ){
+			                		 var rowDatas = $('#table_list_alert').jqGrid('getRowData',id);
+				                	 $("#parentid").val(rowDatas.modelname);
+				                	 $("#parentidhid").val(rowDatas.modelid);
+				                     layer.closeAll();
+			                	 }else{
+			                		 toastr.error("你没有选取或者选取为多行数据");
+			                		 return ;
+			                	 }
+			                 },
+			                 btn2:function(){
+			                	 layer.closeAll();
+			                 }
+			                , success: function (layero, index) {
+			                   $(".bs-glyphicons-list>li").on("click",function(){
+			                	   var span=$(this).find(".glyphicon-class");
+			                	   $("#icon").val($(span).html());
+			                	   layer.closeAll();
+			                   })
+			                }
+			            });
+			        });
+			})
+			$("#table_list_alert").jqGrid({
+				url : "../sys_models/serch.do",
+				datatype : "json",
+				height : 230,
+				autowidth : true,
+				shrinkToFit : true,
+				rowNum : 10,
+				rowList : [ 10, 20, 30 ],
+				colNames : [ "id", "parentid", "模块名称", "图标", "描述" ],
+				colModel : [ {
+					name : "modelid",
+					index : "modelid",
+					editable : true,
+					width : 60,
+					search : false,
+					hidden : true
+				}, {
+					name : "parentid",
+					index : "parentid",
+					editable : true,
+					width : 60,
+					search : true
+				}, {
+					name : "modelname",
+					index : "modelname",
+					editable : true,
+					width : 60,
+					search : true
+				}, {
+					name : "icon",
+					index : "icon",
+					editable : true,
+					width : 60,
+					search : true
+				}, {
+					name : "description",
+					index : "description",
+					editable : true,
+					width : 60,
+					search : true
+				} ],
+				//pager : "#pager_list_2",
+				viewrecords : true,
+				//caption : "jqGrid 示例2",
+				add : false,
+				edit : false,
+				addtext : "Add",
+				edittext : "Edit",
+				hidegrid : true,
+				multiselect : true,  
+				cellEdit: false
+			});
 		});
 		var btn;
 		function closeWind() {

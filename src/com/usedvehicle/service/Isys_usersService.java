@@ -17,4 +17,5 @@ public interface Isys_usersService {
 	int addone(sys_users menu);
 	int modify(sys_users menu);
 	sys_users serchByID(String id);
+	sys_users serchByName(String name);
 }

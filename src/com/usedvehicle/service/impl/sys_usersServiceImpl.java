@@ -71,4 +71,9 @@ public class sys_usersServiceImpl implements Isys_usersService{
 	public sys_users serchByID(String id){
 		return sys_usersDao.serchById(id);
 	}
+	//登录使用
+	@Override
+	public sys_users serchByName(String name){
+		return sys_usersDao.serchByName(name);
+	}
 }

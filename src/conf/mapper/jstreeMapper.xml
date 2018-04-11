@@ -9,7 +9,7 @@
     <result column="icon" property="icon" jdbcType="VARCHAR" />
   </resultMap>
     <select id="model_tree" resultMap="voResultMap" >
-   		SELECT modelid as id ,modelname as `text`,icon,url,case parentid when 0 then '#' else parentid end  as `parent` FROM sys_models where isused=0 
+   		SELECT modelid as id ,modelname as `text`,icon,url,case parentid when '0' then '#' else parentid end  as `parent` FROM sys_models where isused=0 
   	</select>
  
     <select id="role_tree" resultMap="voResultMap" >

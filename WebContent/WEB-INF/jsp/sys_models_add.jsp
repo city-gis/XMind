@@ -10,12 +10,28 @@
 	content="模块管理">
 <link rel="shortcut icon" href="favicon.ico">
 <link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="../css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
 <link href="../css/animate.min.css" rel="stylesheet">
-<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<!-- Sweet Alert -->
 <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
 <link href="../css/layui.css" rel="stylesheet">
+<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
 <base target="_blank">
+<style>
+.jstree-open>.jstree-anchor>.fa-folder:before {
+	content: "\f07c"
+}
+
+.jstree-default .jstree-icon.none {
+	width: 0
+}
+
+.modal-header {
+	padding: 15px 15px !important;
+	text-align: center;
+}
+</style>
 </head>
 <body class="gray-bg">
 	<div class="wrapper wrapper-content animated fadeInRight">
@@ -31,9 +47,10 @@
 						</div>
 						<label class="col-sm-2 control-label">上级模块：</label>
 						<div class="col-sm-4">
-							<input id="parentid" name="parentid" class="form-control"
-								type="text" aria-required="true" aria-invalid="true"
+							<input id="parentid" name="parentname" class="form-control"
+							readonly type="text" aria-required="true" aria-invalid="true"
 								class="valid">
+								<input id="parentidhid" name="parentid" type="hidden" >
 						</div>
 					</div>
 					<div class="form-group">
@@ -91,6 +108,13 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- 弹出选择父级div -->
+	<div class="jqGrid_wrapper" id="menu_showwin"  style="display:none">
+		<table id="table_list_alert"></table>
+		<!-- <div id="pager_list_2"></div> -->
+	</div>
+	
 	
 	<div class="bs-glyphicons" id="divShow" style="display:none">
                             <ul class="bs-glyphicons-list">
@@ -1415,7 +1439,6 @@
 	
 	
 	
-	
 	<script src="../js/jquery.min.js?v=2.1.4"></script>
 	<script src="../js/bootstrap.min.js?v=3.3.5"></script>
 	<script src="../js/content.min.js?v=1.0.0"></script>
@@ -1425,9 +1448,9 @@
 	<script src="../js/jquery.form.js"></script>
     <script src="../js/plugins/toastr/toastr.min.js"></script>
 	<script type="text/javascript"
-		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-	<script type="text/javascript"
 		src="../js/plugins/lay/layui.js" charset="UTF-8"></script>
+	<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+	<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript">
 	/*
 	初始化消息提示
@@ -1525,7 +1548,98 @@
 			                }
 			            });
 			        });
+			});
+			$("#parentid").on("click",function(){
+				 layui.use('layer', function () { //独立版的layer无需执行这一句
+			            var layer = layui.layer; //独立版的layer无需执行这一句
+			            layer.open({
+			                type: 1
+			                , anim: 5
+			                , isOutAnim: false
+			                , offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+			                , id: "menu_showwinlayui"  //防止重复弹出
+			                , content:$("#menu_showwin")
+			                , area: [500 + 'px', 300 + 'px']
+			                , btnAlign: 'c' //按钮居中
+			                ,btn: ['确定', '取消']
+			                , shade: 0 //不显示遮罩
+			                 , yes: function () {
+			                	 var id=$('#table_list_alert').jqGrid('getGridParam','selrow');
+			                	 if(id && id.length==1 ){
+			                		 var rowDatas = $('#table_list_alert').jqGrid('getRowData',id);
+				                	 $("#parentid").val(rowDatas.modelname);
+				                	 $("#parentidhid").val(rowDatas.modelid);
+				                     layer.closeAll();
+			                	 }else{
+			                		 toastr.error("你没有选取或者选取为多行数据");
+			                		 return ;
+			                	 }
+			                 },
+			                 btn2:function(){
+			                	 layer.closeAll();
+			                 }
+			                , success: function (layero, index) {
+			                   $(".bs-glyphicons-list>li").on("click",function(){
+			                	   var span=$(this).find(".glyphicon-class");
+			                	   $("#icon").val($(span).html());
+			                	   layer.closeAll();
+			                   })
+			                }
+			            });
+			        });
 			})
+			$("#table_list_alert").jqGrid({
+				url : "../sys_models/serch.do",
+				datatype : "json",
+				height : 230,
+				autowidth : true,
+				shrinkToFit : true,
+				rowNum : 10,
+				rowList : [ 10, 20, 30 ],
+				colNames : [ "id", "parentid", "模块名称", "图标", "描述" ],
+				colModel : [ {
+					name : "modelid",
+					index : "modelid",
+					editable : true,
+					width : 30,
+					search : false,
+					hidden : true
+				}, {
+					name : "parentid",
+					index : "parentid",
+					editable : true,
+					width : 30,
+					search : true
+				}, {
+					name : "modelname",
+					index : "modelname",
+					editable : true,
+					width : 30,
+					search : true
+				}, {
+					name : "icon",
+					index : "icon",
+					editable : true,
+					width : 30,
+					search : true
+				}, {
+					name : "description",
+					index : "description",
+					editable : true,
+					width : 30,
+					search : true
+				} ],
+				//pager : "#pager_list_2",
+				viewrecords : true,
+				//caption : "jqGrid 示例2",
+				add : false,
+				edit : false,
+				addtext : "Add",
+				edittext : "Edit",
+				hidegrid : true,
+				multiselect : true,  
+				cellEdit: false
+			});
 		});
 		var btn;
 		function closeWind() {

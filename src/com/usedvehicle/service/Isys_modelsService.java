@@ -20,4 +20,5 @@ public interface Isys_modelsService {
 	int modify(sys_models menu);
 	sys_models serchByID(String id);
 	boolean addmodelmenus(String modelid,List<sys_modelmenu> lstmodelmenu);
+	
 }

@@ -167,9 +167,9 @@ $(function(){
 			$(".log-btn").click(function(){
 				// var type = 'phone';
 				var inp = $.trim($('#num').val());
-				var pass = $.md5($.trim($('#pass').val()));
+				var pass = $.trim($('#pass').val());
 				if (checkAccount(inp) && checkPass(pass)) {
-					var ldata = {userinp:inp,password:pass};
+					var ldata = {name:inp,pwd:pass};
 					if (!$('.code').hasClass('hide')) {
 						code = $.trim($('#veri').val());
 						if (!checkCode(code)) {
@@ -178,27 +178,28 @@ $(function(){
 						ldata.code = code;
 					}
 					$.ajax({
-			            url: 'sys/login_post.do',
+			            url: 'login_post.do',
 			            type: 'post',
 			            dataType: 'json',
 			            async: true,
 			            data: ldata,
 			            success:function(data){
-			                if (data.code == '0') {
+			                if (data.mst == '0') {
 			                    // globalTip({'msg':'登录成功!','setTime':3,'jump':true,'URL':'http://www.ui.cn'});
 			                    //globalTip(data.msg);
 			                	//登录成功处理事件
-			                	alert("登录成功");
-			                } else if(data.code == '2') {
+			                	//alert("登录成功");
+			                	window.location.href='index.do';
+			                } else if(data.mst == '1') {
 			                	$(".log-btn").off('click').addClass("off");
 			                    $('.pass-err').removeClass('hide').find('em').text(data.msg);
 			                    $('.pass-err').find('i').attr('class', 'icon-warn').css("color","#d9585b");
 			                    $('.code').removeClass('hide');
-			                    $('.code').find('img').attr('src','/verifyCode?'+Math.random()).click(function(event) {
-			                    	$(this).attr('src', '/verifyCode?'+Math.random());
-			                    });
+			                    //$('.code').find('img').attr('src','/verifyCode?'+Math.random()).click(function(event) {
+			                    //	$(this).attr('src', '/verifyCode?'+Math.random());
+			                    //});
 			                    return false;
-			                } else if(data.code == '3') {
+			                } else if(data.mst == '3') {
 			                	$(".log-btn").off('click').addClass("off");
 			                    $('.img-err').removeClass('hide').find('em').text(data.msg);
 			                    $('.img-err').find('i').attr('class', 'icon-warn').css("color","#d9585b");
@@ -207,7 +208,7 @@ $(function(){
 			                    	$(this).attr('src', '../verificationCode/generate.do?'+Math.random());
 			                    });
 			                    return false;
-			                } else if(data.code == '1'){
+			                } else if(data.mst == '4'){
 			                	$(".log-btn").off('click').addClass("off");
 			                	$('.num-err').removeClass('hide').find('em').text(data.msg);
 			                	$('.num-err').find('i').attr('class', 'icon-warn').css("color","#d9585b");

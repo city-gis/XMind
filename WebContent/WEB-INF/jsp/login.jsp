@@ -8,16 +8,16 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="Keywords" content="网站关键词">
     <meta name="Description" content="网站介绍">
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/iconfont.css">
-    <link rel="stylesheet" href="../css/reg.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/reg.css">
 </head>
 <body>
 <div id="ajax-hook"></div>
 <div class="wrap">
     <div class="wpn">
         <div class="form-data pos">
-            <a href=""><img src="../images/logo.png" class="head-logo"></a>
+            <a href=""><img src="images/logo.png" class="head-logo"></a>
             <div class="change-login">
                 <p class="account_number on">账号登录</p>
                 <p class="message">短信登录</p>
@@ -38,9 +38,9 @@
 	                <p class="p-input pos code ">
 	                    <label for="veri">请输入验证码</label>
 	                    <input type="text" id="veri">
-	                    <img src="../verificationCode/generate.do">
+	                    <img src="verificationCode/generate.do">
 	                    <span class="tel-warn img-err hide"><em>账号或密码错误，请重新输入</em><i class="icon-warn"></i></span>
-	                    <a href="javascript:;">换一换</a>
+	                    <!-- <a href="javascript:;">换一换</a> -->
 	                </p>
                 </form>
             </div>
@@ -72,8 +72,8 @@
         </div>
     </div>
 </div>
-<script src="../js/jquery.min.js"></script>
-<script src="../js/agree.js"></script>
-<script src="../js/login.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/agree.js"></script>
+<script src="js/login.js"></script>
 </body>
 </html>

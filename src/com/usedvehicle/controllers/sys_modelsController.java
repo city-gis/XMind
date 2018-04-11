@@ -46,7 +46,7 @@ public class sys_modelsController {
 		
 	}
 	
-	@AuthPassport
+	//@AuthPassport
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
@@ -180,4 +180,5 @@ public class sys_modelsController {
 		}
 		return message;
 	}
+
 }
