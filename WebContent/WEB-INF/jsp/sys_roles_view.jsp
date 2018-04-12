@@ -101,7 +101,7 @@
 			<!-- <div id="pager_list_2"></div> -->
 		</div>
 		
-		<div class="jqGrid_wrapper" id="menu_showwin"  style="display: none;">
+		<div class="jqGrid_wrapper" id="menu_showwin"  >
 			<table id="table_list_alert_menu"></table>
 			<!-- <div id="pager_list_2"></div> -->
 		</div>
@@ -271,7 +271,7 @@
 					width : "100%",
 					 treeGrid: true,    
 		               treeGridModel: 'adjacency',    
-		               ExpandColumn : 'id',
+		               ExpandColumn : 'text',
 					autowidth : true,
 					shrinkToFit : true,
 					rowNum : 10,
@@ -286,8 +286,8 @@
 						search : false,
 						//hidden : true
 					}, {
-						name : "elementName",
-						index : "elementName",
+						name : "text",
+						index : "text",
 						editable : false,
 						width : 300,
 						search : true,
@@ -305,9 +305,9 @@
 					cellEdit : false,
 					cellsubmit : 'clientArray',
 	                treeReader : {    
-	                     level_field: "leave",    
+	                     level_field: "level",    
 	                     parent_id_field: "parent",    
-	                     leaf_field: "isLeaf",    
+	                     leaf_field: "isLeaf",
 	                     expanded_field: "expanded"    
 	                }
 				});
@@ -317,7 +317,7 @@
 				});
 			});
 			function showicon(cellvalue, options, rowObject) {
-				return '<i class="'+rowObject.icon+'"></i>&nbsp;&nbsp;&nbsp;&nbsp;'+cellvalue;
+				return '<i class="'+rowObject.icons+'"></i>&nbsp;&nbsp;&nbsp;&nbsp;'+cellvalue;
 			}
 			function fnAdd() {
 			    adddata();

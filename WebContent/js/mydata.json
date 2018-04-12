@@ -1,37 +1,55 @@
-[  
-          {  
-              "id": "1",  
-              "elementName": "1",  
-              "leave":"0","parent":null, "isLeaf":false, "expanded":false, "loaded":true  
-          },  
-          {  
-              "id": "1_1",  
-              "elementName": "2",  
-               "leave":"1","parent":"1", "isLeaf":true, "expanded":false, "loaded":true  
-          },  
-          {  
-              "id": "1_2",  
-              "elementName": "3",  
-              "leave":"1","parent":"1", "isLeaf":false, "expanded":false, "loaded":true  
-          },  
-          {  
-              "id": "1_2_1",  
-              "elementName": "4",  
-              "leave":"2","parent":"1_2", "isLeaf":true, "expanded":false, "loaded":true  
-          },  
-          {  
-              "id": "2",  
-              "elementName": "5",  
-              "leave":"1","parent":null, "isLeaf":false, "expanded":true, "loaded":true  
-          },  
-          {  
-              "id": "2_1",  
-              "elementName": "6",  
-             "leave":"1", "parent":"2", "isLeaf":true, "expanded":false, "loaded":true  
-          },  
-          {  
-              "id": "2_2",  
-              "elementName": "7",  
-             "leave":"1", "parent":"2", "isLeaf":true, "expanded":false, "loaded":true  
-          }  
-      ]  
+[{
+	"id": "8b5d501b-3b3c-11e8-8281-68f728595c2f",
+	"icons": "glyphicon glyphicon-asterisk",
+	"parent": null,
+	"text": "系统管理",
+	"level": 1,
+	"isLeaf": false,
+	"expanded": false,
+	"loaded": true
+}, {
+	"id": "c1aa5587-3e54-11e8-81bb-68f728595c2f",
+	"icons": "glyphicon glyphicon-plus",
+	"parent": "8b5d501b-3b3c-11e8-8281-68f728595c2f",
+	"text": "aaaa",
+	"level": 2,
+	"isLeaf": true,
+	"expanded": false,
+	"loaded": true
+}, {
+	"id": "cf97ae79-3e54-11e8-81bb-68f728595c2f",
+	"icons": "glyphicon glyphicon-euro",
+	"parent": "8b5d501b-3b3c-11e8-8281-68f728595c2f",
+	"text": "bbbb",
+	"level": 2,
+	"isLeaf": true,
+	"expanded": false,
+	"loaded": true
+}, {
+	"id": "d992ff40-3e54-11e8-81bb-68f728595c2f",
+	"icons": "glyphicon glyphicon-cloud",
+	"parent": "8b5d501b-3b3c-11e8-8281-68f728595c2f",
+	"text": "cccc",
+	"level": 2,
+	"isLeaf": true,
+	"expanded": false,
+	"loaded": true
+}, {
+	"id": "e2accf41-3e54-11e8-81bb-68f728595c2f",
+	"icons": "glyphicon glyphicon-envelope",
+	"parent": "8b5d501b-3b3c-11e8-8281-68f728595c2f",
+	"text": "dddd",
+	"level": 2,
+	"isLeaf": false,
+	"expanded": false,
+	"loaded": true
+}, {
+	"id": "f99d2433-3e54-11e8-81bb-68f728595c2f",
+	"icons": "glyphicon glyphicon-star",
+	"parent": "e2accf41-3e54-11e8-81bb-68f728595c2f",
+	"text": "ffff",
+	"level": 3,
+	"isLeaf": true,
+	"expanded": false,
+	"loaded": true
+}]
