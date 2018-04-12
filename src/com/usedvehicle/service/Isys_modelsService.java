@@ -8,6 +8,7 @@ import com.usedvehicle.beans.sys_modelmenu;
 import com.usedvehicle.beans.sys_models;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
+import com.usedvehicle.vo.sys_models_gridtree;
 
 public interface Isys_modelsService {
 	List<sys_models>  queryAll();
@@ -20,5 +21,6 @@ public interface Isys_modelsService {
 	int modify(sys_models menu);
 	sys_models serchByID(String id);
 	boolean addmodelmenus(String modelid,List<sys_modelmenu> lstmodelmenu);
+//	List<sys_models_gridtree> serchModelGridTree();
 	
 }

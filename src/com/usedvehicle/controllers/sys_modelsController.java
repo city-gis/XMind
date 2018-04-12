@@ -161,7 +161,7 @@ public class sys_modelsController {
 		return jstrees;
 	}
 	
-	@RequestMapping(value= "updateMenus.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@RequestMapping(value= "updateroles.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public Object updateMenus(@RequestBody sys_modelform modelform) {
 		messageHelper message= new messageHelper();

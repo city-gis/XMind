@@ -1,8 +1,6 @@
 package com.usedvehicle.service;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import com.usedvehicle.beans.sys_userrole;
 import com.usedvehicle.beans.sys_users;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
@@ -18,4 +16,6 @@ public interface Isys_usersService {
 	int modify(sys_users menu);
 	sys_users serchByID(String id);
 	sys_users serchByName(String name);
+
+	boolean adduserroles(String userid,List<sys_userrole> sys_userroles);
 }

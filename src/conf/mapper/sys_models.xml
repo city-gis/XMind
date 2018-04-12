@@ -55,6 +55,18 @@
      </if>
   </select>
 
+
+<!-- <resultMap id="models_gridtreeMap" type="com.usedvehicle.vo.sys_models_gridtree" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="text" property="text" jdbcType="VARCHAR" />
+    <result column="expanded" property="expanded" jdbcType="BOOLEAN" />
+    <result column="parent" property="parent" jdbcType="VARCHAR" />
+    <result column="isLeaf" property="isLeaf" jdbcType="BOOLEAN" />
+  </resultMap>
+    <select id="get_models_gridtree" resultMap="models_gridtreeMap" >
+     
+     select * FROM sys_models 
+  </select> -->
   
    <insert id="addone" parameterType="com.usedvehicle.beans.sys_models" >
     

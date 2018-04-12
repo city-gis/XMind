@@ -34,6 +34,14 @@ public class Admin_roleController {
 		
 	}
 	
+	@RequestMapping("demo.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
+	@ResponseBody//鐢ㄦ柤AJAX
+	public Object demo() {
+		
+		return "[{'modelid':0,'modelname':'王三','level':0,'endDate':'2017-03-07','isLeaf':false,'nodeLevel':20,'expanded':true,'description':'123'}, {'modelid':1,'modelname':'王三','level':1,'endDate':'2017-03-07','isLeaf':false,'nodeLevel':21,'parent':0,'expanded':true,'description':'123'},{'modelid':2,'modelname':'王三','level':2,'endDate':'2017-03-07','isLeaf':true,'nodeLevel':22,'parent':1,'expanded':true,'description':'123'}]";
+		
+	}
+	
 	@RequestMapping("view.do")//鐢ㄦ柤鏌ヨ鎵�鏈夌殑涓嬫媺鑿滃柈鍒嗙礆椤ず
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();

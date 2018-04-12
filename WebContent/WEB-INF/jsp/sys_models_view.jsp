@@ -449,13 +449,29 @@
 			  var form = layui.form,layer = layui.layer;
 		});
 		$("#using_json").jstree({
-			"core" : {
+			"core" : {"check_callback": true,
 				"data" : {
 					'url' : '../sys_models/models_Tree.do',
 					'dataType' : 'json',
 				}
-			}
+			},"force_text": true,"checkbox": {
+                "keep_selected_style": false,//是否默认选中
+                "three_state": true,//父子级别级联选择
+                "tie_selection": false
+            }
 		});
+		$("#using_json").on('load_node.jstree', function(event, obj) {
+			var ref = $("#using_json").jstree(true);
+			//var json =$("#using_json").jstree("get_json", -1);
+			var option ={};
+			option.flat=true;
+			var json =$("#using_json").jstree(true).get_json(null,option);
+        	ref.select_all();
+    		var nodes=$("#using_json").jstree("get_checked"); //使用get_checked方法 
+    		var level = $("#"+selectedNode.id).attr("aria-level"); 
+    		console.log(json);
+		  });
+		  
 		$("#table_list_alert").jqGrid({
 			url : "../sys_menus/serch.do",
 			datatype : "json",

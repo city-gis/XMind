@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Stack;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.usedvehicle.beans.sys_modelmenu;
@@ -14,6 +16,7 @@ import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
 import com.usedvehicle.dao.sys_modelsMapper;
 import com.usedvehicle.service.Isys_modelsService;
+import com.usedvehicle.vo.sys_models_gridtree;
 
 import sun.invoke.empty.Empty;
 
@@ -80,4 +83,37 @@ public class sys_modelsServiceImpl implements Isys_modelsService{
 		}
 		return true;
 	}
+//	@Override
+//	public List<sys_models_gridtree> serchModelGridTree() {
+//		List<sys_models> lstModel=sys_modelsDao.selectAll();
+//		 Stack<sys_models> stChildren = new Stack<sys_models>();
+//		for (sys_models sys_model : lstModel) {
+//			stChildren.push(sys_model);
+//		}
+//		return null;
+//	}
+//	private List<sys_models_gridtree> getGridTree(Stack<sys_models> stChildren,List<sys_models> lstModel) {
+//		List<sys_models_gridtree>lstmodels_gridtree = new ArrayList<sys_models_gridtree>();
+//		for (sys_models sys_model : lstModel) {
+//			sys_models_gridtree models_gridtree =new sys_models_gridtree();
+//			Integer i=0;
+//			while (stChildren.iterator().hasNext()) {
+//				sys_models sys_modelpush=stChildren.get(i);
+//				i++;
+//				if(sys_modelpush.getParentid().equals(sys_model.getModelid())){
+//					
+//				}
+//			}
+//		}
+//		while (stChildren.pop()!=null) {
+//			
+//		}
+//		//getGridTree();
+//	}
+//	public static void it(Stack<sys_models> s){
+//        Iterator<sys_models> it = s.iterator();  
+//        while(it.hasNext()){  
+//            System.out.print(it.next()+";");  
+//        }   
+//    }  
 }

@@ -277,7 +277,7 @@
 				if (ids.length == 1) {
 					var rowid = $("#table_list_2").jqGrid("getGridParam","selrow");
 					var rowData = $("#table_list_2").jqGrid('getRowData',rowid);
-					var modelid=rowData.modelid;
+					var modelid=rowData.userid;
 					editdata(modelid);
 				} else {
 					toastr.error("你没有选取或者选取为多行数据");
@@ -334,21 +334,18 @@
 		                    for(var i=0;i<ids.length;i++){
 		                    	var rowData = $("#table_list_alert").jqGrid('getRowData',ids[i]);
 		                    	var rowone={};
-		                    	rowone.action=rowData.action;
-		                    	rowone.menuid=rowData.menuid;
-		                    	rowone.modelid=rowDatas.modelid;
-		                    	rowone.modelmenuid="";
+		                    	rowone.roleid=rowData.roleid;
+		                    	rowone.userid=rowDatas.userid;
 		                    	datas.push(rowone);
 		                    }
-		                    //console.log(datas);
 		                    $.ajax({
 								type : "POST",
-								url : "../sys_users/updateMenus.do",
-								data : JSON.stringify({"sys_modelmenuss":datas,"modelid":rowDatas.modelid}),
+								url : "../sys_users/updateroles.do",
+								data : JSON.stringify({"lstsys_userrole":datas,"userid":rowDatas.userid}),
 								dataType : "json", 
 								contentType: 'application/json',
 								headers : {  
-			                        'Content-Type' : 'application/json;charset=utf-8'  
+			                        'Content-Type' : 'application/json;charset=utf-8'
 			                    },
 								success : function(data) {
 									messageHelper(data, reloadGrid());
@@ -496,6 +493,7 @@
 			edittext : "Edit",
 			hidegrid : true,
 			multiselect : true,  
+			//multiboxonly:true,  
 			cellEdit: true,
 		    cellsubmit: 'clientArray',
 		    beforeSelectRow:function(id){  
