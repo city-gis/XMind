@@ -449,58 +449,14 @@
 			  var form = layui.form,layer = layui.layer;
 		});
 		$("#using_json").jstree({
-			"core" : {"check_callback": true,
+			"core" : {
 				"data" : {
 					'url' : '../sys_models/models_Tree.do',
 					'dataType' : 'json',
 				}
-			},"force_text": true,"checkbox": {
-                "keep_selected_style": false,//是否默认选中
-                "three_state": true,//父子级别级联选择
-                "tie_selection": false
-            }
-		});
-		$("#using_json").on('load_node.jstree', function(event, obj) {
-			var ref = $("#using_json").jstree(true);
-			ref.select_all();
-			//var json =$("#using_json").jstree("get_json", -1);
-			var option ={};
-			option.flat=true;
-			option.no_state=true;
-			option.no_data=true;
-			option.no_li_attr=true;
-			option.no_a_attr=true;
-			var json =$("#using_json").jstree(true).get_json(null,option);
-			var listData=[];
-			for(var i =0;i<json.length;i++){
-				var dataone={};
-				dataone.id=json[i].id;
-				dataone.icon=json[i].icon;
-				dataone.parent=json[i].parent;
-				dataone.text=json[i].text;
-				//console.log(json[i].id);
-				var node=$("#using_json").jstree(true).get_node(json[i].id);
-				var level = node.parents.length; 
-				//console.log(node);
-				dataone.level=level;
-				if(dataone.parent=="#"){
-					dataone.parent=null;
-				}
-				if(node.children.length>0){
-					dataone.isLeaf=false;
-				}else{
-					dataone.isLeaf=true;	
-				}
-				
-				dataone.expanded=false;
-				dataone.loaded=true;
-				listData.push(dataone);
 			}
-        	//
-    		//var nodes=$("#using_json").jstree("get_checked"); //使用get_checked方法 
-    		//var level = $("#"+selectedNode.id).attr("aria-level"); 
-    		console.log(JSON.stringify(listData));
-		  });
+		});
+		
 		  
 		$("#table_list_alert").jqGrid({
 			url : "../sys_menus/serch.do",

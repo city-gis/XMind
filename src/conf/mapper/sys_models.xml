@@ -16,9 +16,20 @@
     <result column="modifytime" property="modifytime" jdbcType="VARCHAR" />
     <result column="icon" property="icon" jdbcType="VARCHAR" />
   </resultMap>
+  
+  <resultMap id="modelmenuswithmenusMap" type="com.usedvehicle.beans.sys_modelmenu" >
+    <id column="modelid" property="modelid" jdbcType="VARCHAR" />
+    <result column="modelmenuid" property="modelmenuid" jdbcType="VARCHAR" />
+    <result column="menuid" property="menuid" jdbcType="VARCHAR" />
+    <result column="action" property="action" jdbcType="VARCHAR" />
+  </resultMap>
  
   <select id="selectAll" resultMap="BaseResultMap" >
    	SELECT * FROM sys_models 
+  </select>
+  
+   <select id="modelmenuswithmenus" resultMap="modelmenuswithmenusMap" >
+   	SELECT * FROM sys_modelmenu 
   </select>
   <select id="countAll"  resultType="java.lang.Integer" >
     SELECT count(1) FROM sys_models where 1=1 

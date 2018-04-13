@@ -22,5 +22,6 @@ public interface Isys_modelsService {
 	sys_models serchByID(String id);
 	boolean addmodelmenus(String modelid,List<sys_modelmenu> lstmodelmenu);
 //	List<sys_models_gridtree> serchModelGridTree();
+    List<sys_modelmenu> modelmenuswithmenus();//
 	
 }

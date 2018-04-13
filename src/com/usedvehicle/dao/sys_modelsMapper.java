@@ -29,4 +29,8 @@ public interface sys_modelsMapper {
      * 通过modelid删除所有对应的按钮
      * */
     int delBymodelID(String modelid);//
+    /*
+     * 通过modelid删除所有对应的按钮
+     * */
+    List<sys_modelmenu> modelmenuswithmenus();//
 }

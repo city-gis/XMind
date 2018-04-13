@@ -76,6 +76,10 @@ public class sys_modelsServiceImpl implements Isys_modelsService{
 		return sys_modelsDao.serchById(id);
 	}
 	@Override
+	public  List<sys_modelmenu> modelmenuswithmenus(){
+		return sys_modelsDao.modelmenuswithmenus();
+	}
+	@Override
 	public boolean addmodelmenus(String id,List<sys_modelmenu> lstmodelmenu){
 		sys_modelsDao.delBymodelID(id);
 		for(sys_modelmenu one : lstmodelmenu){
