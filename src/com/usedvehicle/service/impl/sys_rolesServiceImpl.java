@@ -8,9 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
+import com.usedvehicle.beans.sys_rolemodel;
 import com.usedvehicle.beans.sys_roles;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
+import com.usedvehicle.dao.sys_rolemodelMapper;
 import com.usedvehicle.dao.sys_rolesMapper;
 import com.usedvehicle.service.Isys_rolesService;
 
@@ -21,6 +23,8 @@ import sun.invoke.empty.Empty;
 public class sys_rolesServiceImpl implements Isys_rolesService{
 	@Autowired
 	private sys_rolesMapper sys_rolesDao;
+	@Autowired
+	private sys_rolemodelMapper sys_rolemodelDao;
 	//@Autowired
 	private pagerHelperRS pagerRs;
 	
@@ -70,5 +74,13 @@ public class sys_rolesServiceImpl implements Isys_rolesService{
 	@Override
 	public sys_roles serchByID(String id){
 		return sys_rolesDao.serchById(id);
+	}
+	@Override
+	public boolean updateRoleModels(String roleid, List<sys_rolemodel> lstrolemodel) {
+		sys_rolemodelDao.delByID(roleid);
+		for (sys_rolemodel one : lstrolemodel) {
+			sys_rolemodelDao.addone(one);
+		}
+		return true;
 	}
 }

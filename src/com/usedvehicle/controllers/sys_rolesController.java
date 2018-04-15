@@ -6,7 +6,9 @@ import java.util.Map;
 import org.aspectj.weaver.ast.Var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,6 +20,9 @@ import com.usedvehicle.common.pagerHelperRS;
 import com.usedvehicle.service.IjstreeService;
 import com.usedvehicle.service.Isys_rolesService;
 import com.usedvehicle.vo.jstree;
+import com.usedvehicle.vo.sys_modelform;
+import com.usedvehicle.vo.sys_rolemodelmenuvo;
+import com.usedvehicle.vo.sys_rolemodelvo;
 
 @Controller
 @RequestMapping("sys_roles")
@@ -149,5 +154,24 @@ public class sys_rolesController {
 	public Object roles_Tree() {
  		List<jstree> jstrees = jstreeService.role_tree();
 		return jstrees;
+	}
+	@RequestMapping(value= "updateRoleModels.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object updateRoleModels(@RequestBody sys_rolemodelvo modelform) {
+		messageHelper message= new messageHelper();
+		try {
+			boolean result= sys_rolesService.updateRoleModels(modelform.getRoleid(), modelform.getSys_rolemodels());
+			 if(result){
+				message.setMst(0);
+				message.setMsg("调整菜单功能成功！");
+			 }else{
+				message.setMst(1);
+				message.setMsg("调整菜单功能失败！");
+			 }
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("调整菜单功能失败！"+e.getMessage());
+		}
+		return message;
 	}
 }

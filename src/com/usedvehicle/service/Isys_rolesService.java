@@ -1,8 +1,7 @@
 package com.usedvehicle.service;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+import com.usedvehicle.beans.sys_rolemodel;
 import com.usedvehicle.beans.sys_roles;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
@@ -17,4 +16,5 @@ public interface Isys_rolesService {
 	int addone(sys_roles menu);
 	int modify(sys_roles menu);
 	sys_roles serchByID(String id);
+	boolean updateRoleModels(String roleid,List<sys_rolemodel> lstrolemodel);
 }

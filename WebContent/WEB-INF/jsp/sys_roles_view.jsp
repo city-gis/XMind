@@ -563,17 +563,17 @@
 			                for (var i = 0; i < ids.length; i++) {
 			                    var rowData = $("#table_list_alert").jqGrid('getRowData', ids[i]);
 			                    var rowone = {};
-			                    rowone.action = rowData.action;
-			                    rowone.menuid = rowData.menuid;
-			                    rowone.modelid = rowDatas.roleid;
-			                    rowone.modelmenuid = "";
+			                    rowone.modelid = rowData.modelid;
+			                    rowone.roleid = rowDatas.roleid;
+			                    rowone.rolemodelid = "";
 			                    datas.push(rowone);
 			                }
+			                //console.log(rowDatas.roleid);
 			                $.ajax({
 			                    type: "POST",
-			                    url: "../sys_models/updateMenus.do",
+			                    url: "../sys_roles/updateRoleModels.do",
 			                    data: JSON.stringify({
-			                        "sys_modelmenuss": datas, "modelid": rowDatas.modelid
+			                        "sys_rolemodels": datas, "roleid": rowDatas.roleid
 			                    }),
 			                    dataType: "json",
 			                    contentType: 'application/json',
