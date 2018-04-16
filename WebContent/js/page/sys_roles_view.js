@@ -366,7 +366,7 @@ function setMebutton(id) {
                 //先保存数据，
                 var modelmenusResult = [];
                 $('input:checkbox[datatype="modelmenus"]:checked').each(function (i) {
-                    if ($(this).attr("modelid") && $(this).attr("menuid")) {
+                    if ($(this).attr("modelid") && $(this).attr("menuid") && $(this).attr("modelid")!="undefined"&& $(this).attr("modelid")!=undefined && $(this).attr("menuid")!="undefined") {
                         modelmenusResult.push({ "modelid": $(this).attr("modelid"), "menuid": $(this).attr("menuid"), "rolemenumodelid": "", "roleid": id });
                     }
                 });
