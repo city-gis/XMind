@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.glass.ui.View;
+import com.usedvehicle.beans.sys_rolemodel;
+import com.usedvehicle.beans.sys_rolemodelmenu;
 import com.usedvehicle.beans.sys_roles;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.common.pagerHelperRQ;
@@ -155,6 +157,9 @@ public class sys_rolesController {
  		List<jstree> jstrees = jstreeService.role_tree();
 		return jstrees;
 	}
+	/*
+	 * 角色赋模组权限
+	 * */
 	@RequestMapping(value= "updateRoleModels.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public Object updateRoleModels(@RequestBody sys_rolemodelvo modelform) {
@@ -174,4 +179,63 @@ public class sys_rolesController {
 		}
 		return message;
 	}
+	/*
+	 * 通过roleid查询所有模组权限
+	 * */
+	@RequestMapping(value= "selectRoleModels.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object selectRoleModels(String id) {
+		messageHelper message= new messageHelper();
+		try {
+			List<sys_rolemodel> lstsys_rolemodel= sys_rolesService.selectRoleModels(id);
+				message.setMst(0);
+				message.setMsg("");
+				message.setData(lstsys_rolemodel);
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("查询失败！"+e.getMessage());
+		}
+		return message;
+	}
+	/*
+	 * 角色赋模组按钮权限
+	 * */
+	@RequestMapping(value= "updateRoleModelMenus.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object updateRoleModelMenus(@RequestBody sys_rolemodelmenuvo modelform) {
+		messageHelper message= new messageHelper();
+		try {
+			boolean result= sys_rolesService.updateRoleModelMenus(modelform.getRoleid(), modelform.getSys_rolemodelmenus());
+			 if(result){
+				message.setMst(0);
+				message.setMsg("调整菜单功能成功！");
+			 }else{
+				message.setMst(1);
+				message.setMsg("调整菜单功能失败！");
+			 }
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("调整菜单功能失败！"+e.getMessage());
+		}
+		return message;
+	}
+	/*
+	 * 通过roleid查询所有模组菜单权限
+	 * */
+	@RequestMapping(value= "selectRoleModelMenus.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object selectRoleModelMenus(String id) {
+		messageHelper message= new messageHelper();
+		try {
+			List<sys_rolemodelmenu> lstsys_rolemodelmenu= sys_rolesService.selectRoleModelMenus(id);
+				message.setMst(0);
+				message.setMsg("");
+				message.setData(lstsys_rolemodelmenu);
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("查询失败！"+e.getMessage());
+		}
+		return message;
+	}
+	
 }

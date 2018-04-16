@@ -40,6 +40,9 @@
 	padding: 15px 15px !important;
 	text-align: center;
 }
+.modal-dialog{
+	    margin: 0px auto !important;
+}
 </style>
 </head>
 
@@ -51,6 +54,12 @@
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
 						<h5>部门列表</h5>
+						<a style="padding: 5px 15px;" onclick="fnAdd();"
+							href="javascript:void(0);"><i class="fa fa-plus"></i> 新增</a> <a
+							style="padding: 5px 15px;" onclick="fnEdit();"
+							href="javascript:void(0);"><i class="fa fa-edit"></i> 修改</a> <a
+							style="padding: 5px 15px;" onclick="fnDel();"
+							href="javascript:void(0);"><i class="fa fa-trash"></i> 删除</a>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 							</a>
@@ -67,11 +76,12 @@
 				</div>
 			</div>
 		</div>
+	</div>
 		<!-- 弹出窗口内容开始 -->
 		<div class="modal inmodal" id="addmodal" tabindex="-1" role="dialog"
 			aria-hidden="true">
-			<div class="modal-dialog modal-lg" style="width: 100%; height: 85%;">
-				<div class="modal-content animated flipInY" style="height: 80%">
+			<div class="modal-dialog modal-lg" style="width: 100%; height: 98%;">
+				<div class="modal-content animated fadeIn" style="height: 91%">
 					<div class="modal-header">
 						<button type="button" class="parent_win_closed close" data-dismiss="modal">
 							<span aria-hidden="true">×</span><span class="sr-only">Close</span>
@@ -93,197 +103,8 @@
 		<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
 		<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
 		<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
-    <script src="../js/plugins/toastr/toastr.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				/*
-				初始化消息提示
-				*/
-				toastr.options = {
-						  "closeButton": true,
-						  "debug": false,
-						  "progressBar": false,
-						  "positionClass": "toast-top-center",
-						  "onclick": null,
-						  "showDuration": "300",
-						  "hideDuration": "1000",
-						  "timeOut": "5000",
-						  "extendedTimeOut": "1000",
-						  "showEasing": "swing",
-						  "hideEasing": "linear",
-						  "showMethod": "fadeIn",
-						  "hideMethod": "fadeOut"
-						};
-				
-				
-				$.jgrid.defaults.styleUI = "Bootstrap";
-				
-				$("#table_list_2").jqGrid({
-					url : "../sys_departs/serch.do",
-					datatype : "json",
-					height : 350,
-					autowidth : true,
-					shrinkToFit : true,
-					rowNum : 10,
-					rowList : [ 10, 20, 30 ],
-					colNames : [ "id","parentid", "部门名称", "描述","创建人","最后修改人"],
-					
-					colModel : [{
-						name : "departid",
-						index : "departid",
-						editable : true,
-						width : 60,
-						search : false,
-						hidden:true
-					},  {
-						name : "parentid",
-						index : "parentid",
-						editable : true,
-						width : 60,
-						search : true
-					},  {
-						name : "departname",
-						index : "departname",
-						editable : true,
-						width : 60,
-						search : true
-					},  {
-						name : "description",
-						index : "description",
-						editable : true,
-						width : 60,
-						search : true
-					},  {
-						name : "creatuser",
-						index : "creatuser",
-						editable : true,
-						width : 60,
-						search : true
-					},  {
-						name : "modifyuser",
-						index : "modifyuser",
-						editable : true,
-						width : 60,
-						search : true
-					} ],
-					pager : "#pager_list_2",
-					viewrecords : true,
-					//caption : "jqGrid 示例2",
-					add : true,
-					edit : true,
-					addtext : "Add",
-					edittext : "Edit",
-					hidegrid : false,
-					multiselect : true,
-				});
-				//$("#table_list_2").setSelection(4, true);
-				$("#table_list_2").jqGrid("navGrid", "#pager_list_2", {
-					edit : true,
-					add : true,
-					del : true,
-					search : true,
-					editfunc : function(id) {
-						var idStr = "#"+id;
-	                    var $currRow = $("#table_list_2").find(idStr);
-	                    var menu_id = $currRow.find("td:eq(1)").text();
-	                    console.log(menu_id);
-						editdata(menu_id);
-					},
-					addfunc : function(id) {
-						adddata();
-					},
-					delfunc : function(id) {
-						var idStr = "#"+id;
-	                    var $currRow = $("#table_list_2").find(idStr);
-	                    var menu_id = $currRow.find("td:eq(1)").text();
-						deldata(menu_id);
-					}
-				}, {
-					height : 250,
-					reloadAfterSubmit : true
-				});
-				$(window).bind("resize", function() {
-					var width = $(".jqGrid_wrapper").width();
-					//$("#table_list_1").setGridWidth(width);
-					$("#table_list_2").setGridWidth(width);
-				});
-			});
-			function showStatue(cellvalue, options, rowObject){
-				if(cellvalue==0){
-					return '<span class="label label-primary">启用</span>';
-				}else{
-					return '<span class="label label-warning">禁用</span>';
-				}
-			}
-			/**
-			删除
-			 */
-			function deldata(id) {
-				swal({
-					title : "您确定要删除这条信息吗",
-					text : "删除后将无法恢复，请谨慎操作！",
-					type : "warning",
-					showCancelButton : true,
-					confirmButtonColor : "#DD6B55",
-					confirmButtonText : "删除",
-					closeOnConfirm : false
-				}, function() {
-					$.ajax({
-			             type: "GET",
-			             url: "../sys_departs/delmenu.do",
-			             data: {id:id},
-			             dataType: "json",
-			             success: function(data){
-			            	 messageHelper(data,reloadGrid());
-			             }
-			         });
-					
-				});
-			}
-			/**
-			修改
-			 */
-			function editdata(id) {
-				//alert(id);
-				$("#frameView").attr("src", "../sys_departs/edit_view.do?id="+id);
-				$('#addmodal').modal({
-					keyboard : true
-				});
-			}
-			/**
-			新增
-			 */
-			function adddata() {
-				$("#frameView").attr("src", "../sys_departs/add_view.do");
-				$('#addmodal').modal({
-					keyboard : true
-				});
-			}
-			//刷新grid
-			function reloadGrid(){
-				//alert(1);
-				var page=$("#table_list_2").jqGrid("getGridParam","page");
-             	$("#table_list_2").jqGrid().trigger("reloadGrid", [{ page: page}]);  //重载JQGrid
-			}
-			function messageHelper(data,func){
-				if(data.mst==0){
-           		 swal.close();
-                	toastr.success(data.msg);
-                	//swal("删除成功！", "您已经永久删除了这条信息。", "success");
-                	//reloadGrid();
-                	if(func){
-                		func();
-                	}
-                }else{
-                	toastr.error(data.msg);
-               	 //swal("删除失败！", "请联系管理员", "error");
-                }
-			}
-		</script>
-
-		
-		<script type="text/javascript"
-			src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+    	<script src="../js/plugins/toastr/toastr.min.js"></script>
+    	<script src="../js/page/sys_departs_view.js"></script>
 </body>
 
 </html>

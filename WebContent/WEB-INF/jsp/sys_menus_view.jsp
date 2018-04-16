@@ -40,6 +40,9 @@
 	padding: 15px 15px !important;
 	text-align: center;
 }
+.modal-dialog{
+	    margin: 0px auto !important;
+}
 </style>
 </head>
 
@@ -70,8 +73,8 @@
 		<!-- 弹出窗口内容开始 -->
 		<div class="modal inmodal" id="addmodal" tabindex="-1" role="dialog"
 			aria-hidden="true">
-			<div class="modal-dialog modal-lg" style="width: 100%; height: 85%;">
-				<div class="modal-content animated flipInY" style="height: 80%">
+			<div class="modal-dialog modal-lg" style="width: 100%; height: 98%;">
+				<div class="modal-content animated fadeIn" style="height: 91%">
 					<div class="modal-header">
 						<button type="button" class="parent_win_closed close" data-dismiss="modal">
 							<span aria-hidden="true">×</span><span class="sr-only">Close</span>

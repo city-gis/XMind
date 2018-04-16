@@ -19,6 +19,8 @@ import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
 import com.usedvehicle.service.Isys_usersService;
 import com.usedvehicle.vo.sys_modelform;
+import com.usedvehicle.vo.sys_rolemodelmenuvo;
+import com.usedvehicle.vo.sys_userdepart_vo;
 import com.usedvehicle.vo.sys_userform;
 
 @Controller
@@ -164,6 +166,27 @@ public class sys_usersController {
 		}
 		return message;
 	}
-
+	/*
+	 * 角色赋模组按钮权限
+	 * */
+	@RequestMapping(value= "updateuserdeparts.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object updateuserdeparts(@RequestBody sys_userdepart_vo modelform) {
+		messageHelper message= new messageHelper();
+		try {
+			boolean result= sys_usersService.updateuserdeparts(modelform.getUserid(), modelform.getLstsys_userdepart());
+			 if(result){
+				message.setMst(0);
+				message.setMsg("调整菜单功能成功！");
+			 }else{
+				message.setMst(1);
+				message.setMsg("调整菜单功能失败！");
+			 }
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("调整菜单功能失败！"+e.getMessage());
+		}
+		return message;
+	}
 	
 }

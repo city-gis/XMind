@@ -8,11 +8,13 @@ import java.util.List;
 import java.util.Map;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
+import com.usedvehicle.beans.sys_departuser;
 import com.usedvehicle.beans.sys_modelmenu;
 import com.usedvehicle.beans.sys_userrole;
 import com.usedvehicle.beans.sys_users;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
+import com.usedvehicle.dao.sys_departuserMapper;
 import com.usedvehicle.dao.sys_userroleMapper;
 import com.usedvehicle.dao.sys_usersMapper;
 import com.usedvehicle.service.Isys_usersService;
@@ -26,6 +28,8 @@ public class sys_usersServiceImpl implements Isys_usersService{
 	private sys_usersMapper sys_usersDao;
 	@Autowired
 	private sys_userroleMapper sys_userroleDao;
+	@Autowired
+	private sys_departuserMapper sys_departuserDao;
 	//@Autowired
 	private pagerHelperRS pagerRs;
 	
@@ -87,6 +91,14 @@ public class sys_usersServiceImpl implements Isys_usersService{
 		sys_userroleDao.delByUserid(userid);
 		for(sys_userrole one : sys_userroles){
 			sys_userroleDao.adduserorle(one);
+		}
+		return true;
+	}
+	@Override
+	public boolean updateuserdeparts(String userid, List<sys_departuser> sys_departusers) {
+		sys_departuserDao.delByID(userid);
+		for (sys_departuser one : sys_departusers) {
+			sys_departuserDao.addone(one);
 		}
 		return true;
 	}

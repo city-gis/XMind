@@ -20,7 +20,17 @@
     <link href="css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
     <link href="css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet">
+	<link href="css/plugins/jsTree/style.min.css" rel="stylesheet">
     <link href="css/style.min.css?v=4.0.0" rel="stylesheet">
+    <style>
+    	.sidebar-collapse>.jstree-default .jstree-node{padding:5px 0!important;}
+    	.jstree-default .jstree-anchor,.jstree-node>a{color:#d6d6d6!important;}
+    	.jstree-node>a:hover{color:#fff!important;}
+    	.jstree-default .jstree-hovered{color:#fff!important;}
+    	.jstree-default .jstree-hovered,.jstree-default .jstree-clicked{background:transparent!important;box-shadow:none}
+    </style>
+   
+   
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
@@ -29,9 +39,10 @@
         <nav class="navbar-default navbar-static-side" role="navigation">
             <div class="nav-close"><i class="fa fa-times-circle"></i>
             </div>
-            <div class="sidebar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li class="nav-header">
+            <div class="sidebar-collapse" >
+            <div id="side-menu-div"></div>
+                <ul class="nav" id="side-menu" style="display:none;">
+                    <!-- <li class="nav-header">
                         <div class="dropdown profile-element">
                             <span><img alt="image" class="img-circle" src="img/profile_small.jpg" /></span>
                             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
@@ -56,8 +67,8 @@
                         </div>
                         <div class="logo-element">H+
                         </div>
-                    </li>
-                    <li>
+                    </li> -->
+                    <!-- <li>
                         <a href="#">
                             <i class="fa fa-home"></i>
                             <span class="nav-label">主页</span>
@@ -392,7 +403,7 @@
                             <li><a class="J_menuItem" href="form_builder.html">表单构建器</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
 
                 </ul>
             </div>
@@ -948,7 +959,10 @@
     <script src="js/hplus.min.js?v=4.0.0"></script>
     <script type="text/javascript" src="js/contabs.min.js"></script>
     <script src="js/plugins/pace/pace.min.js"></script>
-    <script src="js/index.js"></script>
+	<script src="js/plugins/jsTree/jstree.min.js"></script>
+    <script src="js/index.js"></script> 		$("..sidebar-collapse>.jstree-default .jstree-node")
+    	})
+    </script>
 </body>
 
 </html>

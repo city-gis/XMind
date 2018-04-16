@@ -3,26 +3,22 @@ package com.usedvehicle.vo;
 import java.util.List;
 
 import com.usedvehicle.beans.sys_modelmenu;
+import com.usedvehicle.beans.sys_rolemodelmenu;
 
 public class sys_rolemodelmenuvo {
-		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½ï¿½ï¿½
-		private List<sys_modelmenu> sys_modelmenuss;
-		private String modelid;
-
-		public List<sys_modelmenu> getSys_modelmenuss() {
-			return sys_modelmenuss;
+		//½ÇÉ«Ö÷Ò³Ãæ--¸ø½ÇÉ«¸³Ä£×é°´Å¥È¨ÏÞ
+		private List<sys_rolemodelmenu> sys_rolemodelmenus;
+		private String roleid;
+		public List<sys_rolemodelmenu> getSys_rolemodelmenus() {
+			return sys_rolemodelmenus;
 		}
-
-		public void setSys_modelmenuss(List<sys_modelmenu> sys_modelmenuss) {
-			this.sys_modelmenuss = sys_modelmenuss;
+		public void setSys_rolemodelmenus(List<sys_rolemodelmenu> sys_rolemodelmenus) {
+			this.sys_rolemodelmenus = sys_rolemodelmenus;
 		}
-
-		public String getModelid() {
-			return modelid;
+		public String getRoleid() {
+			return roleid;
 		}
-
-		public void setModelid(String modelid) {
-			this.modelid = modelid;
+		public void setRoleid(String roleid) {
+			this.roleid = roleid;
 		}
-		
 }
