@@ -8,9 +8,11 @@ import java.util.List;
 import java.util.Map;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
+import com.usedvehicle.beans.sys_departrole;
 import com.usedvehicle.beans.sys_departs;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
+import com.usedvehicle.dao.sys_departroleMapper;
 import com.usedvehicle.dao.sys_departsMapper;
 import com.usedvehicle.service.Isys_departsService;
 
@@ -21,6 +23,8 @@ import sun.invoke.empty.Empty;
 public class sys_departsServiceImpl implements Isys_departsService{
 	@Autowired
 	private sys_departsMapper sys_departsDao;
+	@Autowired
+	private sys_departroleMapper sys_departroleDao;
 	//@Autowired
 	private pagerHelperRS pagerRs;
 	
@@ -70,5 +74,13 @@ public class sys_departsServiceImpl implements Isys_departsService{
 	@Override
 	public sys_departs serchByID(String id){
 		return sys_departsDao.serchById(id);
+	}
+	@Override
+	public boolean adddepartroles(String departid, List<sys_departrole> lstdepartrole) {
+		sys_departroleDao.delByDepartid(departid);
+		for (sys_departrole one : lstdepartrole) {
+			sys_departroleDao.adddepartrole(one);
+		}
+		return true;
 	}
 }

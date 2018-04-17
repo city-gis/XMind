@@ -6,7 +6,9 @@ import java.util.Map;
 import org.aspectj.weaver.ast.Var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,6 +18,8 @@ import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
 import com.usedvehicle.service.Isys_departsService;
+import com.usedvehicle.vo.sys_departrole_vo;
+import com.usedvehicle.vo.sys_userform;
 
 @Controller
 @RequestMapping("sys_departs")
@@ -137,6 +141,26 @@ public class sys_departsController {
 		} catch (Exception e) {
 			message.setMst(1);
 			message.setMsg("删除菜单功能失败！"+e.getMessage());
+		}
+		return message;
+	}
+	
+	@RequestMapping(value= "updateroles.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object updateroles(@RequestBody sys_departrole_vo modelform) {
+		messageHelper message= new messageHelper();
+		try {
+			boolean result= sys_departsService.adddepartroles(modelform.getDepartid(), modelform.getLstsys_departrole());
+			 if(result){
+				message.setMst(0);
+				message.setMsg("调整菜单功能成功！");
+			 }else{
+				message.setMst(1);
+				message.setMsg("调整菜单功能失败！");
+			 }
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("调整菜单功能失败！"+e.getMessage());
 		}
 		return message;
 	}

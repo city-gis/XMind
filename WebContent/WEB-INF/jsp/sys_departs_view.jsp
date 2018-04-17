@@ -26,6 +26,7 @@
 <!-- Sweet Alert -->
 <link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
 <link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="../css/layui.css" rel="stylesheet">
 <base target="_blank">
 <style>
 .jstree-open>.jstree-anchor>.fa-folder:before {
@@ -59,7 +60,9 @@
 							style="padding: 5px 15px;" onclick="fnEdit();"
 							href="javascript:void(0);"><i class="fa fa-edit"></i> 修改</a> <a
 							style="padding: 5px 15px;" onclick="fnDel();"
-							href="javascript:void(0);"><i class="fa fa-trash"></i> 删除</a>
+							href="javascript:void(0);"><i class="fa fa-trash"></i> 删除</a><a
+							style="padding: 5px 15px;" onclick="fnSetBtn();"
+							href="javascript:void(0);"><i class="fa fa-cogs"></i> 分配角色</a>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 							</a>
@@ -95,6 +98,12 @@
 				</div>
 			</div>
 		</div>
+		
+		
+	<div class="jqGrid_wrapper" id="menu_showwin" style="display:none;">
+		<table id="table_list_alert"></table>
+		<!-- <div id="pager_list_2"></div> -->
+	</div>
 		<script src="../js/jquery.min.js?v=2.1.4"></script>
 		<script src="../js/bootstrap.min.js?v=3.3.5"></script>
 		<script src="../js/content.min.js?v=1.0.0"></script>
@@ -105,6 +114,7 @@
 		<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
     	<script src="../js/plugins/toastr/toastr.min.js"></script>
     	<script src="../js/page/sys_departs_view.js"></script>
+	<script type="text/javascript" src="../js/plugins/lay/layui.js" charset="UTF-8"></script>
 </body>
 
 </html>
