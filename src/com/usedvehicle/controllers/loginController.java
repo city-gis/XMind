@@ -18,6 +18,7 @@ import com.usedvehicle.auth.AuthPassport;
 import com.usedvehicle.beans.sys_users;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.service.Isys_usersService;
+import com.usedvehicle.vo.sys_users_session_enum;
 
 @Controller
 public class loginController {
@@ -40,7 +41,7 @@ public class loginController {
 		messageHelper message = new messageHelper();
 		try {
 			HttpSession session=request.getSession();
-			String codes = (String) session.getAttribute("randCode");
+			String codes = (String) session.getAttribute(sys_users_session_enum.randCode.toString());
 			if (!code.toLowerCase().trim().equals(codes.toLowerCase())) {
 				message.setMst(1);
 				message.setMsg("验证码错误！");
@@ -53,7 +54,8 @@ public class loginController {
 			} else {
 				if (sys_user.getPassword().equals(pwd)) {
 					// 正常登录
-					session.setAttribute("user", sys_user);
+					session.setAttribute(sys_users_session_enum.userid.toString(), sys_user.getUserid());
+					session.setAttribute(sys_users_session_enum.username.toString(), sys_user.getUsername());
 					message.setMst(0);
 					message.setMsg("登录成功！");
 				} else {

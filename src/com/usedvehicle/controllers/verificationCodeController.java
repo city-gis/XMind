@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.usedvehicle.common.ResourceUtil;
+import com.usedvehicle.vo.sys_users_session_enum;
 
 
 @Controller
@@ -101,7 +102,7 @@ public class verificationCodeController {
                 }
                 System.out.println("直接输出："+resultCode);
                 // 将认证码存入SESSION
-                request.getSession().setAttribute(SESSION_KEY_OF_RAND_CODE, resultCode);
+                request.getSession().setAttribute(sys_users_session_enum.randCode.toString(), resultCode);
                 // 图象生效
                 graphics.dispose();
 

@@ -23,7 +23,7 @@
                 <p class="message">短信登录</p>
             </div>
             <div class="form1">
-            	<form id="formAcountLogin" action="sys/login_post.do" method="post">
+            	<form id="formAcountLogin" action="{pageContext.request.contextPath}/sys_login/login_post.do" method="post">
 	                <p class="p-input pos">
 	                    <label for="num">手机号/用户名/UID/邮箱</label>
 	                    <input type="text" id="num">

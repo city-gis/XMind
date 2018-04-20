@@ -1,7 +1,7 @@
 $(function() {
 	var dataResult;
 	$.ajax({
-		url : 'sys_models/models_Tree.do',
+		url : '../sys_models/models_Tree.do',
 		type : 'get',
 		dataType : 'json',
 		async : false,
@@ -34,7 +34,7 @@ $(function() {
 	    	if(one.children.length==0){
 	    		for(var j=0;j<json.length;j++){
 	    			if(json[i].id==dataResult[j].id){
-		    			$("#"+one.a_attr.id).attr("href",dataResult[j].url);
+		    			$("#"+one.a_attr.id).attr("href","../"+dataResult[j].url);
 		    			break;
 	    			}
 	    		}
@@ -58,7 +58,7 @@ $(function() {
 	    	if(one.children.length==0){
 	    		for(var j=0;j<json.length;j++){
 	    			if(json[i].id==dataResult[j].id){
-		    			$("#"+one.a_attr.id).attr("href",dataResult[j].url);
+		    			$("#"+one.a_attr.id).attr("href","../"+dataResult[j].url);
 		    			break;
 	    			}
 	    		}

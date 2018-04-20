@@ -184,12 +184,13 @@ $(function(){
 			            async: true,
 			            data: ldata,
 			            success:function(data){
+			            	console.log(data);
 			                if (data.mst == '0') {
 			                    // globalTip({'msg':'登录成功!','setTime':3,'jump':true,'URL':'http://www.ui.cn'});
 			                    //globalTip(data.msg);
 			                	//登录成功处理事件
-			                	//alert("登录成功");
-			                	window.location.href='index.do';
+			                	alert("登录成功");
+			                	window.location.href='sys/index.do';
 			                } else if(data.mst == '1') {
 			                	$(".log-btn").off('click').addClass("off");
 			                    $('.pass-err').removeClass('hide').find('em').text(data.msg);
