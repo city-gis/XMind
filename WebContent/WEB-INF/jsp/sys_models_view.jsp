@@ -121,12 +121,19 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	
+	
 	
 	<div class="jqGrid_wrapper" id="menu_showwin" style="display:none;">
 		<table id="table_list_alert"></table>
 		<!-- <div id="pager_list_2"></div> -->
 	</div>
+	
+	
+	
+	</div>
+	
+	
     
 	<script src="../js/jquery.min.js?v=2.1.4"></script>
 	<script src="../js/bootstrap.min.js?v=3.3.5"></script>
@@ -444,6 +451,82 @@
 					//swal("删除失败！", "请联系管理员", "error");
 				}
 			}
+			
+			/*
+			设置方法
+			*/
+			function fnSetFuncBtn(){
+				var ids = $("#table_list_2").jqGrid("getGridParam", "selarrrow");
+				if (ids.length == 1) {
+					var rowid = $("#table_list_2").jqGrid("getGridParam","selrow");
+					var rowData = $("#table_list_2").jqGrid('getRowData',rowid);
+					var modelid=rowData.modelid;
+					setfunc(modelid);
+				} else {
+					toastr.error("你没有选取或者选取为多行数据");
+				}
+				return false;
+			}
+			function setfunc(id){
+				layui.use('layer', function () { //独立版的layer无需执行这一句
+		            var layer = layui.layer; //独立版的layer无需执行这一句
+		            layer.open({
+		                type: 1
+		                , anim: 5
+		                , isOutAnim: false
+		                , offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+		                , id: "divShowLayer"  //防止重复弹出
+		                , content:$("#menu_showwin")
+		                , area: [700 + 'px', 500 + 'px']
+		                ,btn: ['确定', '取消']
+		                , btnAlign: 'c' //按钮居中
+		                , shade: 0 //不显示遮罩
+		                ,yes: function () {
+		                    //先保存数据，
+		                    //$('#table_list_alert').jqGrid('getGridParam','selarrrow');
+		                    //$('#table_list_alert').saveRow();
+		                    $('#table_list_alert').jqGrid('saveRow',lastSel);//写在保存方法里  
+		                    var ids=$('#table_list_alert').jqGrid('getGridParam','selarrrow');
+		                    var modelid=$('#table_list_2').jqGrid('getGridParam','selrow');
+		                    var rowDatas = $('#table_list_2').jqGrid('getRowData',modelid);
+		                    var datas=[];
+		                    for(var i=0;i<ids.length;i++){
+		                    	var rowData = $("#table_list_alert").jqGrid('getRowData',ids[i]);
+		                    	var rowone={};
+		                    	rowone.action=rowData.action;
+		                    	rowone.menuid=rowData.menuid;
+		                    	rowone.modelid=rowDatas.modelid;
+		                    	rowone.modelmenuid="";
+		                    	datas.push(rowone);
+		                    }
+		                    //console.log(datas);
+		                    $.ajax({
+								type : "POST",
+								url : "../sys_models/updateMenus.do",
+								data : JSON.stringify({"sys_modelmenuss":datas,"modelid":rowDatas.modelid}),
+								dataType : "json", 
+								contentType: 'application/json',
+								headers : {  
+			                        'Content-Type' : 'application/json;charset=utf-8'  
+			                    },
+								success : function(data) {
+									messageHelper(data, reloadGrid());
+				                    //然后关闭
+				                    layer.closeAll();
+								}
+							});
+		                },
+		                btn2: function(index, layero){
+		                	layer.closeAll();
+		                },
+		                success: function (layero, index) {
+		                   
+		                }
+		            });
+		        });
+			}
+			
+			
 		</script>
 	<script>
 	var lastSel;//在顶部定义  
