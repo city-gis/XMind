@@ -9,11 +9,13 @@ import java.util.Map;
 
 import com.sun.org.apache.bcel.internal.generic.NEW;
 import com.usedvehicle.beans.sys_rolemodel;
+import com.usedvehicle.beans.sys_rolemodelfunc;
 import com.usedvehicle.beans.sys_rolemodelmenu;
 import com.usedvehicle.beans.sys_roles;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
 import com.usedvehicle.dao.sys_rolemodelMapper;
+import com.usedvehicle.dao.sys_rolemodelfuncMapper;
 import com.usedvehicle.dao.sys_rolemodelmenuMapper;
 import com.usedvehicle.dao.sys_rolesMapper;
 import com.usedvehicle.service.Isys_rolesService;
@@ -29,6 +31,8 @@ public class sys_rolesServiceImpl implements Isys_rolesService{
 	private sys_rolemodelMapper sys_rolemodelDao;
 	@Autowired
 	private sys_rolemodelmenuMapper sys_rolemodelmenuDao;
+	@Autowired
+	private sys_rolemodelfuncMapper sys_rolemodelfuncDao;
 	//@Autowired
 	private pagerHelperRS pagerRs;
 	
@@ -103,5 +107,17 @@ public class sys_rolesServiceImpl implements Isys_rolesService{
 	@Override
 	public List<sys_rolemodelmenu> selectRoleModelMenus(String roleid) {
 		return sys_rolemodelmenuDao.selectByRoleid(roleid);
+	}
+	@Override
+	public boolean updateRoleModelfuncs(String roleid, List<sys_rolemodelfunc> lstrolemodelfunc) {
+		sys_rolemodelfuncDao.delByID(roleid);
+		for (sys_rolemodelfunc one : lstrolemodelfunc) {
+			sys_rolemodelfuncDao.addone(one);
+		}
+		return true;
+	}
+	@Override
+	public List<sys_rolemodelfunc> selectRoleModelfuncs(String roleid) {
+		return sys_rolemodelfuncDao.selectByRoleid(roleid);
 	}
 }

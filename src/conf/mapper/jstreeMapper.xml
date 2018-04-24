@@ -15,4 +15,10 @@
     <select id="role_tree" resultMap="voResultMap" >
    		SELECT roleid as id ,rolename as `text`,'fa fa-users' as icon,'' as url,'#'  as `parent` FROM sys_roles 
   	</select>
+  	
+    <select id="modelfunc_tree" resultMap="voResultMap" >
+   		select modelid as id, modelname as `text` ,icon,url,case parentid when '0' then '#' else parentid end  as `parent`  from sys_models 
+		union all
+		select funcid as id, funcname as `text` ,icon,url ,case modelid when '0' then '#' else modelid end  as `parent` from sys_modelfuncs 
+  	</select>
 </mapper>

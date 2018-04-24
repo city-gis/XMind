@@ -15,7 +15,9 @@ import com.usedvehicle.beans.sys_modelfuncs;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
+import com.usedvehicle.service.IjstreeService;
 import com.usedvehicle.service.Isys_modelfuncsService;
+import com.usedvehicle.vo.jstree;
 
 @Controller
 @RequestMapping("sys_modelfuncs")
@@ -23,6 +25,8 @@ public class sys_modelfuncsController {
 
 	@Autowired
 	private Isys_modelfuncsService sys_modelfuncsService;
+	@Autowired
+	private IjstreeService jstreeService;
 	@RequestMapping("queryTreeMenu.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public Object queryMember() {
@@ -32,6 +36,15 @@ public class sys_modelfuncsController {
 		return adminmenus;
 		
 	}
+	
+	@RequestMapping("modelFuncTree.do")//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object modelFuncTree() {
+		List<jstree> jstrees = null;
+		jstrees = jstreeService.modelfunc_tree();
+		return jstrees;
+	}
+	
 	
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {

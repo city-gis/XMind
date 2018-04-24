@@ -69,6 +69,7 @@ $(document).ready(function () {
         hidegrid: false,
         multiselect: true,
     });
+    
     //$("#table_list_2").setSelection(4, true);
     $("#table_list_2").jqGrid("navGrid", "#pager_list_2", {
         edit: false,
@@ -283,6 +284,59 @@ $(document).ready(function () {
     layui.use(['form', 'layedit'], function () {
         var form = layui.form, layer = layui.layer;
     });
+    
+    $("#table_list_alert_funcs").jqGrid({
+        url: "../sys_modelfuncs/serch.do",
+        datatype: "json",
+        height: "auto",
+        width: "100%",
+        autowidth: true,
+        shrinkToFit: true,
+        rowNum: 10,
+        rowList: [10, 20, 30],
+        colNames: ["id", "方法名称", "所在模块","描述"],
+        colModel: [{
+            name: "funcid",
+            index: "funcid",
+            editable: false,
+            width: 60,
+            search: false,
+            hidden: true
+        }, {
+            name: "funcname",
+            index: "funcname",
+            editable: false,
+            width: 200,
+            search: true,
+            formatter: showfuncicon
+        }, {
+            name: "modelid",
+            index: "modelid",
+            editable: false,
+            width: 200,
+            search: true
+        }, {
+            name: "description",
+            index: "description",
+            editable: false,
+            width: 250,
+            search: true
+        }],
+        //pager : "#pager_list_2",
+        viewrecords: true,
+        //caption : "jqGrid 示例2",
+        add: false,
+        edit: false,
+        addtext: "Add",
+        edittext: "Edit",
+        hidegrid: true,
+        multiselect: true,
+        cellEdit: true,
+        cellsubmit: 'clientArray',
+        loadComplete : function() {
+        	//绑定已经分配的方法
+        }
+    });
 });
 function showicon(cellvalue, options, rowObject) {
     return cellvalue + '&nbsp;&nbsp;&nbsp;&nbsp;<i class="' + rowObject.icons + '"></i>';
@@ -417,7 +471,6 @@ function setMebutton(id) {
                      	}
                      }
                  });
-            	
             }
         });
     });
@@ -570,3 +623,98 @@ function messageHelper(data, func) {
         toastr.error(data.msg);
     }
 }
+
+/*
+ * 方法权限设置
+ * */
+function fnSetFuncAu() {
+    var ids = $("#table_list_2").jqGrid("getGridParam", "selarrrow");
+    if (ids.length == 1) {
+        var rowid = $("#table_list_2").jqGrid("getGridParam", "selrow");
+        var rowData = $("#table_list_2").jqGrid('getRowData', rowid);
+        var modelid = rowData.roleid;
+        setbuttonfuncs(modelid);
+    } else {
+        toastr.error("你没有选取或者选取为多行数据");
+    }
+    return false;
+}
+function showfuncicon(cellvalue, options, rowObject){
+	return '<i class="' + rowObject.icon + '"></i>&nbsp;&nbsp;&nbsp;&nbsp;'+cellvalue;
+}
+function setbuttonfuncs(id) {
+    layui.use('layer', function () { //独立版的layer无需执行这一句
+        var layer = layui.layer; //独立版的layer无需执行这一句
+        layer.open({
+            type: 1
+            , anim: 5
+            , isOutAnim: false
+            , offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
+            , id: "divShowLayerfunc" //防止重复弹出
+            , content: $("#menu_funcs"),
+            area: [700 + 'px', 500 + 'px'],
+            btn: ['确定', '取消'],
+            btnAlign: 'c' //按钮居中
+            , shade: 0 //不显示遮罩
+            , yes: function () {
+                //先保存数据，
+                var ids = $('#table_list_alert_funcs').jqGrid('getGridParam', 'selarrrow');
+                var modelid = $('#table_list_2').jqGrid('getGridParam', 'selrow');
+                var rowDatas = $('#table_list_2').jqGrid('getRowData', modelid);
+                var datas = [];
+                for (var i = 0; i < ids.length; i++) {
+                    var rowData = $("#table_list_alert_funcs").jqGrid('getRowData', ids[i]);
+                    var rowone = {};
+                    rowone.modelfuncid = rowData.funcid;
+                    rowone.roleid = rowDatas.roleid;
+                    rowone.rolemodelfuncid = "";
+                    datas.push(rowone);
+                }
+                console.log(datas);
+                $.ajax({
+                    type: "POST",
+                    url: "../sys_roles/updateRoleModelfuncs.do",
+                    data: JSON.stringify({
+                        "sys_rolemodelfuncs": datas, "roleid": rowDatas.roleid
+                    }),
+                    dataType: "json",
+                    contentType: 'application/json',
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    },
+                    success: function (data) {
+                        messageHelper(data, reloadGrid());
+                        //然后关闭
+                        layer.closeAll();
+                    }
+                });
+            },
+            btn2: function (index, layero) {
+                layer.closeAll();
+            },
+            success: function (layero, index) {
+            	$("#table_list_alert_funcs").jqGrid().trigger("reloadGrid"); //重载JQGrid
+                $.ajax({
+                    type: "POST",
+                    url: "../sys_roles/selectRoleModelfuncs.do",
+                    data: {"id":id},
+                    dataType: "json",
+                    success: function (data) {
+                    	setTimeout(function(){
+                    		var RowData=$("#table_list_alert_funcs").getRowData();
+                        	for(var i=0;i<data.data.length;i++){
+    	                    		var one=data.data[i];
+    	                    		for(var j=0;j<RowData.length;j++){
+    	                    			if(RowData[j].funcid==one.modelfuncid){
+    		                    			$("#table_list_alert_funcs").jqGrid('setSelection',j+1);
+    	                    			}
+    	                    		}
+                        	}
+                    	},100)
+                    }
+                });
+            }
+        });
+    });
+}
+

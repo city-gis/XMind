@@ -26,4 +26,10 @@ public class jstreeServiceImpl implements IjstreeService{
 		jstrees = jstreeDao.role_tree();
 		return jstrees;
 	}
+	@Override
+	public List<jstree> modelfunc_tree() {
+		List<jstree> jstrees = null;
+		jstrees = jstreeDao.modelfunc_tree();
+		return jstrees;
+	}
 }

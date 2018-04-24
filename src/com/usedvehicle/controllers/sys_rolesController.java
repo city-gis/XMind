@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.glass.ui.View;
 import com.usedvehicle.beans.sys_rolemodel;
+import com.usedvehicle.beans.sys_rolemodelfunc;
 import com.usedvehicle.beans.sys_rolemodelmenu;
 import com.usedvehicle.beans.sys_roles;
 import com.usedvehicle.common.messageHelper;
@@ -23,6 +24,7 @@ import com.usedvehicle.service.IjstreeService;
 import com.usedvehicle.service.Isys_rolesService;
 import com.usedvehicle.vo.jstree;
 import com.usedvehicle.vo.sys_modelform;
+import com.usedvehicle.vo.sys_rolemodelfuncvo;
 import com.usedvehicle.vo.sys_rolemodelmenuvo;
 import com.usedvehicle.vo.sys_rolemodelvo;
 
@@ -228,6 +230,47 @@ public class sys_rolesController {
 		messageHelper message= new messageHelper();
 		try {
 			List<sys_rolemodelmenu> lstsys_rolemodelmenu= sys_rolesService.selectRoleModelMenus(id);
+				message.setMst(0);
+				message.setMsg("");
+				message.setData(lstsys_rolemodelmenu);
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("查询失败！"+e.getMessage());
+		}
+		return message;
+	}
+	
+	/*
+	 * 角色赋模组按钮权限
+	 * */
+	@RequestMapping(value= "updateRoleModelfuncs.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object updateRoleModelfuncs(@RequestBody sys_rolemodelfuncvo modelform) {
+		messageHelper message= new messageHelper();
+		try {
+			boolean result= sys_rolesService.updateRoleModelfuncs(modelform.getRoleid(), modelform.getSys_rolemodelfuncs());
+			 if(result){
+				message.setMst(0);
+				message.setMsg("调整菜单功能成功！");
+			 }else{
+				message.setMst(1);
+				message.setMsg("调整菜单功能失败！");
+			 }
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("调整菜单功能失败！"+e.getMessage());
+		}
+		return message;
+	}
+	/*
+	 * 通过roleid查询所有模组菜单权限
+	 * */
+	@RequestMapping(value= "selectRoleModelfuncs.do",method={RequestMethod.POST})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object selectRoleModelfuncs(String id) {
+		messageHelper message= new messageHelper();
+		try {
+			List<sys_rolemodelfunc> lstsys_rolemodelmenu= sys_rolesService.selectRoleModelfuncs(id);
 				message.setMst(0);
 				message.setMsg("");
 				message.setData(lstsys_rolemodelmenu);

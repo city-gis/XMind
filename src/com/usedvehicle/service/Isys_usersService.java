@@ -21,4 +21,5 @@ public interface Isys_usersService {
 
 	boolean adduserroles(String userid,List<sys_userrole> sys_userroles);
 	boolean updateuserdeparts(String userid,List<sys_departuser> sys_departusers);
+	int hasAU(String url,String userid);
 }

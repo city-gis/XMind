@@ -102,4 +102,8 @@ public class sys_usersServiceImpl implements Isys_usersService{
 		}
 		return true;
 	}
+	@Override
+	public int hasAU(String url,String roleid) {
+		return sys_usersDao.hasAU(url,roleid);
+	}
 }

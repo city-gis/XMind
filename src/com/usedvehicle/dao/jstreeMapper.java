@@ -12,5 +12,9 @@ public interface jstreeMapper {
 	 * 角色管理列表页面左侧树
 	 * */
     List<jstree>  role_tree();
+	/*
+	 * 角色列表页面方法权限管理
+	 * */
+    List<jstree>  modelfunc_tree();
     
 }

@@ -23,6 +23,7 @@ public class sys_users_session {
 	private  String modifytime;
 	private List<sys_roles> lstRoleid;
 	private List<sys_departs> lstDepartid;
+	//private List<model> lstDepartid;
 	private String randCode;
 	public String getUserid() {
 		return userid;

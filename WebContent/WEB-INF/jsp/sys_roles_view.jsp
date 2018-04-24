@@ -64,7 +64,9 @@
 							style="padding: 5px 15px;" onclick="fnSetMoAu();"
 							href="javascript:void(0);"><i class="fa fa-cogs"></i> 模块权限</a><a
 							style="padding: 5px 15px;" onclick="fnSetMeAu();"
-							href="javascript:void(0);"><i class="fa fa-cogs"></i> 菜单权限</a>
+							href="javascript:void(0);"><i class="fa fa-cogs"></i> 菜单权限</a><a
+							style="padding: 5px 15px;" onclick="fnSetFuncAu();"
+							href="javascript:void(0);"><i class="fa fa-cogs"></i> 方法权限</a>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 							</a>
@@ -108,6 +110,12 @@
 		
 		<div class="jqGrid_wrapper" id="menu_showwin"   style="display: none;" >
 			<table id="table_list_alert_menu"></table>
+			<div id="pager_menu"></div>
+			<!-- <div id="pager_list_2"></div> -->
+		</div>
+		<!-- 方法权限设定 -->
+		<div class="jqGrid_wrapper" id="menu_funcs"   style="display: none;" >
+			<table id="table_list_alert_funcs"></table>
 			<div id="pager_menu"></div>
 			<!-- <div id="pager_list_2"></div> -->
 		</div>
