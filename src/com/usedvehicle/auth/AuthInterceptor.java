@@ -27,23 +27,23 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 					AuthPassport authPassport = ((HandlerMethod) handler).getMethodAnnotation(AuthPassport.class);
 					// 没有声明需要权限,或者声明不验证权限
 					
-					if (authPassport != null && authPassport.validate() == true)
-						return true;
-					else {
-						// 在这里实现自己的权限验证逻辑
-						String userid=(String)session.getAttribute(sys_users_session_enum.userid.toString());
-						 System.out.println("直接输出："+url+"@@"+userid);
-						int result=sys_usersService.hasAU(url,userid);
-						
-						if (result>0)// 如果验证成功返回true（这里直接写false来模拟验证失败的处理）
-							return true;
-						else// 如果验证失败
-						{
-							// 返回到登录界面
-							response.sendRedirect(contextPath+"/404.jsp");
-							return false;
-						}
-					}
+//					if (authPassport != null && authPassport.validate() == true)
+//						return true;
+//					else {
+//						// 在这里实现自己的权限验证逻辑
+//						String userid=(String)session.getAttribute(sys_users_session_enum.userid.toString());
+//						 System.out.println("直接输出："+url+"@@"+userid);
+//						int result=sys_usersService.hasAU(url,userid);
+//						if (result>0)// 如果验证成功返回true（这里直接写false来模拟验证失败的处理）
+//							return true;
+//						else// 如果验证失败
+//						{
+//							// 返回到登录界面
+//							response.sendRedirect(contextPath+"/404.jsp");
+//							return false;
+//						}
+//					}
+					return true;
 				} else{
 					return true;
 				}
@@ -57,6 +57,5 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			response.sendRedirect(contextPath+"/login.jsp");
 			return false;
 		}
-		
 	}
 }

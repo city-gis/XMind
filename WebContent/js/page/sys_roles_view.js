@@ -294,7 +294,7 @@ $(document).ready(function () {
         shrinkToFit: true,
         rowNum: 10,
         rowList: [10, 20, 30],
-        colNames: ["id", "方法名称", "所在模块","描述"],
+        colNames: ["id", "modelid","方法名称", "所在模块","描述"],
         colModel: [{
             name: "funcid",
             index: "funcid",
@@ -303,6 +303,13 @@ $(document).ready(function () {
             search: false,
             hidden: true
         }, {
+            name: "modelid",
+            index: "modelid",
+            editable: false,
+            hidden: true,
+            width: 60,
+            search: false
+        },{
             name: "funcname",
             index: "funcname",
             editable: false,
@@ -310,11 +317,12 @@ $(document).ready(function () {
             search: true,
             formatter: showfuncicon
         }, {
-            name: "modelid",
-            index: "modelid",
+            name: "modelname",
+            index: "modelname",
             editable: false,
             width: 200,
-            search: true
+            search: true,
+            formatter: showfuncgroup
         }, {
             name: "description",
             index: "description",
@@ -333,6 +341,13 @@ $(document).ready(function () {
         multiselect: true,
         cellEdit: true,
         cellsubmit: 'clientArray',
+        sortable: true,
+        sortname: 'funcid', //设置默认的排序列
+        sortorder: 'asc',
+        grouping:true,
+        groupingView : {
+          groupField : ['modelname']
+        },
         loadComplete : function() {
         	//绑定已经分配的方法
         }
@@ -545,7 +560,7 @@ function setbutton(id) {
     	                    			}
     	                    		}
                         	}
-                    	},100)
+                    	},500)
                     }
                 });
             }
@@ -641,6 +656,13 @@ function fnSetFuncAu() {
 }
 function showfuncicon(cellvalue, options, rowObject){
 	return '<i class="' + rowObject.icon + '"></i>&nbsp;&nbsp;&nbsp;&nbsp;'+cellvalue;
+}
+function showfuncgroup(cellvalue, options, rowObject){
+	if(cellvalue && cellvalue!='' ){
+		return cellvalue;
+	}else{
+		return "首页功能";
+	}
 }
 function setbuttonfuncs(id) {
     layui.use('layer', function () { //独立版的layer无需执行这一句

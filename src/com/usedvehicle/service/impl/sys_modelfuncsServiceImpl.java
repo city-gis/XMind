@@ -71,4 +71,5 @@ public class sys_modelfuncsServiceImpl implements Isys_modelfuncsService{
 	public sys_modelfuncs serchByID(String id){
 		return sys_modelfuncsDao.serchById(id);
 	}
+	
 }
