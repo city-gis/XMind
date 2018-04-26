@@ -51,9 +51,31 @@
      </if>
   </select>
 
+  <resultMap id="sys_menusvoMap" type="com.usedvehicle.vo.sys_menusvo" >
+    <id column="menuid" property="menuid" jdbcType="VARCHAR" />
+    <result column="orderby" property="orderby" jdbcType="INTEGER" />
+    <result column="menuname" property="menuname" jdbcType="VARCHAR" />
+    <result column="description" property="description" jdbcType="VARCHAR" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="creatuser" property="creatuser" jdbcType="VARCHAR" />
+    <result column="creattime" property="creattime" jdbcType="VARCHAR" />
+    <result column="modifyuser" property="modifyuser" jdbcType="VARCHAR" />
+    <result column="modifytime" property="modifytime" jdbcType="VARCHAR" />
+    <result column="modelid" property="modelid" jdbcType="VARCHAR" />
+    <result column="modelname" property="modelname" jdbcType="VARCHAR" />
+    <result column="checked" property="checked" jdbcType="VARCHAR" />
+  </resultMap>
+ 
+  <select id="serchwithmodel" resultMap="sys_menusvoMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
+     
+     select menus.*,modelmenu.modelid,models.modelname,case when modelmenu.menuid is null then 'false' else 'true' end  checked FROM sys_menus as menus left join sys_modelmenu as modelmenu on menus.menuid=modelmenu.menuid left join sys_models as models on modelmenu.modelid=models.modelid
+where 1=1 
+     <if test="modelid!=null and modelid !=''">
+      AND modelmenu.modelid= #{modelid,jdbcType=VARCHAR}
+     </if>
+  </select>
   
    <insert id="addone" parameterType="com.usedvehicle.beans.sys_menus" >
-    
    INSERT INTO sys_menus
             (menuid,
              orderby,

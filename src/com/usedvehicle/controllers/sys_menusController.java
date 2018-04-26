@@ -7,15 +7,19 @@ import org.aspectj.weaver.ast.Var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.glass.ui.View;
+import com.usedvehicle.auth.AuthPassport;
 import com.usedvehicle.beans.sys_menus;
+import com.usedvehicle.beans.sys_modelmenu;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
 import com.usedvehicle.service.Isys_menusService;
+import com.usedvehicle.vo.sys_menusvo;
 
 @Controller
 @RequestMapping("sys_menus")
@@ -32,7 +36,7 @@ public class sys_menusController {
 		return adminmenus;
 		
 	}
-	
+	@AuthPassport
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
@@ -40,7 +44,7 @@ public class sys_menusController {
 		return mv;
 	}
 
-	
+	@AuthPassport
 	@RequestMapping("add_view.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
@@ -49,7 +53,7 @@ public class sys_menusController {
 		//View view=mv.getClass();
 		return mv;
 	}
-	
+	@AuthPassport
 	@RequestMapping("edit_view.do")//用於查詢所有的下拉菜單分級顯示
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
@@ -120,6 +124,7 @@ public class sys_menusController {
 			return message;
 		}
 	//分页查询
+	@AuthPassport
 	@RequestMapping("delmenu.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public Object delmenu(String id) {
@@ -139,6 +144,15 @@ public class sys_menusController {
 			message.setMsg("删除菜单功能失败！"+e.getMessage());
 		}
 		return message;
+	}
+	
+	/*
+	 * 通过roleid查询所有模组权限
+	 * */
+	@RequestMapping(value= "serchwithmodel.do",method={RequestMethod.GET})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object serchwithmodel(String modelid) {
+		return sys_menusService.serchwithmodel(modelid);
 	}
 	
 }

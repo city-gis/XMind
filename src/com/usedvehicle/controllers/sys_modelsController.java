@@ -19,6 +19,7 @@ import com.sun.glass.ui.View;
 import com.usedvehicle.auth.AuthPassport;
 import com.usedvehicle.beans.sys_modelmenu;
 import com.usedvehicle.beans.sys_models;
+import com.usedvehicle.beans.sys_rolemodel;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
@@ -47,6 +48,7 @@ public class sys_modelsController {
 	}
 	
 	//@AuthPassport
+	@AuthPassport
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
@@ -54,7 +56,7 @@ public class sys_modelsController {
 		return mv;
 	}
 
-	
+	@AuthPassport
 	@RequestMapping("add_view.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
@@ -63,7 +65,7 @@ public class sys_modelsController {
 		//View view=mv.getClass();
 		return mv;
 	}
-	
+	@AuthPassport
 	@RequestMapping("edit_view.do")//用於查詢所有的下拉菜單分級顯示
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
@@ -134,6 +136,7 @@ public class sys_modelsController {
 			return message;
 		}
 	//分页查询
+	@AuthPassport
 	@RequestMapping("delmenu.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public Object delmenu(String id) {
@@ -185,5 +188,24 @@ public class sys_modelsController {
 	public Object modelmenuswithmenus() {
 		List<sys_modelmenu> sys_modelmenus = sys_modelsService.modelmenuswithmenus();
 		return sys_modelmenus;
+	}
+	
+	/*
+	 * 通过roleid查询所有模组权限
+	 * */
+	@RequestMapping(value= "selectMenus.do",method={RequestMethod.GET})//用於查詢所有的下拉菜單分級顯示
+	@ResponseBody//用於AJAX
+	public Object selectMenus(String modelid) {
+		messageHelper message= new messageHelper();
+		try {
+			List<sys_modelmenu> lstsys_rolemodel= sys_modelsService.getMenus(modelid);
+				message.setMst(0);
+				message.setMsg("");
+				message.setData(lstsys_rolemodel);
+		} catch (Exception e) {
+			message.setMst(1);
+			message.setMsg("查询失败！"+e.getMessage());
+		}
+		return message;
 	}
 }

@@ -120,4 +120,9 @@ public class sys_modelsServiceImpl implements Isys_modelsService{
 //            System.out.print(it.next()+";");  
 //        }   
 //    }  
+	@Override
+	public List<sys_modelmenu> getMenus(String modelid) {
+		// TODO Auto-generated method stub
+		return sys_modelsDao.getMenus(modelid);
+	}
 }

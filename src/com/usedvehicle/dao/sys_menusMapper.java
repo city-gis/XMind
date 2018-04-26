@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 import com.usedvehicle.beans.sys_menus;
 import com.usedvehicle.common.pagerHelperRQ;
+import com.usedvehicle.vo.sys_menusvo;
 
 
 public interface sys_menusMapper {
@@ -19,4 +20,5 @@ public interface sys_menusMapper {
     int addone(sys_menus sys_menus );
     int modify(sys_menus sys_menus );
     sys_menus serchById(@Param("id") String id);
+    List<sys_menusvo> serchwithmodel(@Param("modelid") String modelid);
 }

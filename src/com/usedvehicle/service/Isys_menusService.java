@@ -6,6 +6,7 @@ import java.util.Map;
 import com.usedvehicle.beans.sys_menus;
 import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
+import com.usedvehicle.vo.sys_menusvo;
 
 public interface Isys_menusService {
 	List<sys_menus>  queryAll();
@@ -17,4 +18,5 @@ public interface Isys_menusService {
 	int addone(sys_menus menu);
 	int modify(sys_menus menu);
 	sys_menus serchByID(String id);
+	List<sys_menusvo> serchwithmodel(String modelid);
 }

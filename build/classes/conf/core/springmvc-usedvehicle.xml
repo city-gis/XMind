@@ -37,27 +37,20 @@
     </bean>
     
     <!-- 注册拦截器 -->
-    <mvc:interceptors>
-    	<!-- 拦截所有的用户请求 -->
-    	<mvc:interceptor>
-    		<mvc:mapping path="/**"/>
-    		<bean class="com.usedvehicle.listeners.RequestHandlerIntercetpor" />
-    	</mvc:interceptor>
-    
-    </mvc:interceptors>
+   	<mvc:interceptors>
+   		<mvc:interceptor>
+   			<mvc:mapping path="/*/*"/><!-- 进行拦截的路径 -->
+   			<mvc:exclude-mapping path="/verificationCode/generate.do"/><!-- 不进行拦截的路径 -->
+   			<bean class="com.usedvehicle.auth.AuthInterceptor"/>
+   		</mvc:interceptor>
+   	</mvc:interceptors>
     
     <!-- 注册切面类 -->
     <bean id="controllAspect" class="com.usedvehicle.aop.HandlerResultAopAfterAdvice" />
     <!-- 注册自动代理生成器 -->
     <aop:aspectj-autoproxy />
     
-        <mvc:interceptors>  
-	    <!-- 国际化操作拦截器 如果采用基于（请求/Session/Cookie）则必需配置 --> 
-	    <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />  
-	    <!-- 如果不定义 mvc:mapping path 将拦截所有的URL请求 -->
-	    <bean class="com.usedvehicle.auth.AuthInterceptor"></bean>
-	</mvc:interceptors>
-        <!-- 如果当前请求为“/”时，则转发到“/helloworld/index" -->
-	<mvc:view-controller path="/" view-name="forward:/ssm-usedvehicle/nextjsp.do"/>
+    <!-- 如果当前请求为“/”时，则转发到“/helloworld/index" -->
+	<mvc:view-controller path="/" view-name="forward:/ssm-usedvehicle/login.do"/>
     
 </beans>

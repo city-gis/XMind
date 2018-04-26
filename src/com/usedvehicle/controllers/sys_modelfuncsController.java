@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.sun.glass.ui.View;
+import com.usedvehicle.auth.AuthPassport;
 import com.usedvehicle.beans.sys_modelfuncs;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.common.pagerHelperRQ;
@@ -45,7 +46,7 @@ public class sys_modelfuncsController {
 		return jstrees;
 	}
 	
-	
+	@AuthPassport
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
@@ -53,7 +54,7 @@ public class sys_modelfuncsController {
 		return mv;
 	}
 
-	
+	@AuthPassport
 	@RequestMapping("add_view.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
@@ -62,7 +63,7 @@ public class sys_modelfuncsController {
 		//View view=mv.getClass();
 		return mv;
 	}
-	
+	@AuthPassport
 	@RequestMapping("edit_view.do")//用於查詢所有的下拉菜單分級顯示
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
@@ -133,6 +134,7 @@ public class sys_modelfuncsController {
 			return message;
 		}
 	//分页查询
+	@AuthPassport
 	@RequestMapping("delmenu.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX
 	public Object delmenu(String id) {

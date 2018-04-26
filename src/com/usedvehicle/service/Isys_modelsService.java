@@ -23,5 +23,6 @@ public interface Isys_modelsService {
 	boolean addmodelmenus(String modelid,List<sys_modelmenu> lstmodelmenu);
 //	List<sys_models_gridtree> serchModelGridTree();
     List<sys_modelmenu> modelmenuswithmenus();//
+    List<sys_modelmenu> getMenus(String modelid);
 	
 }

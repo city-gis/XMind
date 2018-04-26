@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.usedvehicle.auth.AuthPassport;
 import com.usedvehicle.beans.sys_users;
 import com.usedvehicle.common.messageHelper;
 import com.usedvehicle.service.Isys_usersService;

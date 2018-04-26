@@ -13,6 +13,7 @@ import com.usedvehicle.common.pagerHelperRQ;
 import com.usedvehicle.common.pagerHelperRS;
 import com.usedvehicle.dao.sys_menusMapper;
 import com.usedvehicle.service.Isys_menusService;
+import com.usedvehicle.vo.sys_menusvo;
 
 import sun.invoke.empty.Empty;
 
@@ -70,5 +71,10 @@ public class sys_menusServiceImpl implements Isys_menusService{
 	@Override
 	public sys_menus serchByID(String id){
 		return sys_menusDao.serchById(id);
+	}
+	@Override
+	public List<sys_menusvo> serchwithmodel(String modelid) {
+		
+		return sys_menusDao.serchwithmodel(modelid);
 	}
 }

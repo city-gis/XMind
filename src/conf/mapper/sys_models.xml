@@ -66,6 +66,13 @@
      </if>
   </select>
 
+   <select id="getMenus" resultMap="modelmenuswithmenusMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
+     
+     select * FROM sys_modelmenu where 1=1 
+     <if test="modelid!=null and modelid !=''">
+      AND modelid= #{modelid,jdbcType=VARCHAR}
+     </if>
+  </select>
 
 <!-- <resultMap id="models_gridtreeMap" type="com.usedvehicle.vo.sys_models_gridtree" >
     <id column="id" property="id" jdbcType="VARCHAR" />

@@ -33,4 +33,8 @@ public interface sys_modelsMapper {
      * 通过modelid删除所有对应的按钮
      * */
     List<sys_modelmenu> modelmenuswithmenus();//
+    /*
+     * 通过modelid删除所有对应的按钮
+     * */
+    List<sys_modelmenu> getMenus(@Param("modelid") String modelid);//
 }
