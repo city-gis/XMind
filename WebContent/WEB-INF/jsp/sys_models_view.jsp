@@ -77,14 +77,14 @@
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
 						<h5>模块列表</h5>
-						<a style="padding: 5px 15px;" onclick="fnAdd();"
+						<div id="ibox-menus"><a style="padding: 5px 15px;" onclick="fnAdd();"
 							href="javascript:void(0);"><i class="fa fa-plus"></i> 新增</a> <a
 							style="padding: 5px 15px;" onclick="fnEdit();"
 							href="javascript:void(0);"><i class="fa fa-edit"></i> 修改</a> <a
 							style="padding: 5px 15px;" onclick="fnDel();"
 							href="javascript:void(0);"><i class="fa fa-trash"></i> 删除</a> <a
 							style="padding: 5px 15px;" onclick="fnSetBtn();"
-							href="javascript:void(0);"><i class="fa fa-cogs"></i> 设置按钮</a>
+							href="javascript:void(0);"><i class="fa fa-cogs"></i> 设置按钮</a></div>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 							</a>

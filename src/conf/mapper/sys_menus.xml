@@ -63,17 +63,38 @@
     <result column="modifytime" property="modifytime" jdbcType="VARCHAR" />
     <result column="modelid" property="modelid" jdbcType="VARCHAR" />
     <result column="modelname" property="modelname" jdbcType="VARCHAR" />
+    <result column="action" property="action" jdbcType="VARCHAR" />
     <result column="checked" property="checked" jdbcType="VARCHAR" />
+    <result column="jsfunc" property="jsfunc" jdbcType="VARCHAR" />
   </resultMap>
  
   <select id="serchwithmodel" resultMap="sys_menusvoMap" ><!-- where name like #{name,jdbcType=VARCHAR} -->
      
-     select menus.*,modelmenu.modelid,models.modelname,case when modelmenu.menuid is null then 'false' else 'true' end  checked FROM sys_menus as menus left join sys_modelmenu as modelmenu on menus.menuid=modelmenu.menuid left join sys_models as models on modelmenu.modelid=models.modelid
-where 1=1 
+    select menus.*,modelmenu.modelid,models.modelname,modelmenu.action,modelmenu.jsfunc,case when modelmenu.menuid is null then 'false' else 'true' end  checked FROM sys_menus as menus left join 
+(select *from  sys_modelmenu where 1=1 
+ <if test="modelid!=null and modelid !=''">
+      AND modelid=  #{modelid,jdbcType=VARCHAR}
+     </if>
+) as modelmenu 
+on menus.menuid=modelmenu.menuid 
+left join sys_models as models 
+on modelmenu.modelid=models.modelid
      <if test="modelid!=null and modelid !=''">
       AND modelmenu.modelid= #{modelid,jdbcType=VARCHAR}
      </if>
   </select>
+  
+  
+<select id="serchWithPage" resultMap="BaseResultMap" >
+     select menus.*from sys_menus as menus left join sys_rolemodelmenu as rmm on menus.menuid= rmm.menuid left join sys_userrole as ur on rmm.roleid=ur.roleid where 1=1 
+     <if test="modelid!=null and modelid !=''">
+      AND rmm.modelid= #{modelid,jdbcType=VARCHAR}
+     </if>
+      <if test="userid!=null and userid !=''">
+      AND ur.userid= #{userid,jdbcType=VARCHAR}
+     </if>
+  </select>
+  
   
    <insert id="addone" parameterType="com.usedvehicle.beans.sys_menus" >
    INSERT INTO sys_menus

@@ -77,4 +77,9 @@ public class sys_menusServiceImpl implements Isys_menusService{
 		
 		return sys_menusDao.serchwithmodel(modelid);
 	}
+	@Override
+	public List<sys_menus> serchWithPage(String modelid, String userid) {
+		
+		return sys_menusDao.serchWithPage(modelid,userid);
+	}
 }

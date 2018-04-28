@@ -138,12 +138,14 @@
             (modelmenuid,
             modelid,
              menuid,
-             action)
+             action,
+             jsfunc)
     values (
     UUID()
     ,#{modelid,jdbcType=VARCHAR}
     ,#{menuid,jdbcType=VARCHAR}
     ,#{action,jdbcType=VARCHAR}
+    ,#{jsfunc,jdbcType=VARCHAR}
     )
   </insert> 
      <delete id="delBymodelID" >

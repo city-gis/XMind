@@ -13,6 +13,8 @@ public class sys_menusvo {
 	private String modelid;
 	private String modelname;
 	private String checked;
+	private String action;
+	private String jsfunc;
 	public String getMenuid() {
 		return menuid;
 	}
@@ -84,6 +86,18 @@ public class sys_menusvo {
 	}
 	public void setChecked(String checked) {
 		this.checked = checked;
+	}
+	public String getAction() {
+		return action;
+	}
+	public void setAction(String action) {
+		this.action = action;
+	}
+	public String getJsfunc() {
+		return jsfunc;
+	}
+	public void setJsfunc(String jsfunc) {
+		this.jsfunc = jsfunc;
 	}
 
 }

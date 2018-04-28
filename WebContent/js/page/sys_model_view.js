@@ -123,6 +123,90 @@ $(document).ready(
 							height : 250,
 							reloadAfterSubmit : true
 						});
+						
+						 $("#table_list_alert").jqGrid({
+		            			url : "../sys_menus/serch.do",
+		            			datatype : "json",
+		            			height : "auto",
+		            			width : "100%",
+		            			autowidth : true,
+		            			shrinkToFit : true,
+		            			rowNum : 10,
+		            			rowList : [ 10, 20, 30 ],
+		            			colNames : [ "id","checked", "菜单名称", "描述","url","js方法"],
+		            			colModel : [{
+		            				name : "menuid",
+		            				index : "menuid",
+		            				editable : false,
+		            				width : 60,
+		            				search : false,
+		            				hidden:true
+		            			},{
+		            				name : "checked",
+		            				index : "checked",
+		            				editable : false,
+		            				width : 60,
+		            				search : false,
+		            				hidden:true
+		            			},{
+		            				name : "menuname",
+		            				index : "menuname",
+		            				editable : false,
+		            				width : 100,
+		            				search : true,
+		            				formatter:showicon
+		            			},{
+		            				name : "description",
+		            				index : "description",
+		            				editable : false,
+		            				width : 200,
+		            				search : true
+		            			},{
+		            				name : "action",
+		            				index : "action",
+		            				editable : true,
+		            				width : 150,
+		            				search : true,
+		            				editable:true
+		            			},{
+		            				name : "jsfunc",
+		            				index : "jsfunc",
+		            				editable : true,
+		            				width : 150,
+		            				search : true,
+		            				editable:true
+		            			}],
+		            			//pager : "#pager_list_2",
+		            			viewrecords : true,
+		            			//caption : "jqGrid 示例2",
+		            			add : false,
+		            			edit : false,
+		            			addtext : "Add",
+		            			edittext : "Edit",
+		            			hidegrid : true,
+		            			multiselect : true,  
+		            			cellEdit: true,
+		            		    cellsubmit: 'clientArray',
+		            		    beforeSelectRow:function(id){  
+		            	            if(id && id!==lastSel){     
+		            	                $('#table_list_alert').jqGrid('saveRow',lastSel);  
+		            	                lastSel=id;
+		            	            }
+		            	            $('#table_list_alert').editRow(id, true);
+		            	        },//加上grid代码处。  
+		            	        gridComplete:function(){
+		            	        	var RowData=$("#table_list_alert").getDataIDs();
+		            	        	if(RowData){
+			            	        	for(var i=0;i<RowData.length;i++){
+			            	        		var data=$("#table_list_alert").getRowData(RowData[i]);
+			            	        		if(data && data["checked"]=="true"){
+			            	        			$("#table_list_alert").jqGrid('setSelection',RowData[i]);
+			            	        		}
+			            	        	}
+		            	        	}
+		            	        }
+		            		});
+						
 						$(window).bind("resize", function() {
 							var width = $(".jqGrid_wrapper").width();
 							$("#table_list_2").setGridWidth(width);
@@ -195,12 +279,12 @@ $(document).ready(
 		                    	var rowData = $("#table_list_alert").jqGrid('getRowData',ids[i]);
 		                    	var rowone={};
 		                    	rowone.action=rowData.action;
+		                    	rowone.jsfunc=rowData.jsfunc;
 		                    	rowone.menuid=rowData.menuid;
 		                    	rowone.modelid=rowDatas.modelid;
 		                    	rowone.modelmenuid="";
 		                    	datas.push(rowone);
 		                    }
-		                    //console.log(datas);
 		                    $.ajax({
 								type : "POST",
 								url : "../sys_models/updateMenus.do",
@@ -223,85 +307,12 @@ $(document).ready(
 		                success: function (layero, index) {
 		                	var modelid=$('#table_list_2').jqGrid('getGridParam','selrow');
 		                    var rowDatas = $('#table_list_2').jqGrid('getRowData',modelid);
-		                    $("#table_list_alert").jqGrid({
-		            			url : "../sys_menus/serchwithmodel.do?modelid="+rowDatas.modelid,
-		            			datatype : "json",
-		            			height : "auto",
-		            			width : "100%",
-		            			autowidth : true,
-		            			shrinkToFit : true,
-		            			rowNum : 10,
-		            			rowList : [ 10, 20, 30 ],
-		            			colNames : [ "id", "菜单名称", "描述","对应方法"],
-		            			colModel : [{
-		            				name : "menuid",
-		            				index : "menuid",
-		            				editable : false,
-		            				width : 60,
-		            				search : false,
-		            				hidden:true
-		            			},{
-		            				name : "menuname",
-		            				index : "menuname",
-		            				editable : false,
-		            				width : 200,
-		            				search : true,
-		            				formatter:showicon
-		            			},{
-		            				name : "description",
-		            				index : "description",
-		            				editable : false,
-		            				width : 250,
-		            				search : true
-		            			},{
-		            				name : "action",
-		            				index : "",
-		            				editable : true,
-		            				width : 200,
-		            				search : true,
-		            				editable:true
-		            			}],
-		            			//pager : "#pager_list_2",
-		            			viewrecords : true,
-		            			//caption : "jqGrid 示例2",
-		            			add : false,
-		            			edit : false,
-		            			addtext : "Add",
-		            			edittext : "Edit",
-		            			hidegrid : true,
-		            			multiselect : true,  
-		            			cellEdit: true,
-		            		    cellsubmit: 'clientArray',
-		            		    beforeSelectRow:function(id){  
-		            	            if(id && id!==lastSel){     
-		            	                $('#table_list_alert').jqGrid('saveRow',lastSel);  
-		            	                lastSel=id;
-		            	            }
-		            	            $('#table_list_alert').editRow(id, true);
-		            	        }//加上grid代码处。  
-		            		});
-		                	$("#table_list_alert").jqGrid().trigger("reloadGrid",[{url:"../sys_menus/serchwithmodel.do?modelid="+rowDatas.modelid}]);  //重载JQGrid
-//		                	$.ajax({
-//					             type: "GET",
-//					             url : "../sys_models/selectMenus.do",
-//					             data: {modelid:rowDatas.modelid},
-//					             dataType: "json",
-//					             success: function(data){
-//					            	 setTimeout(function(){
-//											var RowData=$("#table_list_alert").getRowData();
-//											if(data.data){
-//												for(var i=0;i<data.data.length;i++){
-//				    	                    		var one=data.data[i];
-//				    	                    		for(var j=0;j<RowData.length;j++){
-//				    	                    			if(RowData[j].menuid==one.menuid){
-//				    		                    			$("#table_list_alert").jqGrid('setSelection',j+1);
-//				    	                    			}
-//				    	                    		}
-//												}
-//											}
-//										},500);
-//					             }
-//					         });
+		                    $("#table_list_alert").setGridParam( //G,P要大写
+		                    	    {
+		                    	    url:"../sys_menus/serchwithmodel.do",
+		                    	    postData:{modelid:rowDatas.modelid}
+		                    	    }
+		                    	) .trigger("reloadGrid");
 		                }
 		            });
 		        });

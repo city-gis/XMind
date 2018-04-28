@@ -21,4 +21,5 @@ public interface sys_menusMapper {
     int modify(sys_menus sys_menus );
     sys_menus serchById(@Param("id") String id);
     List<sys_menusvo> serchwithmodel(@Param("modelid") String modelid);
+    List<sys_menus> serchWithPage(@Param("modelid") String modelid,@Param("userid")  String userid);
 }
