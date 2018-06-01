@@ -1,22 +1,4 @@
 $(document).ready(function () {
-    /*
-    初始化消息提示
-    */
-    toastr.options = {
-        "closeButton": true,
-        "debug": false,
-        "progressBar": false,
-        "positionClass": "toast-top-center",
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "5000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    };
     $.jgrid.defaults.styleUI = "Bootstrap";
     $("#table_list_2").jqGrid({
         url: "../sys_menus/serch.do",
@@ -77,9 +59,9 @@ $(document).ready(function () {
     });
     //$("#table_list_2").setSelection(4, true);
     $("#table_list_2").jqGrid("navGrid", "#pager_list_2", {
-        edit: true,
-        add: true,
-        del: true,
+        edit: false,
+        add: false,
+        del: false,
         search: true,
         editfunc: function (id) {
             var idStr = "#" + id;
@@ -115,35 +97,52 @@ function showStatue(cellvalue, options, rowObject) {
         return '<span class="label label-warning">禁用</span>';
     }
 }
+
 /**
 删除
  */
+function del() {
+    var ids = $("#table_list_2").jqGrid("getGridParam", "selarrrow");
+    if (ids.length == 1) {
+        var rowid = $("#table_list_2").jqGrid("getGridParam", "selrow");
+        var rowData = $("#table_list_2").jqGrid('getRowData', rowid);
+        var modelid = rowData.menuid;
+        deldata(modelid);
+    } else {
+        toastr.error("你没有选取或者选取为多行数据");
+    }
+    return false;
+}
 function deldata(id) {
-    swal({
-        title: "您确定要删除这条信息吗",
-        text: "删除后将无法恢复，请谨慎操作！",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "删除",
-        closeOnConfirm: false
-    }, function () {
-        $.ajax({
+	Tool.delTipWin("删除数据后将无法恢复，确认删除？",function(){
+    	$.ajax({
             type: "GET",
             url: "../sys_menus/delmenu.do",
             data: { id: id },
             dataType: "json",
             success: function (data) {
-                messageHelper(data, reloadGrid());
+            	Tool.layer.closeAll();
+            	Tool.messageHelper(data, reloadGrid());
             }
         });
-    });
+	});
 }
 /**
 修改
  */
+function edit() {
+    var ids = $("#table_list_2").jqGrid("getGridParam", "selarrrow");
+    if (ids.length == 1) {
+        var rowid = $("#table_list_2").jqGrid("getGridParam", "selrow");
+        var rowData = $("#table_list_2").jqGrid('getRowData', rowid);
+        var modelid = rowData.menuid;
+        editdata(modelid);
+    } else {
+        toastr.error("你没有选取或者选取为多行数据");
+    }
+    return false;
+}
 function editdata(id) {
-    //alert(id);
     $("#frameView").attr("src", "../sys_menus/edit_view.do?id=" + id);
     $('#addmodal').modal({
         keyboard: true
@@ -152,6 +151,9 @@ function editdata(id) {
 /**
 新增
  */
+function add(){
+	adddata();
+}
 function adddata() {
     $("#frameView").attr("src", "../sys_menus/add_view.do");
     $('#addmodal').modal({
@@ -160,21 +162,6 @@ function adddata() {
 }
 //刷新grid
 function reloadGrid() {
-    //alert(1);
     var page = $("#table_list_2").jqGrid("getGridParam", "page");
     $("#table_list_2").jqGrid().trigger("reloadGrid", [{ page: page }]);  //重载JQGrid
-}
-function messageHelper(data, func) {
-    if (data.mst == 0) {
-        swal.close();
-        toastr.success(data.msg);
-        //swal("删除成功！", "您已经永久删除了这条信息。", "success");
-        //reloadGrid();
-        if (func) {
-            func();
-        }
-    } else {
-        toastr.error(data.msg);
-        //swal("删除失败！", "请联系管理员", "error");
-    }
 }

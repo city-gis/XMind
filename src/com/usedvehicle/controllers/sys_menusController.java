@@ -74,7 +74,6 @@ public class sys_menusController {
 		return pagerrs;
 	}
 
-	
 	//分页查询
 	@RequestMapping("serchCount.do")//用於查詢所有的下拉菜單分級顯示
 	@ResponseBody//用於AJAX

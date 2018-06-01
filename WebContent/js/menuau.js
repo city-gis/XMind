@@ -11,7 +11,7 @@ $(function(){
         	var html="";
         	for (var index = 0; index < data.length; index++) {
         	    var element = data[index];
-        	    html+='<a style="padding: 5px 15px;" href="javascript:void(0);"><i class="'+element.icon+'"></i> '+ element.menuname+' </a>';
+        	    html+='<a class="sys_menus" style="padding: 5px 15px;" onclick="'+element.jsfunc+'" href="javascript:void(0);"><i class="'+element.icon+'"></i> '+ element.menuname+' </a>';
         	}
         	$("#ibox-menus").empty().append(html);
         }

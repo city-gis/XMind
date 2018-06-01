@@ -85,8 +85,8 @@ on modelmenu.modelid=models.modelid
   </select>
   
   
-<select id="serchWithPage" resultMap="BaseResultMap" >
-     select menus.*from sys_menus as menus left join sys_rolemodelmenu as rmm on menus.menuid= rmm.menuid left join sys_userrole as ur on rmm.roleid=ur.roleid where 1=1 
+<select id="serchWithPage" resultMap="sys_menusvoMap" >
+     select menus.*,modelmenu.modelid,modelmenu.jsfunc,modelmenu.action from sys_menus as menus left join sys_rolemodelmenu as rmm on menus.menuid= rmm.menuid left join sys_userrole as ur on rmm.roleid=ur.roleid left join sys_modelmenu as modelmenu on rmm.menuid=modelmenu.menuid and rmm.modelid=modelmenu.modelid  where 1=1   
      <if test="modelid!=null and modelid !=''">
       AND rmm.modelid= #{modelid,jdbcType=VARCHAR}
      </if>

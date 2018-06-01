@@ -19,5 +19,5 @@ public interface Isys_menusService {
 	int modify(sys_menus menu);
 	sys_menus serchByID(String id);
 	List<sys_menusvo> serchwithmodel(String modelid);
-	List<sys_menus> serchWithPage(String modelid,String userid);
+	List<sys_menusvo> serchWithPage(String modelid,String userid);
 }

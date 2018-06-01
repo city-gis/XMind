@@ -95,8 +95,10 @@
 		<script src="${pageContext.request.contextPath}/js/plugins/peity/jquery.peity.min.js"></script>
 		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
 		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
-		<script src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
+		<!-- <script src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script> -->
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/lay/layui.js" charset="UTF-8"></script>
     	<script src="${pageContext.request.contextPath}/js/plugins/toastr/toastr.min.js"></script>
+    	<script src="${pageContext.request.contextPath}/js/common.js"></script>
     	<script src="${pageContext.request.contextPath}/js/page/sys_menus_view.js"></script>
     	<script src="${pageContext.request.contextPath}/js/menuau.js"></script>
 </body>

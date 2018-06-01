@@ -15,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.usedvehicle.beans.sys_menus;
 import com.usedvehicle.service.Isys_menusService;
+import com.usedvehicle.vo.sys_menusvo;
 import com.usedvehicle.vo.sys_users_session_enum;
 
 @Controller
@@ -35,7 +36,7 @@ public class indexController {
 	public Object getpagemenu(String modelid,HttpServletRequest request) {
 		HttpSession session =request.getSession();
 		String userid= (String) session.getAttribute(sys_users_session_enum.userid.toString());
-		List<sys_menus> lstMenu=sys_menusService.serchWithPage(modelid,userid);
+		List<sys_menusvo> lstMenu=sys_menusService.serchWithPage(modelid,userid);
 		return lstMenu;
 	}
 }
