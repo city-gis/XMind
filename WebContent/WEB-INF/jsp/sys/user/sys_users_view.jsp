@@ -26,19 +26,19 @@
 <meta name="description" content="模块管理列表页面">
 
 <link rel="shortcut icon" href="favicon.ico">
-<link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="../css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="../css/plugins/jsTree/style.min.css" rel="stylesheet">
-<link href="../css/animate.min.css" rel="stylesheet">
-<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="../css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
-<link href="../css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/jsTree/style.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.min14ed.css?v=3.3.6" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min93e3.css?v=4.4.0" rel="stylesheet">
 <!-- Sweet Alert -->
-<link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-<link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
-<link href="../css/layui.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/layui.css" rel="stylesheet">
 <base target="_blank">
 <style>
 .jstree-open>.jstree-anchor>.fa-folder:before {
@@ -101,7 +101,6 @@
 							<table id="table_list_2"></table>
 							<div id="pager_list_2"></div>
 						</div>
-
 					</div>
 				</div>
 			</div>
@@ -136,17 +135,17 @@
 		<table id="table_list_departs"></table>
 		<!-- <div id="pager_list_2"></div> -->
 	</div>
-	<script src="../js/jquery.min.js?v=2.1.4"></script>
-	<script src="../js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="../js/content.min.js?v=1.0.0"></script>
-	<script src="../js/plugins/jsTree/jstree.min.js"></script>
-	<script src="../js/plugins/peity/jquery.peity.min.js"></script>
-	<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
-	<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
-	<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
-	<script src="../js/plugins/toastr/toastr.min.js"></script>
-	<script src="../js/page/sys_users_view.js"></script>
-	<script type="text/javascript" src="../js/plugins/lay/layui.js" charset="UTF-8"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${pageContext.request.contextPath}/js/content.min.js?v=1.0.0"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/jsTree/jstree.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/peity/jquery.peity.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/toastr/toastr.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/page/sys_users_view.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/lay/layui.js" charset="UTF-8"></script>
 </body>
 
 </html>

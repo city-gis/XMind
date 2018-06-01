@@ -1,19 +1,22 @@
+  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>H+ 后台主题UI框架 - 表单验证 jQuery Validation</title>
-<meta name="keywords" content="H+后台主题,后台bootstrap框架,会员中心主题,后台HTML,响应式后台">
+<title>部门管理修改</title>
+<meta name="keywords" content="部门管理修改">
 <meta name="description"
-	content="H+是一个完全响应式，基于Bootstrap3最新版本开发的扁平化主题，她采用了主流的左右两栏式布局，使用了Html5+CSS3等现代技术">
+	content="部门管理修改">
 <link rel="shortcut icon" href="favicon.ico">
-<link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="../css/animate.min.css" rel="stylesheet">
-<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
-<link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 <base target="_blank">
 </head>
 <body class="gray-bg">
@@ -21,60 +24,28 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<form class="form-horizontal m-t" id="signupForm"
-					action="../sys_users/add.do">
+					action="${pageContext.request.contextPath}/sys_departs/add.do">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">名称：</label>
 						<div class="col-sm-4">
-							<input id="name" name="username" class="form-control"
+						<input name =departid type ="hidden" value="${ sys_departs.departid}"/>
+							<input id="departname" name="departname" class="form-control"  value="${sys_departs.departname }"
 								aria-required="true" aria-invalid="true" type="text">
 						</div>
-						<label class="col-sm-2 control-label">排序：</label>
+						<label class="col-sm-2 control-label">上级部门：</label>
 						<div class="col-sm-4">
-							<input id="orderby" name="orderby" class="form-control"
-								type="text" aria-required="true" aria-invalid="true"
+							<input id="parentid" name="parentid" class="form-control"
+							 value="${ sys_departs.parentid}"	type="text" aria-required="true" aria-invalid="true"
 								class="valid">
 						</div>
 					</div>
+					
+					
 					<div class="form-group">
-						
-						<label class="col-sm-2 control-label">密码：</label>
-						<div class="col-sm-4">
-							<input id="password" name="password" class="form-control"
-								 type="password">
-						</div>
-						<label class="col-sm-2 control-label">确认密码：</label>
-						<div class="col-sm-4">
-							<input id="confirm_password" name="confirm_password" aria-invalid="true"
-								class="form-control" type="password">
-								<span class="help-block m-b-none"><i class="fa fa-info-circle"></i> 请再次输入您的密码</span>
-						</div>
-					</div>
-					<div class="form-group">
-						
-						<label class="col-sm-2 control-label">是否显示：</label>
-						<div class="col-sm-4 col-sm-offset-3"
-							style="margin-left: 0px !important;">
-							<input type="hidden" name="display" id="display" value="1" />
-							<div class="switch">
-								<div class="onoffswitch">
-									<input type="checkbox" checked=""
-										onchange="changeDisplay(this);" class="onoffswitch-checkbox"
-										id="example1"> <label class="onoffswitch-label"
-										for="example1"> <span class="onoffswitch-inner"></span>
-										<span class="onoffswitch-switch"></span>
-									</label>
-								</div>
+							<label class="col-sm-2 control-label">描述：</label>
+							<div class="col-sm-8">
+								<input id="description"  value="${sys_departs.description}"	 name="description" class="form-control">
 							</div>
-						</div>
-						
-						
-					</div>
-					<div class="form-group">
-					<label class="col-sm-2 control-label">描述：</label>
-						<div class="col-sm-8">
-							<textarea rows="3" cols="20" id="description" name="description" class="form-control"
-								></textarea>
-						</div> 
 					</div>
 					<div class="form-group">
 						<div class="col-sm-4 col-sm-offset-3">
@@ -89,14 +60,16 @@
 			</div>
 		</div>
 	</div>
-	<script src="../js/jquery.min.js?v=2.1.4"></script>
-	<script src="../js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="../js/content.min.js?v=1.0.0"></script>
-	<script src="../js/plugins/validate/jquery.validate.min.js"></script>
-	<script src="../js/plugins/validate/messages_zh.min.js"></script>
-	<script src="../js/demo/form-validate-demo.min.js"></script>
-	<script src="../js/jquery.form.js"></script>
-    <script src="../js/plugins/toastr/toastr.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${pageContext.request.contextPath}/js/content.min.js?v=1.0.0"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/demo/form-validate-demo.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.form.js"></script>
+    <script src="${pageContext.request.contextPath}/js/plugins/toastr/toastr.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript"
 		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 	<script type="text/javascript">
@@ -133,24 +106,25 @@
 	function postForm(form){
 		$(form).ajaxSubmit({
             type: 'post', // 提交方式 get/post
-            url: '../sys_users/add.do', // 需要提交的 url,
+            url: '${pageContext.request.contextPath}/sys_departs/edit.do', // 需要提交的 url,
             success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
                 // 此处可对 data 作相关处理
                 if(data.mst==0){
                 	toastr.success(data.msg);
                 	$(form).resetForm(); // 提交后重置表单
                 	if(btn&&btn=="close"){
-                		parent.reloadGrid();
+                		parent.reloadGrid()
                 		setTimeout(function(){
                 			$('.parent_win_closed', window.parent.document).click();
                 		},1000);
+                		//alert(1);
                 	}
                 	//setTimeout(function(){$("#frameView", window.parent.document).attr("src","");},1000);
-                	
                 }else{
                 	toastr.error(data.msg);
                 }
             }
+            
         });
 	}
 		/*
@@ -171,6 +145,13 @@
 				closeWind();
 			});
 			$("#signupForm").validate();
+			/*var check=$("#hdcheckDisplay").val();
+			if(check=="1" && $("#display").is(':checked')){
+				$("#example1").click();
+			} if(check=="0" && $("#display").is(':checked')==false){
+				$("#example1").click();
+			}*/
+			//$("#example1")
 		});
 		var btn;
 		function closeWind() {

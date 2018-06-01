@@ -52,7 +52,7 @@ public class sys_modelsController {
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_models_view");
+		mv.setViewName("sys/model/sys_models_view");
 		return mv;
 	}
 
@@ -61,7 +61,7 @@ public class sys_modelsController {
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_models_add");
+		mv.setViewName("sys/model/sys_models_add");
 		//View view=mv.getClass();
 		return mv;
 	}
@@ -70,7 +70,7 @@ public class sys_modelsController {
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
 		sys_models sys_models=sys_modelsService.serchByID(id);
-		ModelAndView mv = new ModelAndView("sys_models_edit");
+		ModelAndView mv = new ModelAndView("sys/model/sys_models_edit");
 		String names="nihao";
 		mv.addObject(sys_models);
 		mv.addObject("ret","nihao  ninasinfi");

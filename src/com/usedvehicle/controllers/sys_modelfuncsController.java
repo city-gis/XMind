@@ -50,7 +50,7 @@ public class sys_modelfuncsController {
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_modelfuncs_view");
+		mv.setViewName("sys/function/sys_modelfuncs_view");
 		return mv;
 	}
 
@@ -59,7 +59,7 @@ public class sys_modelfuncsController {
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_modelfuncs_add");
+		mv.setViewName("sys/function/sys_modelfuncs_add");
 		//View view=mv.getClass();
 		return mv;
 	}
@@ -68,7 +68,7 @@ public class sys_modelfuncsController {
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
 		sys_modelfuncs sys_modelfuncs=sys_modelfuncsService.serchByID(id);
-		ModelAndView mv = new ModelAndView("sys_modelfuncs_edit");
+		ModelAndView mv = new ModelAndView("sys/function/sys_modelfuncs_edit");
 		String names="nihao";
 		mv.addObject(sys_modelfuncs);
 		mv.addObject("ret","nihao  ninasinfi");

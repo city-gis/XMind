@@ -1,23 +1,23 @@
+  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>方法管理</title>
-<meta name="keywords" content="方法管理">
+<title>菜单管理修改</title>
+<meta name="keywords" content="菜单管理修改">
 <meta name="description"
-	content="方法管理">
+	content="菜单管理修改">
 <link rel="shortcut icon" href="favicon.ico">
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/style.min.css?v=4.0.0" rel="stylesheet">
-<link href="${pageContext.request.contextPath}/css/plugins/jsTree/style.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 <link href="${pageContext.request.contextPath}/css/layui.css" rel="stylesheet">
-
 <base target="_blank">
 </head>
 <body class="gray-bg">
@@ -25,49 +25,36 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<form class="form-horizontal m-t" id="signupForm"
-					action="${pageContext.request.contextPath}/sys_modelfuncs/add.do">
+					action="${pageContext.request.contextPath}/sys_menus/add.do">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">名称：</label>
 						<div class="col-sm-4">
-							<input id="name" name="funcname" class="form-control"
+						<input name =menuid type ="hidden" value="${ sys_menus.menuid}"/>
+							<input id="menuname" name="menuname" class="form-control"  value="${sys_menus.menuname }"
 								aria-required="true" aria-invalid="true" type="text">
 						</div>
-						
-						<label class="col-sm-2 control-label">模块：</label>
+						<label class="col-sm-2 control-label">顺序：</label>
 						<div class="col-sm-4">
-							<input id="modelname" name="modelname" class="form-control"
-								readonly type="text" aria-required="true" aria-invalid="true"
-								class="valid">
-								<input id="modelid" name="modelid" class="form-control"
-								  type="hidden" aria-required="true" aria-invalid="true"
-								class="valid">
+							<input id="orderby" name="orderby" class="form-control"
+								 value="${ sys_menus.orderby}" aria-required="true" aria-invalid="true" type="text">
 						</div>
-						
-						
 					</div>
 					<div class="form-group">
-					<label class="col-sm-2 control-label">地址：</label>
-						<div class="col-sm-4">
-							<input id="url" name="url" class="form-control"
-								type="text" aria-required="true" aria-invalid="true"
-								class="valid">
-						</div>
+					
 						<label class="col-sm-2 control-label">图标：</label>
 						<div class="col-sm-4">
 							<input id="icon" name="icon" class="form-control"
-								readonly type="text" aria-required="true" aria-invalid="true"
+							readonly value="${ sys_menus.icon}"	type="text" aria-required="true" aria-invalid="true"
 								class="valid">
 						</div>
 					</div>
 					
 					
-					
 					<div class="form-group">
-					<label class="col-sm-2 control-label">描述：</label>
-						<div class="col-sm-8">
-							<textarea rows="3" cols="20" id="description" name="description" class="form-control"
-								></textarea>
-						</div> 
+							<label class="col-sm-2 control-label">描述：</label>
+							<div class="col-sm-8">
+								<input id="description"  value="${sys_menus.description}"	 name="description" class="form-control">
+							</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-4 col-sm-offset-3">
@@ -81,13 +68,6 @@
 				</form>
 			</div>
 		</div>
-	
-	
-	
-	<div class="jqGrid_wrapper" id="divCheckModelid" style="display:none;">
-		<table id="table_list_CheckModelid"></table>
-		<div id="pager_list_2"></div> 
-	</div>
 	</div>
 	
 	<div class="bs-glyphicons" id="divShow" style="display:none">
@@ -1025,21 +1005,20 @@
                         </div>
 	
 	
-	
-	
-		<div id="using_json" style="display: none;" ></div>
 	<script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script>
 	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.3.5"></script>
 	<script src="${pageContext.request.contextPath}/js/content.min.js?v=1.0.0"></script>
-	<script src="${pageContext.request.contextPath}/js/plugins/jsTree/jstree.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/plugins/validate/jquery.validate.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/plugins/validate/messages_zh.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/demo/form-validate-demo.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/jquery.form.js"></script>
-	<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
-	<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/plugins/toastr/toastr.min.js"></script>
-	<script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/lay/layui.js" charset="UTF-8"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+	<script type="text/javascript"
+		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+	<script type="text/javascript"
+		src="${pageContext.request.contextPath}/js/plugins/lay/layui.js" charset="UTF-8"></script>
 	<script type="text/javascript">
 	/*
 	初始化消息提示
@@ -1068,39 +1047,31 @@
 	    	return false;
 	    }
 	});
-
-	function clickCheckbox(obj){
-		$('input:checkbox[data="checkedmodel"]').each(function(){
-			$(this).removeAttr("checked");
-		})
-		$(obj).prop("checked","checked");
-		$(obj).attr("checked","checked");
-	}
-	
 	/*
 	表单提交方法
 	*/
 	function postForm(form){
 		$(form).ajaxSubmit({
             type: 'post', // 提交方式 get/post
-            url: '../sys_modelfuncs/add.do', // 需要提交的 url,
+            url: '${pageContext.request.contextPath}/sys_menus/edit.do', // 需要提交的 url,
             success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
                 // 此处可对 data 作相关处理
                 if(data.mst==0){
                 	toastr.success(data.msg);
                 	$(form).resetForm(); // 提交后重置表单
                 	if(btn&&btn=="close"){
-                		parent.reloadGrid();
+                		parent.reloadGrid()
                 		setTimeout(function(){
                 			$('.parent_win_closed', window.parent.document).click();
                 		},1000);
+                		//alert(1);
                 	}
                 	//setTimeout(function(){$("#frameView", window.parent.document).attr("src","");},1000);
-                	
                 }else{
                 	toastr.error(data.msg);
                 }
             }
+            
         });
 	}
 		/*
@@ -1117,16 +1088,17 @@
 		生成表单验证并给保存并关闭按钮注册事件
 		*/
 		$(function() {
-			$("<link>")
-			.attr({ rel: "stylesheet",
-			type: "text/css",
-			href: "../css/plugins/jqgrid/ui.jqgrid.css"
-			})	
-			.appendTo("head");
 			$("#btnSaveAndClose").on("click", function() {
 				closeWind();
 			});
 			$("#signupForm").validate();
+			/*var check=$("#hdcheckDisplay").val();
+			if(check=="1" && $("#display").is(':checked')){
+				$("#example1").click();
+			} if(check=="0" && $("#display").is(':checked')==false){
+				$("#example1").click();
+			}*/
+			//$("#example1")
 			$("#icon").on("click",function(){
 				 layui.use('layer', function () { //独立版的layer无需执行这一句
 			            var layer = layui.layer; //独立版的layer无需执行这一句
@@ -1144,175 +1116,15 @@
 			                //     layer.closeAll();
 			                // },
 			                , success: function (layero, index) {
-			                   $(".fa-hover>a").on("click",function(){
-			                	   var span=$(this).find("i");
-			                	   $("#icon").val($(span).attr("class"));
-			                	   layer.closeAll();
-			                   })
+			                	 $(".fa-hover>a").on("click",function(){
+				                	   var span=$(this).find("i");
+				                	   $("#icon").val($(span).attr("class"));
+				                	   layer.closeAll();
+				                   })
 			                }
 			            });
 			        });
 			})
-			/*
-			选择模块
-			*/
-			$("#modelname").on("click",function(){
-			
-				layui.use('layer', function () { //独立版的layer无需执行这一句
-			        var layer = layui.layer; //独立版的layer无需执行这一句
-			        layer.open({
-			            type: 1
-			            , anim: 5
-			            , isOutAnim: false
-			            , offset: 'auto' //具体配置参考：http://www.layui.com/doc/modules/layer.html#offset
-			            , id: "checkModelidLayer" //防止重复弹出
-			            , content: $("#divCheckModelid"),
-			            area: [700 + 'px', 500 + 'px'],
-			            btn: ['确定', '取消'],
-			            btnAlign: 'c' //按钮居中
-			            , shade: 0 //不显示遮罩
-			            , yes: function () {
-			                //先保存数据，
-			                var lstChecked=[];
-			                $('input:checkbox[data="checkedmodel"]').each(function(){
-			                	if($(this).is(":checked")){
-			                		lstChecked.push($(this));
-			                	}
-			                });
-			                if(lstChecked && lstChecked.length==1){
-			                	$("#modelname").val(lstChecked[0].attr("names"));
-			                	$("#modelid").val(lstChecked[0].attr("value"));
-			                	layer.closeAll();
-			                }else{
-			                	toastr.error("你没有选取或者选取为多行数据");
-			                }
-			            },
-			            btn2: function (index, layero) {
-			                layer.closeAll();
-			            },
-			            success: function (layero, index) {
-			            	$("#using_json").jstree({
-			                    "core": {
-			                        "check_callback": true,
-			                        "data": {
-			                            'url': '../sys_models/models_Tree.do',
-			                            'dataType': 'json',
-			                        }
-			                    }
-			                });
-			                $("#using_json").on('load_node.jstree', function (event, obj) {
-			                    var option = {};
-			                    option.flat = true;
-			                    option.no_state = true;
-			                    option.no_data = true;
-			                    option.no_li_attr = true;
-			                    option.no_a_attr = true;
-			                    var json = $("#using_json").jstree(true).get_json(null, option);
-			                    var listData = [];
-			                    //组装数据
-	                            for (var i = 0; i < json.length; i++) {
-	                                var dataone = {};
-	                                dataone.id = json[i].id;
-	                                dataone.icons = json[i].icon;
-	                                dataone.parent = json[i].parent;
-	                                dataone.text = json[i].text;
-	                                var node = $("#using_json").jstree(true).get_node(json[i].id);
-	                                var level = node.parents.length;
-	                                dataone.level = level;
-	                                if (dataone.parent == "#") {
-	                                    dataone.parent = null;
-	                                }
-	                                if (node.children.length > 0) {
-	                                    dataone.isLeaf = false;
-	                                } else {
-	                                    dataone.isLeaf = true;
-	                                }
-	                                dataone.expanded = true;
-	                                dataone.loaded = true;
-	                                listData.push(dataone);
-	                            }
-	                            var nameFormat= '<label>'+
-	                            '<input type="checkbox" class="ace" id="chxCheckAll">'+
-	                            '<span class="lbl align-top" >名称</span>'+
-	                          '</label>';
-			                    
-	                          //加载json数据到datagrid的treegrid中
-	                          
-                                $.jgrid.gridUnload("table_list_CheckModelid");
-                                $("#table_list_CheckModelid").jqGrid({
-                                    data: listData,
-                                    datatype: "local",
-                                    height: "auto",
-                                    width: "100%",
-                                    treeGrid: true,
-                                    treeGridModel: 'adjacency',
-                                    ExpandColumn: 'text',
-                                    autowidth: true,
-                                    shrinkToFit: true,
-                                    multiselect: true,
-                                    rowNum: 10,
-                                    rowList: [10, 20, 30],
-                                    colNames: ["id","名称","图标"],
-                                    treeIcons: { plus: 'fa fa-plus-square-o', minus: 'fa fa-minus-square-o', leaf: 'fa fa-file-archive-o' },
-                                    colModel: [{
-                                        name: "id",
-                                        index: "id",
-                                        editable: false,
-                                        width: 60,
-                                        search: false,
-                                        hidden: true
-                                    }, {
-                                        name: "text",
-                                        index: "text",
-                                        editable: false,
-                                        width: 300,
-                                        search: true,
-                                        formatter: showicon
-                                    }, {
-                                        name: "icons",
-                                        index: "icons",
-                                        editable: false,
-                                        width: 350,
-                                        search: true
-                                    }],
-                                    viewrecords: true,
-                                    add: false,
-                                    edit: false,
-                                    addtext: "Add",
-                                    edittext: "Edit",
-                                    hidegrid: true,
-                                    multiselect: true,
-                                    cellEdit: false,
-                                    cellsubmit: 'clientArray',
-                                    treedatatype: "json",
-                                    loadonce: true,
-                                    rowNum: 10000,
-                                    //pager: "#pager_menu",
-                                    treeReader: {
-                                        level_field: "level",
-                                        parent_id_field: "parent",
-                                        leaf_field: "isLeaf",
-                                        expanded_field: "expanded"
-                                    }
-                                });
-                                $("#table_list_CheckModelid").jqGrid().trigger("reloadGrid"); //重载JQGrid
-                                function showicon( cellvalue, options, cell ) {
-                                    var rowId = cell.id;
-                                    var checkbox = '<label >'+
-                                                        '<input data="checkedmodel" names="'+cell.text+'" type="checkbox" id="chx'+rowId+'" class="ace" value="'+rowId+'" onclick="clickCheckbox(this);" />'+
-                                                        '<i class="'+cell.icons+'"></i><span class="lbl align-top" ></span>'+
-                                                            cell.text +
-                                                    '</label>';
-                                    return  checkbox ;          
-                                }
-                                
-                                
-			                });
-			            }
-			        });
-			    });
-			});
-			
 		});
 		var btn;
 		function closeWind() {

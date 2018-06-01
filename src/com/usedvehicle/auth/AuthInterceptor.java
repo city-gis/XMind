@@ -25,20 +25,20 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 			if(session.getAttribute(sys_users_session_enum.userid.toString())!=null){
 				if (handler.getClass().isAssignableFrom(HandlerMethod.class)) {
 					AuthPassport authPassport = ((HandlerMethod) handler).getMethodAnnotation(AuthPassport.class);
-					// 没有声明需要权限,或者声明不验证权限
+					// 
 					
 					if (authPassport == null || authPassport.validate() == false)
 						return true;
 					else {
-						// 在这里实现自己的权限验证逻辑
+						// 
 						String userid=(String)session.getAttribute(sys_users_session_enum.userid.toString());
-						 System.out.println("直接输出："+url+"@@"+userid);
+						 System.out.println(url+"@@"+userid);
 						int result=sys_usersService.hasAU(url,userid);
-						if (result>0)// 如果验证成功返回true（这里直接写false来模拟验证失败的处理）
+						if (result>0)// 
 							return true;
-						else// 如果验证失败
+						else// 
 						{
-							// 返回到登录界面
+							// 
 							response.sendRedirect(contextPath+"/404.jsp");
 							return false;
 						}
@@ -48,12 +48,12 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 					return true;
 				}
 			}else{
-				// 返回到登录界面
+				// 锟斤拷锟截碉拷锟斤拷录锟斤拷锟斤拷
 				response.sendRedirect(contextPath+"/login.jsp");
 				return false;
 			}
 		} else{
-			// 返回到登录界面
+			// 锟斤拷锟截碉拷锟斤拷录锟斤拷锟斤拷
 			response.sendRedirect(contextPath+"/login.jsp");
 			return false;
 		}

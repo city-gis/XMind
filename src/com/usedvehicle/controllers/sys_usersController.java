@@ -43,7 +43,7 @@ public class sys_usersController {
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_users_view");
+		mv.setViewName("sys/user/sys_users_view");
 		return mv;
 	}
 
@@ -52,7 +52,7 @@ public class sys_usersController {
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_users_add");
+		mv.setViewName("sys/user/sys_users_add");
 		//View view=mv.getClass();
 		return mv;
 	}
@@ -61,7 +61,7 @@ public class sys_usersController {
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
 		sys_users sys_users=sys_usersService.serchByID(id);
-		ModelAndView mv = new ModelAndView("sys_users_edit");
+		ModelAndView mv = new ModelAndView("sys/user/sys_users_edit");
 		String names="nihao";
 		mv.addObject(sys_users);
 		mv.addObject("ret","nihao  ninasinfi");

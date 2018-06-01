@@ -40,7 +40,7 @@ public class sys_menusController {
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_menus_view");
+		mv.setViewName("sys/menu/sys_menus_view");
 		return mv;
 	}
 
@@ -49,7 +49,7 @@ public class sys_menusController {
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_menus_add");
+		mv.setViewName("sys/menu/sys_menus_add");
 		//View view=mv.getClass();
 		return mv;
 	}
@@ -58,7 +58,7 @@ public class sys_menusController {
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
 		sys_menus sys_menus=sys_menusService.serchByID(id);
-		ModelAndView mv = new ModelAndView("sys_menus_edit");
+		ModelAndView mv = new ModelAndView("sys/menu/sys_menus_edit");
 		String names="nihao";
 		mv.addObject(sys_menus);
 		mv.addObject("ret","nihao  ninasinfi");

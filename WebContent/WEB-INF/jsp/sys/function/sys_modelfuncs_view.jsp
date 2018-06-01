@@ -8,24 +8,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>菜单管理列表页面</title>
+<title>方法管理列表页面</title>
 
-<meta name="keywords" content="菜单管理列表页面">
+<meta name="keywords" content="方法管理列表页面">
 <meta name="description"
-	content="菜单管理列表页面">
+	content="方法管理列表页面">
 
 <link rel="shortcut icon" href="favicon.ico">
-<link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="../css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="../css/plugins/jsTree/style.min.css" rel="stylesheet">
-<link href="../css/animate.min.css" rel="stylesheet">
-<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/jsTree/style.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
 <!-- Sweet Alert -->
-<link href="../css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-<link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 <base target="_blank">
 <style>
 .jstree-open>.jstree-anchor>.fa-folder:before {
@@ -53,8 +53,7 @@
 			<div class="col-sm-12">
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
-						<h5>菜单列表</h5>
-						<div id="ibox-menus"></div>
+						<h5>方法列表</h5>
 						<div class="ibox-tools">
 							<a class="collapse-link"> <i class="fa fa-chevron-up"></i>
 							</a>
@@ -66,6 +65,7 @@
 							<table id="table_list_2"></table>
 							<div id="pager_list_2"></div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -88,17 +88,18 @@
 				</div>
 			</div>
 		</div>
-		<script src="../js/jquery.min.js?v=2.1.4"></script>
-		<script src="../js/bootstrap.min.js?v=3.3.5"></script>
-		<script src="../js/content.min.js?v=1.0.0"></script>
-		<script src="../js/plugins/jsTree/jstree.min.js"></script>
-		<script src="../js/plugins/peity/jquery.peity.min.js"></script>
-		<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
-		<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
-		<script src="../js/plugins/sweetalert/sweetalert.min.js"></script>
-    	<script src="../js/plugins/toastr/toastr.min.js"></script>
-    	<script src="../js/page/sys_menus_view.js"></script>
-    	<script src="../js/menuau.js"></script>
+		</div>
+		<script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script>
+		<script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.3.5"></script>
+		<script src="${pageContext.request.contextPath}/js/content.min.js?v=1.0.0"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jsTree/jstree.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/peity/jquery.peity.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/sweetalert/sweetalert.min.js"></script>
+    	<script src="${pageContext.request.contextPath}/js/plugins/toastr/toastr.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/page/sys_modelfuncs_view.js"></script>
+    
 </body>
 
 </html>

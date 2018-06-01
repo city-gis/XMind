@@ -41,7 +41,7 @@ public class sys_departsController {
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_departs_view");
+		mv.setViewName("sys/depart/sys_departs_view");
 		return mv;
 	}
 
@@ -50,7 +50,7 @@ public class sys_departsController {
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_departs_add");
+		mv.setViewName("sys/depart/sys_departs_add");
 		//View view=mv.getClass();
 		return mv;
 	}
@@ -60,7 +60,7 @@ public class sys_departsController {
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
 		sys_departs sys_departs=sys_departsService.serchByID(id);
-		ModelAndView mv = new ModelAndView("sys_departs_edit");
+		ModelAndView mv = new ModelAndView("sys/depart/sys_departs_edit");
 		String names="nihao";
 		mv.addObject(sys_departs);
 		mv.addObject("ret","nihao  ninasinfi");

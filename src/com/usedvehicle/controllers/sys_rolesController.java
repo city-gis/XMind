@@ -50,7 +50,7 @@ public class sys_rolesController {
 	@RequestMapping("view.do")//用於查詢所有的下拉菜單分級顯示
 	public ModelAndView view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_roles_view");
+		mv.setViewName("sys/role/sys_roles_view");
 		return mv;
 	}
 
@@ -59,7 +59,7 @@ public class sys_rolesController {
 	@ResponseBody//用於AJAX
 	public ModelAndView add_view() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("sys_roles_add");
+		mv.setViewName("sys/role/sys_roles_add");
 		//View view=mv.getClass();
 		return mv;
 	}
@@ -68,7 +68,7 @@ public class sys_rolesController {
 	//@ResponseBody//用於AJAX
 	public ModelAndView edit_view(String id) {
 		sys_roles sys_roles=sys_rolesService.serchByID(id);
-		ModelAndView mv = new ModelAndView("sys_roles_edit");
+		ModelAndView mv = new ModelAndView("sys/role/sys_roles_edit");
 		String names="nihao";
 		mv.addObject(sys_roles);
 		mv.addObject("ret","nihao  ninasinfi");

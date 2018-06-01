@@ -7,16 +7,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>部门管理修改</title>
-<meta name="keywords" content="部门管理修改">
+<title>角色管理修改</title>
+<meta name="keywords" content="角色管理修改">
 <meta name="description"
-	content="部门管理修改">
+	content="角色管理修改">
 <link rel="shortcut icon" href="favicon.ico">
-<link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="../css/animate.min.css" rel="stylesheet">
-<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
-<link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/style.min.css?v=4.0.0" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/toastr/toastr.min.css" rel="stylesheet">
 <base target="_blank">
 </head>
 <body class="gray-bg">
@@ -24,27 +24,27 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<form class="form-horizontal m-t" id="signupForm"
-					action="../sys_departs/add.do">
+					action="${pageContext.request.contextPath}/sys_roles/add.do">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">名称：</label>
 						<div class="col-sm-4">
-						<input name =departid type ="hidden" value="${ sys_departs.departid}"/>
-							<input id="departname" name="departname" class="form-control"  value="${sys_departs.departname }"
+						<input name =roleid type ="hidden" value="${ sys_roles.roleid}"/>
+							<input id="rolename" name="rolename" class="form-control"  value="${sys_roles.rolename }"
 								aria-required="true" aria-invalid="true" type="text">
 						</div>
-						<label class="col-sm-2 control-label">上级部门：</label>
+						<label class="col-sm-2 control-label">顺序：</label>
 						<div class="col-sm-4">
-							<input id="parentid" name="parentid" class="form-control"
-							 value="${ sys_departs.parentid}"	type="text" aria-required="true" aria-invalid="true"
-								class="valid">
+							<input id="orderby" name="orderby" class="form-control"
+								 value="${ sys_roles.orderby}" aria-required="true" aria-invalid="true" type="text">
 						</div>
 					</div>
+					
 					
 					
 					<div class="form-group">
 							<label class="col-sm-2 control-label">描述：</label>
 							<div class="col-sm-8">
-								<input id="description"  value="${sys_departs.description}"	 name="description" class="form-control">
+								<input id="description"  value="${sys_roles.description}"	 name="description" class="form-control">
 							</div>
 					</div>
 					<div class="form-group">
@@ -60,16 +60,16 @@
 			</div>
 		</div>
 	</div>
-	<script src="../js/jquery.min.js?v=2.1.4"></script>
-	<script src="../js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="../js/content.min.js?v=1.0.0"></script>
-	<script src="../js/plugins/validate/jquery.validate.min.js"></script>
-	<script src="../js/plugins/validate/messages_zh.min.js"></script>
-	<script src="../js/demo/form-validate-demo.min.js"></script>
-	<script src="../js/jquery.form.js"></script>
-    <script src="../js/plugins/toastr/toastr.min.js"></script>
-		<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
-		<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${pageContext.request.contextPath}/js/content.min.js?v=1.0.0"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/demo/form-validate-demo.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.form.js"></script>
+    <script src="${pageContext.request.contextPath}/js/plugins/toastr/toastr.min.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+		<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript"
 		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
 	<script type="text/javascript">
@@ -106,7 +106,7 @@
 	function postForm(form){
 		$(form).ajaxSubmit({
             type: 'post', // 提交方式 get/post
-            url: '../sys_departs/edit.do', // 需要提交的 url,
+            url: '${pageContext.request.contextPath}/sys_roles/edit.do', // 需要提交的 url,
             success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
                 // 此处可对 data 作相关处理
                 if(data.mst==0){

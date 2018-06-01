@@ -1,56 +1,68 @@
-  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>模块管理修改</title>
-<meta name="keywords" content="模块管理修改">
+<title>模块管理</title>
+<meta name="keywords" content="模块管理">
 <meta name="description"
-	content="模块管理修改">
+	content="模块管理">
 <link rel="shortcut icon" href="favicon.ico">
-<link href="../css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
-<link href="../css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
-<link href="../css/animate.min.css" rel="stylesheet">
-<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
-<link href="../css/plugins/toastr/toastr.min.css" rel="stylesheet">
-<link href="../css/style.min.css?v=4.0.0" rel="stylesheet">
-<link href="../css/layui.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/bootstrap.min.css?v=3.3.5" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/plugins/jqgrid/ui.jqgrid.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/animate.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+<!-- Sweet Alert -->
+<link href="${pageContext.request.contextPath}/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/layui.css" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/style.min.css?v=4.0.0" rel="stylesheet">
 <base target="_blank">
+<style>
+.jstree-open>.jstree-anchor>.fa-folder:before {
+	content: "\f07c"
+}
+
+.jstree-default .jstree-icon.none {
+	width: 0
+}
+
+.modal-header {
+	padding: 15px 15px !important;
+	text-align: center;
+}
+</style>
 </head>
 <body class="gray-bg">
 	<div class="wrapper wrapper-content animated fadeInRight">
 		<div class="row">
 			<div class="col-sm-12">
 				<form class="form-horizontal m-t" id="signupForm"
-					action="../sys_models/add.do">
+					action="${pageContext.request.contextPath}/sys_models/add.do">
 					<div class="form-group">
 						<label class="col-sm-2 control-label">名称：</label>
 						<div class="col-sm-4">
-						<input name =modelid type ="hidden" value="${ sys_models.modelid}"/>
-							<input id="modelname" name="modelname" class="form-control"  value="${sys_models.modelname }"
+							<input id="name" name="modelname" class="form-control"
 								aria-required="true" aria-invalid="true" type="text">
 						</div>
 						<label class="col-sm-2 control-label">上级模块：</label>
 						<div class="col-sm-4">
-							<input id="parentid" name="parentid" class="form-control"
-							 value="${ sys_models.parentid}"	type="text" aria-required="true" aria-invalid="true"
+							<input id="parentid" name="parentname" class="form-control"
+							readonly type="text" aria-required="true" aria-invalid="true"
 								class="valid">
+								<input id="parentidhid" name="parentid" type="hidden" >
 						</div>
 					</div>
 					<div class="form-group">
 					<label class="col-sm-2 control-label">顺序：</label>
 						<div class="col-sm-4">
 							<input id="orderby" name="orderby" class="form-control"
-								 value="${ sys_models.orderby}" aria-required="true" aria-invalid="true" type="text">
+								aria-required="true" aria-invalid="true" type="text">
 						</div>
 						<label class="col-sm-2 control-label">url：</label>
 						<div class="col-sm-4">
 							<input id="url" name="url" class="form-control"
-							 value="${ sys_models.url}"	type="text" aria-required="true" aria-invalid="true"
+								type="text" aria-required="true" aria-invalid="true"
 								class="valid">
 						</div>
 					</div>
@@ -59,12 +71,12 @@
 					<label class="col-sm-2 control-label">是否可见：</label>
 						<div class="col-sm-4">
 							<input id="isview" name="isview" class="form-control"
-								 value="${ sys_models.isview}"	aria-required="true" aria-invalid="true" type="text">
+								aria-required="true" aria-invalid="true" type="text">
 						</div>
 						<label class="col-sm-2 control-label">是否启用：</label>
 						<div class="col-sm-4">
 							<input id="isused" name="isused" class="form-control"
-								 value="${ sys_models.isused}"	type="text" aria-required="true" aria-invalid="true"
+								type="text" aria-required="true" aria-invalid="true"
 								class="valid">
 						</div>
 					</div>
@@ -72,14 +84,16 @@
 					<label class="col-sm-2 control-label">图标：</label>
 						<div class="col-sm-4">
 							<input id="icon" name="icon" class="form-control"
-								readonly value="${ sys_models.icon}" aria-required="true" aria-invalid="true" type="text">
+							readonly	aria-required="true" aria-invalid="true" type="text">
 						</div>
 					</div>
+					
 					<div class="form-group">
-							<label class="col-sm-2 control-label">描述：</label>
-							<div class="col-sm-8">
-								<input id="description"  value="${sys_models.description}"	 name="description" class="form-control">
-							</div>
+					<label class="col-sm-2 control-label">描述：</label>
+						<div class="col-sm-8">
+							<textarea rows="3" cols="20" id="description" name="description" class="form-control"
+								></textarea>
+						</div> 
 					</div>
 					<div class="form-group">
 						<div class="col-sm-4 col-sm-offset-3">
@@ -94,11 +108,13 @@
 			</div>
 		</div>
 	</div>
-		<!-- 弹出选择父级div -->
+	
+	<!-- 弹出选择父级div -->
 	<div class="jqGrid_wrapper" id="menu_showwin"  style="display:none">
 		<table id="table_list_alert"></table>
 		<!-- <div id="pager_list_2"></div> -->
 	</div>
+	
 	
 	<div class="bs-glyphicons" id="divShow" style="display:none">
                             <ul class="bs-glyphicons-list">
@@ -1423,21 +1439,18 @@
 	
 	
 	
-	
-	<script src="../js/jquery.min.js?v=2.1.4"></script>
-	<script src="../js/bootstrap.min.js?v=3.3.5"></script>
-	<script src="../js/content.min.js?v=1.0.0"></script>
-	<script src="../js/plugins/validate/jquery.validate.min.js"></script>
-	<script src="../js/plugins/validate/messages_zh.min.js"></script>
-	<script src="../js/demo/form-validate-demo.min.js"></script>
-	<script src="../js/jquery.form.js"></script>
-    <script src="../js/plugins/toastr/toastr.min.js"></script>
-		<script src="../js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
-		<script src="../js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.min.js?v=2.1.4"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js?v=3.3.5"></script>
+	<script src="${pageContext.request.contextPath}/js/content.min.js?v=1.0.0"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/validate/jquery.validate.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/validate/messages_zh.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/demo/form-validate-demo.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery.form.js"></script>
+    <script src="${pageContext.request.contextPath}/js/plugins/toastr/toastr.min.js"></script>
 	<script type="text/javascript"
-		src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
-	<script type="text/javascript"
-		src="../js/plugins/lay/layui.js" charset="UTF-8"></script>
+		src="${pageContext.request.contextPath}/js/plugins/lay/layui.js" charset="UTF-8"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/i18n/grid.locale-cn.js"></script>
+	<script src="${pageContext.request.contextPath}/js/plugins/jqgrid/jquery.jqGrid.min.js"></script>
 	<script type="text/javascript">
 	/*
 	初始化消息提示
@@ -1472,25 +1485,24 @@
 	function postForm(form){
 		$(form).ajaxSubmit({
             type: 'post', // 提交方式 get/post
-            url: '../sys_models/edit.do', // 需要提交的 url,
+            url: '${pageContext.request.contextPath}/sys_models/add.do', // 需要提交的 url,
             success: function(data) { // data 保存提交后返回的数据，一般为 json 数据
                 // 此处可对 data 作相关处理
                 if(data.mst==0){
                 	toastr.success(data.msg);
                 	$(form).resetForm(); // 提交后重置表单
                 	if(btn&&btn=="close"){
-                		parent.reloadGrid()
+                		parent.reloadGrid();
                 		setTimeout(function(){
                 			$('.parent_win_closed', window.parent.document).click();
                 		},1000);
-                		//alert(1);
                 	}
                 	//setTimeout(function(){$("#frameView", window.parent.document).attr("src","");},1000);
+                	
                 }else{
                 	toastr.error(data.msg);
                 }
             }
-            
         });
 	}
 		/*
@@ -1511,13 +1523,6 @@
 				closeWind();
 			});
 			$("#signupForm").validate();
-			/*var check=$("#hdcheckDisplay").val();
-			if(check=="1" && $("#display").is(':checked')){
-				$("#example1").click();
-			} if(check=="0" && $("#display").is(':checked')==false){
-				$("#example1").click();
-			}*/
-			//$("#example1")
 			$("#icon").on("click",function(){
 				 layui.use('layer', function () { //独立版的layer无需执行这一句
 			            var layer = layui.layer; //独立版的layer无需执行这一句
@@ -1543,7 +1548,7 @@
 			                }
 			            });
 			        });
-			})
+			});
 			$("#parentid").on("click",function(){
 				 layui.use('layer', function () { //独立版的layer无需执行这一句
 			            var layer = layui.layer; //独立版的layer无需执行这一句
@@ -1584,7 +1589,7 @@
 			        });
 			})
 			$("#table_list_alert").jqGrid({
-				url : "../sys_models/serch.do",
+				url : "${pageContext.request.contextPath}/sys_models/serch.do",
 				datatype : "json",
 				height : 230,
 				autowidth : true,
@@ -1596,32 +1601,32 @@
 					name : "modelid",
 					index : "modelid",
 					editable : true,
-					width : 60,
+					width : 30,
 					search : false,
 					hidden : true
 				}, {
 					name : "parentid",
 					index : "parentid",
 					editable : true,
-					width : 60,
+					width : 30,
 					search : true
 				}, {
 					name : "modelname",
 					index : "modelname",
 					editable : true,
-					width : 60,
+					width : 30,
 					search : true
 				}, {
 					name : "icon",
 					index : "icon",
 					editable : true,
-					width : 60,
+					width : 30,
 					search : true
 				}, {
 					name : "description",
 					index : "description",
 					editable : true,
-					width : 60,
+					width : 30,
 					search : true
 				} ],
 				//pager : "#pager_list_2",
